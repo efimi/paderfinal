@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'AppController@start');
+Route::get('/match', 'AppController@makeMatch');
 
 Auth::routes();
 

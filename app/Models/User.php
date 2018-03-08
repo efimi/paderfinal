@@ -26,4 +26,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function matches()
+    {
+        return $this->hasMany(Match::class);
+    }
+    public function mToday()
+    {
+        return Match::mToday()->where('user_id', $this->id)->first();
+    }
 }
