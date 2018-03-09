@@ -10,13 +10,18 @@ class MatchesController extends Controller
     {
         $this->middleware('auth');
     }
-	public function index()
+	public function show(Match $match)
 	{
-		
+		return view('match.show', compact('match'));
 	}
-	public function delete()
+
+	public function delete(Match $match)
 	{
-		# code...
+		if ($match->user() === auth()->user()) {
+			$match->delete();
+			return ture;
+		}
+		return false;
 	}
 
 }

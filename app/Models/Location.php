@@ -12,6 +12,36 @@ class Location extends Model
 	{
 		return $this->hasMany(Match::class);
 	}
+	public function openinghours()
+	{
+		return $this->hasMany(OpeningHour::class);
+	}
+	public function photos()
+	{
+		return $this->hasMany(Photo::class);
+	}
+	public function closingTime()
+	{	
+		$thisDayId = today()->dayOfWeek + 1;
+		switch (count($this->openinghours())) {
+			case 2:
+				$nextDayId = today()->add(1)->dayOfWeek + 1;
+				return $this->openinghours()->where('day_id', $nextDayId)->first();
+				break;
+			case 1:
+				return $this->openinghours()->where('day_id', $thisDayId);
+				break;
+			default:
+				return null;
+				break;
+		}
+				
+		
+	}
+	public static function openLocationsTodayAt($time = 2000)
+	{
+		return OpeningHour::allOpenToday($time)->each->location;
+	}
  	public function usedPlaces()
  	{
  		return Match::mToday()->where('location_id', $this->id)->count();

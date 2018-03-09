@@ -1,0 +1,9 @@
+INSERT INTO `opening_hours` ( `location_id`, `day_id`, `opened`, `closed`, `created_at`, `updated_at`)
+VALUES
+	(7, 1, '1600', '0000', NULL, NULL),
+	(7, 3, '1600', '0000', NULL, NULL),
+	(7, 4, '1600', '0000', NULL, NULL),
+	(7, 5, '1600', '0000', NULL, NULL),
+	(7, 6, '1600', '0000', NULL, NULL),
+	(7, 7, '1100', '0000', NULL, NULL);
+	

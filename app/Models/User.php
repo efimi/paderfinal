@@ -2,8 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Notifications\Notifiable;
+use App\Models\Location;
+use App\Models\Match;
+use Carbon\Carbon;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+
+use Faker\Generator as Faker;
 
 class User extends Authenticatable
 {
@@ -15,7 +20,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password'
     ];
 
     /**
@@ -27,12 +32,18 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+     public function history()
+    {
+        return $this->hasMany(History::class);
+    }
     public function matches()
     {
         return $this->hasMany(Match::class);
     }
-    public function mToday()
+
+    public function todaysMatch()
     {
-        return Match::mToday()->where('user_id', $this->id)->first();
+        return $this->matches()->whereDate('created_at', today())->first();
     }
+    
 }
