@@ -22,7 +22,7 @@ class AppController extends Controller
     public function makeMatch()
     {	
         $user = Auth::user();
-        if (!empty($user->mToday())) {
+        if (count($user->mToday())) {
             $match = $user->mToday();
         }else{
     	   $match = Match::makeNewMatch($user);

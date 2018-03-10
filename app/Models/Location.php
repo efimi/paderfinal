@@ -39,8 +39,11 @@ class Location extends Model
 		
 	}
 	public static function openLocationsTodayAt($time = 2000)
-	{
-		return OpeningHour::allOpenToday($time)->each->location;
+	{	
+		$openhours = OpeningHour::allOpenToday($time);
+
+		return self::extractLocationsHelper($openhours); 
+
 	}
  	public function usedPlaces()
  	{
@@ -48,8 +51,8 @@ class Location extends Model
  	}
 	public static function getLocation()
 	{
-		if (!empty(self::getLocationWithFreeSpace())) {
-			return self::getLocationWithFreeSpace();
+		if (!empty(self::getFillableLocation())) {
+			return self::getFillableLocation();
 		}
 		elseif (!empty(self::getNewRandom())) {
 			return self::getNewRandom();
@@ -60,7 +63,7 @@ class Location extends Model
 			})->first();
 		}
 	}
- 	public static function getLocationWithFreeSpace() {
+ 	public static function getFillableLocation() {
  		$locationsWithLessThen5 = self::allUsedToday()->filter(function($loc){
  			return $loc->usedPlaces() < 5;
  		});
@@ -68,19 +71,23 @@ class Location extends Model
  	}
 
 	public static function getNewRandom() {
-		$all = Location::all();
+		$all = Location::openLocationsTodayAt(2000);
 		$locationsToday = self::allUsedToday();
 		return $all->diff($locationsToday)->random();
  	}
  	public static function allUsedToday(){
  		
  		$uniqueMatches = Match::mToday()->get()->unique('location_id');
+ 		return self::extractLocationsHelper($uniqueMatches);
+ 	}
+
+ 	public static function extractLocationsHelper($input)
+ 	{
  		$locations = collect([]);
- 		foreach ($uniqueMatches as $m) {
- 			$locations->push($m->location);
+ 		foreach ($input as $i) {
+ 			$locations->push($i->location);
  		}
  		return $locations;
  	}
-
 
 }

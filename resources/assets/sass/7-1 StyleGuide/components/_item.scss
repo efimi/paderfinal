@@ -1,0 +1,11 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the item component.
+// -----------------------------------------------------------------------------
+.item{
+	background-color: $brand-color;
+	@include rounded(100px);
+	padding: 1rem 2rem;
+	@include on-event{
+		border: 2px soild $brand-color;
+	};
+}

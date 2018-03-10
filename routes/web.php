@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'AppController@start');
-Route::get('/match', 'AppController@makeMatch');
+Route::get('/match', 'AppController@makeMatch')->name('match');
 
 Auth::routes();
 

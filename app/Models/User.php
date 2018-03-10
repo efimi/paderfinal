@@ -8,8 +8,6 @@ use Carbon\Carbon;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-use Faker\Generator as Faker;
-
 class User extends Authenticatable
 {
     use Notifiable;
@@ -41,7 +39,7 @@ class User extends Authenticatable
         return $this->hasMany(Match::class);
     }
 
-    public function todaysMatch()
+    public function mToday()
     {
         return $this->matches()->whereDate('created_at', today())->first();
     }

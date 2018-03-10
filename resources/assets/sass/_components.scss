@@ -1,0 +1,63 @@
+.title {
+    font-size: 5vh;
+    margin-bottom: 30px;
+    &__caption{
+        font-size: 3vh;
+    }
+}
+
+.card {
+	overflow: hidden;
+	border: 3px solid $paderblue;
+	padding: 1rem 2rem;
+	border-radius: 40px;
+	&--result{
+		color: rgb(255,255,255);
+		max-width: 320px;
+		@include movingGradient;
+	}
+}
+
+
+.btn {
+	display: inline-block;
+	padding: 0.5rem 1.2rem;
+	margin: 0;
+	text-decoration: none;
+	border-radius: 100px;
+	&--white{
+		background-color: rgba(255,255,255,1);
+		color: $paderblue;
+	    transition: all .25s cubic-bezier(.88,.03,.98,.79);
+		@include on-event{
+			color:#fff;
+			background-color: $paderblue;
+	        transition: all .25s cubic-bezier(.88,.03,.98,.79);
+		}
+	}
+	&--big{
+		font-size: 4vh;
+		font-weight: 300;
+		padding: 1rem 4rem;
+
+		background-color: $paderblue;
+		color: rgba(255,255,255,1);
+	    transition: all .25s cubic-bezier(.88,.03,.98,.79);
+		@include on-event{
+			color:#fff;
+			background-color: $paderblue;
+	        transition: all .25s cubic-bezier(.88,.03,.98,.79);
+		}
+	}
+}
+.result{
+	&__container{
+		min-height: 40vh;
+	}
+}
+.img {
+	&--responsive{
+		width:100%;
+		height: auto;
+	}
+}

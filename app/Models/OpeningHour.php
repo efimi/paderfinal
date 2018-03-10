@@ -16,9 +16,8 @@ class OpeningHour extends Model
     	$thisDay = today()->dayOfWeek + 1;
         $nextDay = today()->addDay(1)->dayOfWeek + 1;
     	$open = OpeningHour::where('day_id', $thisDay)->where('opened','<', $time)->where('closed','>', $time)
-                            ->orWhere('day_id', $thisDay)->where('opened','<', $time)->where('closed', "")
-    						->orWhere('day_id', $nextDay)->where('opened',"")->where('closed', '<', $time)
-    						->get();
+        ->orWhere('day_id', $thisDay)->where('opened','<', $time)->whereNull('closed')
+        ->get()->unique('location_id');
     	return $open;
     }
 }
