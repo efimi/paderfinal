@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Chat\Message;
 use App\Models\Location;
 use App\Models\Match;
 use Illuminate\Database\Eloquent\Model;
@@ -20,6 +21,10 @@ class Location extends Model
 	{
 		return $this->hasMany(Photo::class);
 	}
+	public function messages()
+    {
+        return $this->hasMany(Message::class);
+    }
 	public function closingTime()
 	{	
 		$thisDayId = today()->dayOfWeek + 1;

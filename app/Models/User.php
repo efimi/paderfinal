@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Chat\Message;
 use App\Models\Location;
 use App\Models\Match;
 use Carbon\Carbon;
@@ -38,6 +39,11 @@ class User extends Authenticatable
     {
         return $this->hasMany(Match::class);
     }
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
+    }
+
 
     public function mToday()
     {

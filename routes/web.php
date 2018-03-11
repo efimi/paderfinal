@@ -15,6 +15,9 @@ Route::get('/', 'AppController@start');
 Route::get('/match', 'AppController@makeMatch')->name('match');
 Route::get('/pinwall', 'LocationsController@showPinwall')->name('pinwall');
 
+Route::get('/chat/messages', 'Chat\ChatMessageController@index');
+Route::post('/chat/messages', 'Chat\ChatMessageController@store');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
