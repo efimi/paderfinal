@@ -43,5 +43,12 @@ class User extends Authenticatable
     {
         return $this->matches()->whereDate('created_at', today())->first();
     }
+    public function mLocationId()
+    {
+        if(count($this->mToday())){
+            return $this->mToday()->location->id;
+        }
+        return null;
+    }
     
 }

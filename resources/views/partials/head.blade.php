@@ -7,3 +7,19 @@
 
 <!-- Styles -->
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+<!--  Ajax Scripts-->
+<script>
+	window.Laravel = {!! json_encode([
+		'csrfToken' => csrf_Token(),
+		'user' => [
+			'authenticated' => auth()->check(),
+			'id' => auth()->check() ? auth()->user()->id : null,
+			'name' => auth()->check() ? auth()->user()->name : null,
+			'matchedLocationId' => auth()->check() ? auth()->user()->mLocationID() : null,
+		], 
+		'keys' => [
+			'pusher' => config('broadcasting.connections.pusher.key')
+		]
+	]) !!};
+</script>

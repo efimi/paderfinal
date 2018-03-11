@@ -13,7 +13,12 @@
 
 Route::get('/', 'AppController@start');
 Route::get('/match', 'AppController@makeMatch')->name('match');
+Route::get('/pinwall', 'LocationsController@showPinwall')->name('pinwall');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+// Api Routen für axios
+Route::get('/api/match', 'MatchesController@show')->name('match--api');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Match;
 use Illuminate\Http\Request;
 
 class MatchesController extends Controller
@@ -12,7 +13,13 @@ class MatchesController extends Controller
     }
 	public function show(Match $match)
 	{
-		return view('match.show', compact('match'));
+		if (count(auth()->user()->mToday())) {
+           $user = auth()->user();
+            $messages = Match::with(['location'])->whereDate('created_at', today())
+                        ->where('user_id', $user->id)->get();
+            return response()->json($messages,200);
+        }
+        return;
 	}
 
 	public function delete(Match $match)
