@@ -441,9 +441,7 @@
   height: 14px;
   width: 14px;
   position: absolute;
-  left: 50.5%;
-  top: 105%;
-  margin: 11px 0px 0px -12px;
+  top: 115%;
   -webkit-transform: rotateX(55deg);
           transform: rotateX(55deg);
   z-index: 2;

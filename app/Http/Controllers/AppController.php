@@ -8,7 +8,8 @@ use Auth;
 use Illuminate\Http\Request;
 
 class AppController extends Controller
-{
+{   
+
     public function start()
     {   
         if(!Auth::check()){

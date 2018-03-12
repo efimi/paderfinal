@@ -62346,8 +62346,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				selfOwned: true,
 				pinwallId: Laravel.user.matchedLocationId,
 				user: {
-					name: Laravel.user.name,
-					avatar: Laravel.user.avatarPath
+					name: Laravel.user.name
+					// avatar: Laravel.user.avatarPath
 				}
 			};
 		},
@@ -63630,7 +63630,40 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports={render:function(){},staticRenderFns:[]}
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "users" },
+    [
+      _c("div", { staticClass: "users__header" }, [
+        _vm._v(
+          _vm._s(_vm.users.length) +
+            " " +
+            _vm._s(_vm.pluralize("user", _vm.users.length)) +
+            " online"
+        )
+      ]),
+      _vm._v(" "),
+      _vm._l(_vm.users, function(user) {
+        return _c("div", { staticClass: "users__user" }, [
+          _c("a", { attrs: { href: "" } }, [_vm._v(_vm._s(user.name))]),
+          _vm._v(" "),
+          _c("img", {
+            staticClass: "users__user-avatar",
+            attrs: { src: user.name, alt: "#" }
+          })
+        ])
+      })
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
