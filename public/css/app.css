@@ -551,7 +551,7 @@
 }
 
 .pinwall__header-info {
-  font-size: 5vh;
+  font-size: 5vw;
   z-index: 10;
   text-align: center;
   background: rgba(0, 166, 255, 0.9);
@@ -564,7 +564,7 @@
 }
 
 .pinwall__header-map {
-  height: 30vh;
+  height: 40vh;
   width: 100%;
 }
 
@@ -572,12 +572,43 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  aling-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 1rem 2rem;
 }
 
 .pinwall__body p {
   max-width: 320px;
+}
+
+.pinwall__chat {
+  max-width: 700px;
+}
+
+.pinwall__chat-info {
+  font-size: 3vw;
+  padding: 2vw 5vw;
+}
+
+.pinwall__footer-share {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.pinwall__footer-share a {
+  margin: 2vw;
 }
 
 html,

@@ -32,4 +32,11 @@ class Match extends Model
 	    		]);
     	return $match;
     }
+    public function participants()
+    {
+        $location = $this->location;
+
+        // location, dann today, this locaiton, user 
+        return Match::mToday()->where('location_id', $location->id)->get();
+    }
 }

@@ -14,7 +14,8 @@ class Message extends Model
 
 	protected $appends = [
 		'selfOwned',
-		'pinwallId'
+		'pinwallId',
+		'matchPosition'
 	];
 
 	public function getSelfOwnedAttribute()
@@ -24,6 +25,10 @@ class Message extends Model
 	public function getPinwallIdAttribute()
 	{
 	return $this->user->mLocationId();
+	}
+	public function getMatchPositionAttribute()
+	{
+	return $this->user->matchPosition();
 	}
 
     public function user()

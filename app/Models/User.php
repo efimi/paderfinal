@@ -56,5 +56,28 @@ class User extends Authenticatable
         }
         return null;
     }
-    
+    // Today
+    public function matchPosition()
+    {
+
+        if (count($match = $this->mToday())) {
+             $participants = self::extractUsersHelper($match->participants());
+            foreach ($participants as $position => $user) {
+                if ($this->id == $user->id) {
+                    return $position + 1;
+                }
+            }
+        }
+        return null;
+       
+    }
+
+    public static function extractUsersHelper($input)
+    {
+        $users = collect([]);
+        foreach ($input as $i) {
+            $users->push($i->user);
+        }
+        return $users;
+    }
 }

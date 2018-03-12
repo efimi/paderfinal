@@ -9,7 +9,7 @@
 	export default{
 		data(){
 			return {
-				match:{}
+				messages:[]
 			}
 		},
 		methods: {
@@ -47,6 +47,8 @@
 				height: 400px;
 				max-height: 400px;
 				overflow-y: scroll;
+				position: relative;
+				
 			}
 	}
 </style>

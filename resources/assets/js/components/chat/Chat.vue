@@ -1,19 +1,27 @@
 <template>
 	<div class="chat">
 		<chat-messages></chat-messages>
-		<form action="#">
+		<form action="#" class="chat__form">
+			
 			<textarea 
+			class="chat__form-input--text"
 			id="body"
-			cols="30"
+			cols=""
 			rows="3"
-			class="chat__form-input"
 			v-model="body"
 			@keydown="handleMessageInput"
 			></textarea>
-			<span class="chat__form-helptext">
-				Drücke Enter um zu senden, oder Shift + Enter für eine neue Zeile!
-			</span>
+		
+			<div 
+			class="chat__form-input--button btn shadow"
+			@click="handleMessageInput">
+				📌
+			</div>
+			
 		</form>
+			<div class="chat__form-helptext flex flex__column">
+				<p>Drücke Enter um zu senden</p>
+			</div>
 	</div>
 </template>
 
@@ -46,7 +54,8 @@
 					body: this.body, 
 					created_at: moment().zone('+0100').utc().format('YYYY-MM-DD HH:mm:ss'),
 					selfOwned: true,
-					pinwallId: Laravel.user.matchedLocationId, 
+					pinwallId: Laravel.user.matchedLocationId,
+					matchPosition: Laravel.user.matchPosition, 
 					user: {
 						name: Laravel.user.name,
 						// avatar: Laravel.user.avatarPath
@@ -75,27 +84,43 @@
 </script>
 
 <style lang="scss">
-	$paderblue: #00A6FF;
+	$paderblue: hsl(201, 100%, 50%);
 
 	.chat{
-		background-color: #fff;
-		border: 1px solid $paderblue;
-		border-radius: 25px;
+		background-color: hsl(201, 100%, 100%); 
+		// border: 1px solid $paderblue;
 		overflow: hidden;
-
 		&__form{
-			border-top: 1px solid $paderblue;
 			padding: 10px;
-
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin: 0 5vw;
 			&-input{
-				width: 100%;
-				paading: 5px 10px;
-				border: 1px solid $paderblue;
-				outline: none;
-			}
+				height: 3vh;
 
+				&--text{
+					margin-left: 1vw;
+					width: 80%;
+					padding: 2vh 4vh;
+					border-radius: 50px;
+					border: 1px solid hsl(201, 100%, 50%);
+					outline: none;
+					
+				}
+				&--button{
+					display: inline-block;
+					padding: 0.5rem 1.2rem;
+					margin: 0;
+					text-decoration: none;
+					border-radius: 100px;
+					background-color:#fff;
+				}
+
+			}
 			&-helpertext{
 				color: #aaa;
+				padding: 2vw 5vw;
 			}
 		}
 	}

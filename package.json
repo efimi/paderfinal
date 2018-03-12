@@ -24,5 +24,8 @@
         "popper.js": "^1.13.0",
         "pusher-js": "^4.2.2",
         "vue": "^2.5.15"
+    },
+    "dependencies": {
+        "vue-template-compiler": "^2.5.15"
     }
 }
