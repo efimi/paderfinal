@@ -34,6 +34,8 @@ Vue.component('footer-tab', require('./components/footer-tab/FooterTab.vue'));
 // Vue.component('logo', require('./components/Logo.vue'));
 import VueCollapse from 'vue2-collapse' 
 window.Vue.use(VueCollapse)
+
+
 const app = new Vue({
     el: '#app',
     // for loginin vue
