@@ -18,6 +18,12 @@ Route::get('/pinwall', 'LocationsController@showPinwall')->name('pinwall');
 Route::get('/chat/messages', 'Chat\ChatMessageController@index');
 Route::post('/chat/messages', 'Chat\ChatMessageController@store');
 
+
+// Static Stuff 
+Route::get('/frequentquestions', 'Statics\FrequentAskedQuestionsController@index');
+
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

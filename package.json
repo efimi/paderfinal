@@ -26,6 +26,7 @@
         "vue": "^2.5.15"
     },
     "dependencies": {
-        "vue-template-compiler": "^2.5.15"
+        "vue-template-compiler": "^2.5.15",
+        "vue2-collapse": "^1.0.11"
     }
 }

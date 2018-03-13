@@ -28575,8 +28575,11 @@ module.exports = __webpack_require__(198);
 
 /***/ }),
 /* 139 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue2_collapse__ = __webpack_require__(208);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -28601,9 +28604,16 @@ Vue.component('chat-users', __webpack_require__(184));
 // Vue.component('avatar-upload', require('./components/AvatarUpload.vue'));
 Vue.component('geo', __webpack_require__(190));
 Vue.component('card-result', __webpack_require__(195));
+
+Vue.component('faq', __webpack_require__(202));
+Vue.component('feedback-form', __webpack_require__(221));
+Vue.component('impressum', __webpack_require__(223));
+Vue.component('question-answer', __webpack_require__(204));
+Vue.component('footer-tab', __webpack_require__(218));
 // Vue.component('mod', require('./components/Modal.vue'));
 // Vue.component('logo', require('./components/Logo.vue'));
 
+window.Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue2_collapse__["a" /* default */]);
 var app = new Vue({
   el: '#app'
   // for loginin vue
@@ -64198,6 +64208,1104 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 199 */,
+/* 200 */,
+/* 201 */,
+/* 202 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(206)
+/* template */
+var __vue_template__ = __webpack_require__(203)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/footer-tab/FAQ.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-69d47c21", Component.options)
+  } else {
+    hotAPI.reload("data-v-69d47c21", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 203 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-collapse-group",
+    { style: _vm.styles },
+    _vm._l(_vm.faqs, function(faq) {
+      return _c("v-collapse-wrapper", { key: faq.id }, [
+        _c("div", { staticClass: "faq" }, [
+          _c(
+            "div",
+            {
+              directives: [
+                { name: "collapse-toggle", rawName: "v-collapse-toggle" }
+              ],
+              staticClass: "faq__question"
+            },
+            [
+              _c("div", { staticClass: "faq__question-text" }, [
+                _vm._v(_vm._s(faq.question))
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              directives: [
+                { name: "collapse-content", rawName: "v-collapse-content" }
+              ],
+              staticClass: "faq__answer"
+            },
+            [_c("p", [_vm._v(_vm._s(faq.answer))])]
+          )
+        ])
+      ])
+    })
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-69d47c21", module.exports)
+  }
+}
+
+/***/ }),
+/* 204 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(217)
+/* template */
+var __vue_template__ = __webpack_require__(205)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/footer-tab/QuestionAnswer.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-b57d7eee", Component.options)
+  } else {
+    hotAPI.reload("data-v-b57d7eee", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 205 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("v-collapse-wrapper", [
+    _c("div", { staticClass: "faq" }, [
+      _c(
+        "div",
+        {
+          directives: [
+            { name: "collapse-toggle", rawName: "v-collapse-toggle" }
+          ],
+          staticClass: "faq__question"
+        },
+        [
+          _c("div", { staticClass: "faq__question-text" }, [
+            _vm._v(_vm._s(_vm.q))
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          directives: [
+            { name: "collapse-content", rawName: "v-collapse-content" }
+          ],
+          staticClass: "faq__answer"
+        },
+        [_c("p", [_vm._v(_vm._s(_vm.a))])]
+      )
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-b57d7eee", module.exports)
+  }
+}
+
+/***/ }),
+/* 206 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data: function data() {
+		return {
+			faqs: [],
+			styles: {}
+		};
+	},
+	created: function created() {
+		var _this = this;
+
+		axios.get('/frequentquestions').then(function (response) {
+			_this.faqs = response.data;
+		});
+		var faqHeight = faqs.length() * 5;
+		this.styles = {
+			'height': faqHeight
+		};
+	}
+});
+
+/***/ }),
+/* 207 */
+/***/ (function(module, exports) {
+
+// Default configuration
+const prefix = 'v-collapse';
+const basename = 'collapse';
+
+const defaults = {
+    'prefix' : prefix,
+    'basename' : basename,
+    'togglerClassDefault': prefix + '-toggler',
+    'contentClassDefault': prefix + '-content',
+    'contentClassEnd': prefix + '-content-end'
+};
+
+// Global toggle methods
+
+const toggleElement = function (target, config) {
+    target.classList.toggle(config.contentClassEnd);
+};
+
+const closeElement = function (target, config) {
+    target.classList.remove(config.contentClassEnd);
+};
+
+const openElement = function (target, config) {
+    target.classList.add(config.contentClassEnd);
+};
+
+module.exports={
+    defaults,
+    toggleElement,
+    closeElement,
+    openElement,
+};
+
+/***/ }),
+/* 208 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_wrapper_vue__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_wrapper_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_wrapper_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_group_vue__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_group_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_group_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__defaults__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__defaults___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__defaults__);
+
+
+
+
+let VueCollapse = {};
+VueCollapse.install = function (Vue, options) {
+
+    // merge configs
+
+    const settings = Object.assign(__WEBPACK_IMPORTED_MODULE_2__defaults__["defaults"], options);
+
+    // creating required components
+
+    Vue.component(settings.prefix + '-wrapper', __WEBPACK_IMPORTED_MODULE_0__components_wrapper_vue___default.a);
+    Vue.component(settings.prefix + '-group', __WEBPACK_IMPORTED_MODULE_1__components_group_vue___default.a);
+
+    // creates instance of settings in the Vue
+
+    Vue.mixin({
+        created: function () {
+            this.$options.$vc = {
+                settings : settings
+            };
+        }
+    });
+
+    // content directive
+
+    Vue.directive(settings.basename + '-content', {
+
+        // assigning css classes from settings
+
+        bind (el, binding, vnode, oldVnode) {
+            vnode.elm.classList.add(vnode.context.$options.$vc.settings.contentClassDefault);
+        }
+    });
+
+    // toggler directive
+
+    Vue.directive(settings.basename + '-toggle', {
+
+        // adding toggle class
+
+        bind (el, binding, vnode, oldVnode) {
+            vnode.elm.classList.add(vnode.context.$options.$vc.settings.togglerClassDefault);
+        },
+
+        // Creating custom toggler handler
+
+        inserted (el, binding, vnode, oldVnode) {
+            if (binding.value != null) {
+                vnode.elm.addEventListener('click', function () {
+                    vnode.context.$refs[binding.value].status = !vnode.context.$refs[binding.value].status;
+                }.bind(this));
+            }
+        }
+    });
+};
+if (typeof window !== 'undefined' && window.Vue) {
+    window.Vue.use(VueCollapse)
+}
+/* harmony default export */ __webpack_exports__["a"] = (VueCollapse);
+
+/***/ }),
+/* 209 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(210)
+}
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(212)
+/* template */
+var __vue_template__ = __webpack_require__(213)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "node_modules/vue2-collapse/src/components/wrapper.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-6987e66d", Component.options)
+  } else {
+    hotAPI.reload("data-v-6987e66d", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 210 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(211);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(4)("4336de35", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6987e66d\",\"scoped\":false,\"hasInlineConfig\":true}!../../../vue-loader/lib/selector.js?type=styles&index=0!./wrapper.vue", function() {
+     var newContent = require("!!../../../css-loader/index.js!../../../vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6987e66d\",\"scoped\":false,\"hasInlineConfig\":true}!../../../vue-loader/lib/selector.js?type=styles&index=0!./wrapper.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 211 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.v-collapse-content{\n    max-height: 0;\n    -webkit-transition: max-height 0.3s ease-out;\n    transition: max-height 0.3s ease-out;\n    overflow: hidden;\n    padding: 0;\n}\n.v-collapse-content-end{\n    -webkit-transition: max-height 0.3s ease-in;\n    transition: max-height 0.3s ease-in;\n    max-height: 100%;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 212 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__defaults__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__defaults___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__defaults__);
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            nodes: {},
+            status: false
+        };
+    },
+
+    props: ['active'],
+
+    // status watcher - change toggle element when status changes
+    watch: {
+        active: function active(status) {
+            if (status != null) {
+                this.status = status;
+            }
+        },
+
+        status: function status(new_value, old_value) {
+            this.$emit('onStatusChange', { vm: this, status: new_value, old_status: old_value });
+            if (this.$parent.onlyOneActive === false) {
+                Object(__WEBPACK_IMPORTED_MODULE_0__defaults__["toggleElement"])(this.nodes.content, this.$options.$vc.settings);
+            } else {
+                if (new_value === true && old_value === false) {
+                    var active = this.$parent.$children.filter(function (el) {
+                        return el.status === true;
+                    });
+                    if (active.length > 1) {
+                        active.forEach(function (el) {
+                            el.close();
+                            Object(__WEBPACK_IMPORTED_MODULE_0__defaults__["closeElement"])(el.nodes.content, this.$options.$vc.settings);
+                        }.bind(this));
+                    }
+                    Object(__WEBPACK_IMPORTED_MODULE_0__defaults__["openElement"])(this.nodes.content, this.$options.$vc.settings);
+                    this.open();
+                } else if (old_value === true && new_value === false) {
+                    Object(__WEBPACK_IMPORTED_MODULE_0__defaults__["closeElement"])(this.nodes.content, this.$options.$vc.settings);
+                    this.close();
+                }
+            }
+        }
+    },
+
+    // collapse basic instance methods
+
+    methods: {
+        toggle: function toggle() {
+            this.$emit('beforeToggle', this);
+            this.status = !this.status;
+            this.$emit('afterToggle', this);
+        },
+        close: function close() {
+            this.$emit('beforeClose', this);
+            this.status = false;
+            this.$emit('afterClose', this);
+        },
+        open: function open() {
+            this.$emit('beforeOpen', this);
+            this.status = true;
+            this.$emit('afterOpen', this);
+        }
+    },
+
+    // mounting
+
+    mounted: function mounted() {
+        var _this = this;
+
+        this.nodes.toggle = this.$el.querySelector('.' + this.$options.$vc.settings.togglerClassDefault);
+        this.nodes.content = this.$el.querySelector('.' + this.$options.$vc.settings.contentClassDefault);
+        this.$emit('afterNodesBinding', { vm: this, nodes: this.nodes });
+        if (this.nodes.toggle !== null) {
+            this.nodes.toggle.addEventListener('click', function () {
+                _this.toggle();
+            });
+        }
+        if (this.active != null) {
+            this.status = this.active;
+        }
+    }
+});
+
+/***/ }),
+/* 213 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { class: "vc-" + _vm.$options.$vc.settings.basename },
+    [_vm._t("default")],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-6987e66d", module.exports)
+  }
+}
+
+/***/ }),
+/* 214 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(215)
+/* template */
+var __vue_template__ = __webpack_require__(216)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "node_modules/vue2-collapse/src/components/group.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-1325cad9", Component.options)
+  } else {
+    hotAPI.reload("data-v-1325cad9", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 215 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__defaults__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__defaults___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__defaults__);
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {};
+    },
+
+    props: {
+        onlyOneActive: {
+            default: false,
+            type: Boolean
+        }
+    },
+
+    // computed props for accessing elements
+    computed: {
+        elements: function elements() {
+            return this.$children;
+        },
+        elements_count: function elements_count() {
+            return this.$children.length;
+        },
+        active_elements: function active_elements() {
+            return this.$children.filter(function (el) {
+                return el.status === true;
+            });
+        }
+    },
+    methods: {
+        closeAll: function closeAll() {
+            this.$children.forEach(function (el) {
+                el.close();
+            });
+        },
+        openAll: function openAll() {
+            this.$children.forEach(function (el) {
+                el.open();
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 216 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "v-collapse-group" }, [_vm._t("default")], 2)
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-1325cad9", module.exports)
+  }
+}
+
+/***/ }),
+/* 217 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue2_collapse__ = __webpack_require__(208);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	props: ['q', 'a'],
+	data: function data() {}
+});
+
+/***/ }),
+/* 218 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(219)
+/* template */
+var __vue_template__ = __webpack_require__(220)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/footer-tab/FooterTab.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-6ce8ae76", Component.options)
+  } else {
+    hotAPI.reload("data-v-6ce8ae76", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 219 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue2_collapse__ = __webpack_require__(208);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['location', 'used']
+
+});
+
+/***/ }),
+/* 220 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "footer__collapse" }, [
+    _c("div", { staticClass: "tab" }, [
+      _c("div", { staticClass: "tab__buttons" }, [
+        _c(
+          "a",
+          {
+            directives: [
+              {
+                name: "collapse-toggle",
+                rawName: "v-collapse-toggle",
+                value: "faq",
+                expression: "'faq'"
+              }
+            ],
+            staticClass: "btn btn--white transform--towards"
+          },
+          [_vm._v("FAQ")]
+        ),
+        _vm._v(" \n\t\t\t| \n\t\t\t"),
+        _c(
+          "a",
+          {
+            directives: [
+              {
+                name: "collapse-toggle",
+                rawName: "v-collapse-toggle",
+                value: "impressum",
+                expression: "'impressum'"
+              }
+            ],
+            staticClass: "btn btn--white transform--towards"
+          },
+          [_vm._v("Impressum")]
+        ),
+        _vm._v("\n\t\t\t| \n\t\t\t"),
+        _c(
+          "a",
+          {
+            directives: [
+              {
+                name: "collapse-toggle",
+                rawName: "v-collapse-toggle",
+                value: "feedback",
+                expression: "'feedback'"
+              }
+            ],
+            staticClass: "btn btn--white transform--towards"
+          },
+          [_vm._v("Feedback")]
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "tab__content" },
+        [
+          _c("v-collapse-wrapper", { ref: "faq" }, [
+            _c(
+              "div",
+              {
+                directives: [
+                  { name: "collapse-content", rawName: "v-collapse-content" }
+                ]
+              },
+              [_c("faq")],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _c("v-collapse-wrapper", { ref: "impressum" }, [
+            _c(
+              "div",
+              {
+                directives: [
+                  { name: "collapse-content", rawName: "v-collapse-content" }
+                ]
+              },
+              [_c("impressum")],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _c("v-collapse-wrapper", { ref: "feedback" }, [
+            _c(
+              "div",
+              {
+                directives: [
+                  { name: "collapse-content", rawName: "v-collapse-content" }
+                ]
+              },
+              [_c("feedback-form")],
+              1
+            )
+          ])
+        ],
+        1
+      )
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-6ce8ae76", module.exports)
+  }
+}
+
+/***/ }),
+/* 221 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = null
+/* template */
+var __vue_template__ = __webpack_require__(222)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/footer-tab/FeedbackForm.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-010e6bee", Component.options)
+  } else {
+    hotAPI.reload("data-v-010e6bee", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 222 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("transition", [_c("p", [_vm._v("FeedbackForm")])])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-010e6bee", module.exports)
+  }
+}
+
+/***/ }),
+/* 223 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = null
+/* template */
+var __vue_template__ = __webpack_require__(224)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/footer-tab/Impressum.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-24818ac2", Component.options)
+  } else {
+    hotAPI.reload("data-v-24818ac2", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 224 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("p", [_vm._v("Impressum")]),
+      _vm._v(" "),
+      _c("h2", [_vm._v("Angaben gemäß § 5 TMG:")]),
+      _vm._v(
+        "\n\tReinhold Lehnahrdt,\n\tPadermeet,\n\tKönigstrasse 66,\n\t33098 Paderborn\n\n\t"
+      ),
+      _c("h2", [_vm._v("Kontakt:")]),
+      _vm._v(
+        "\n\tTelefon:\t+49 (0) 176 4764 1882,\n\tE-Mail:\tinfo@padermeet.de\n\t"
+      ),
+      _c("h2", [_vm._v("Aufsichtsbehörde:")]),
+      _vm._v(
+        "\n\tLandratsamt Paderborn\n\n\tDie Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: http://ec.europa.eu/consumers/odr\n\tUnsere E-Mail- Adresse finden Sie oben im Impressum.\n\n\t \n\n\tWir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.\n\n\t"
+      ),
+      _c("h2", [_vm._v("Haftung für Inhalte")]),
+      _vm._v(
+        "\n\tAls Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.\n\n\tVerpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.\n\n\t"
+      ),
+      _c("h2", [_vm._v("Haftung für Links")]),
+      _vm._v(
+        "\n\tUnser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.\n\n\tEine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.\n\n\t"
+      ),
+      _c("h2", [_vm._v("Urheberrecht")]),
+      _vm._v(
+        "\n\tDie durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.\n\n\tSoweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.\n\n\t \n\n\tQuelle: https://www.e-recht24.de\n"
+      )
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-24818ac2", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

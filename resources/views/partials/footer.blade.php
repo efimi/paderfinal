@@ -1,15 +1,10 @@
 <footer class="footer">
-		<div>
-			<a href="#" class="btn btn--white transform--towards">FAQ</a> 
-			| 
-			<a href="#" class="btn btn--white transform--towards">Impressum</a>
-			|  <a href="#" class="btn btn--white transform--towards">Feedback geben</a> | 
-			Made with ♥️
-		</div>
-		<div>
+		
+		<footer-tab></footer-tab>
+		<div class="footer__copyright">
 			<p> Copyrighy &copy; Padermeet 2018</p>
+			<p>Made with ♥️</p>
 		</div>
-		<div>
-			 <a href="#" class="btn btn--white">Feedback geben</a>
-		</div>
+
+		@include('partials.town')
 </footer>

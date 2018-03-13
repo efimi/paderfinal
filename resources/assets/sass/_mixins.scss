@@ -1,8 +1,15 @@
 // Flexbox Mixin
-@mixin flex{
+@mixin flex-column{
 	display: flex;
-	flex-direction: column;
+  flex-direction: column;
 }
+
+@mixin color-padermeet__gradient{
+    background: $paderblue; /* fallback for old browsers */
+    // background: -webkit-linear-gradient(to right, $paderblue, hsl(212, 100%, 40%)); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(180deg, $paderblue, hsl(212, 100%, 40%)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
 @mixin centerEl{
 	justify-content: center;
 	align-item: center;

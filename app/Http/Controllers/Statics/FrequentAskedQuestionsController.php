@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Static;
+namespace App\Http\Controllers\Statics;
 
-use App\Models\Static\Faq;
+use App\Models\Statics\Faq;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,7 +15,8 @@ class FrequentAskedQuestionsController extends Controller
      */
     public function index()
     {
-        //
+        $faqs = Faq::all();
+            return response()->json($faqs,200);
     }
 
     /**
