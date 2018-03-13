@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\Chat\Message;
+use App\Models\Feedback;
 use App\Models\Location;
 use App\Models\Match;
 use Carbon\Carbon;
@@ -38,6 +40,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Match::class);
     }
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
+    }
+    public function feedback()
+    {
+        return $this->hasMany(Feedback::class);
+    }
 
     public function mToday()
     {
@@ -50,5 +60,28 @@ class User extends Authenticatable
         }
         return null;
     }
-    
+    // Today
+    public function matchPosition()
+    {
+
+        if (count($match = $this->mToday())) {
+             $participants = self::extractUsersHelper($match->participants());
+            foreach ($participants as $position => $user) {
+                if ($this->id == $user->id) {
+                    return $position + 1;
+                }
+            }
+        }
+        return null;
+       
+    }
+
+    public static function extractUsersHelper($input)
+    {
+        $users = collect([]);
+        foreach ($input as $i) {
+            $users->push($i->user);
+        }
+        return $users;
+    }
 }

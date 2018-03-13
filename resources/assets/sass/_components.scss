@@ -79,9 +79,10 @@
 	}
 }
 .town{
-		background: $paderblue;
-		width:100%;
-		overflow: hidden;
+	align-self: flex-end;
+
+	width:100%;
+	overflow: hidden;
 	&__sky{
 		width: 100%;
 		position: relative;
@@ -109,6 +110,7 @@
 			width:100%;
 			height: 200px;
 			bottom: 0;
+			// left: -300px;
 		}
 		
 	}
@@ -119,9 +121,7 @@
   height: 14px;
   width: 14px;
   position: absolute;
-  left: 50.5%;
-  top: 105%;
-  margin: 11px 0px 0px -12px;
+  top: 115%;
   transform: rotateX(55deg);
   z-index: 2;
 }
@@ -136,5 +136,31 @@
   opacity: 0;
   box-shadow: 0 0 1px 2px rgba(255, 255, 255, 1);
   animation-delay: 1.1s;
+}
+
+.tab{
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+	&__buttons{
+		margin-bottom: 2vh;
+	}
+	&__content{
+		padding: 7vw;
+	}
+}
+
+.faq{
+	border-style: 1px solid hsl(201, 100%, 100%);
+	border-radius: 40px;
+	font-size: 5vw;
+	min-height: 100%;
+	&__question{
+		font-weight: 800;
+	}
+	&__answer{
+		
+	}
 }
 

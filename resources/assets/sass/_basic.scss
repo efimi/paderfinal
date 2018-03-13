@@ -11,11 +11,19 @@
     }
 }
 .footer{
-    height: 50px;
-    text-align: center;
-    background-color: $paderblue;
+    height: auto;
+    @include color-padermeet__gradient;
     color: rgb(255,255,255);
-    padding: 2em 1.6em;
+    margin-top: 5vh;
+    padding-top: 2vh;
+    width: 100%;
+    &__collapse{ 
+        padding: 2vh 0;
+    }
+    &__copyright{
+        
+    text-align: center;
+    }
 }
 
 .row{

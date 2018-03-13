@@ -8,7 +8,8 @@ use Auth;
 use Illuminate\Http\Request;
 
 class AppController extends Controller
-{
+{   
+
     public function start()
     {   
         if(!Auth::check()){
@@ -16,6 +17,7 @@ class AppController extends Controller
         		'name' => 'Gast'
         	]);
     	   Auth::login($user, true);
+           // return view('tutorial');
         }
     	return view('welcome');
     }

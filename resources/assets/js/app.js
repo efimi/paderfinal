@@ -17,15 +17,24 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-// Vue.component('chat', require('./components/chat/Chat.vue'));
-// Vue.component('chat-messages', require('./components/chat/Messages.vue'));
-// Vue.component('chat-message', require('./components/chat/Message.vue'));
-// Vue.component('chat-users', require('./components/chat/Users.vue'));
+Vue.component('chat', require('./components/chat/Chat.vue'));
+Vue.component('chat-messages', require('./components/chat/Messages.vue'));
+Vue.component('chat-message', require('./components/chat/Message.vue'));
+Vue.component('chat-users', require('./components/chat/Users.vue'));
 // Vue.component('avatar-upload', require('./components/AvatarUpload.vue'));
 Vue.component('geo', require('./components/Geolocation.vue'));
 Vue.component('card-result', require('./components/card/Card.vue'));
+
+Vue.component('faq', require('./components/footer-tab/FAQ.vue'));
+Vue.component('feedback-form', require('./components/footer-tab/FeedbackForm.vue'));
+Vue.component('impressum', require('./components/footer-tab/Impressum.vue'));
+Vue.component('question-answer', require('./components/footer-tab/QuestionAnswer.vue'));
+Vue.component('footer-tab', require('./components/footer-tab/FooterTab.vue'));
 // Vue.component('mod', require('./components/Modal.vue'));
 // Vue.component('logo', require('./components/Logo.vue'));
+import VueCollapse from 'vue2-collapse' 
+window.Vue.use(VueCollapse)
+
 
 const app = new Vue({
     el: '#app',
