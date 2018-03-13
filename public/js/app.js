@@ -65199,29 +65199,120 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "feedback" }, [
-      _c("p", [_vm._v("Wir würden uns über ein Feeback freuen")]),
-      _vm._v(" "),
-      _c("form", { staticClass: "feedback__form", attrs: { action: "" } }, [
+  return _c("div", { staticClass: "feedback" }, [
+    _c(
+      "p",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: !_vm.sended,
+            expression: "!sended"
+          }
+        ]
+      },
+      [_vm._v("Wir würden uns über ein Feeback freuen")]
+    ),
+    _vm._v(" "),
+    _c(
+      "p",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.sended,
+            expression: "sended"
+          }
+        ]
+      },
+      [_vm._v("Wir freuen uns über dein Feedback 😀")]
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "feedback__text" }, [
+      _c("p", [_vm._v(_vm._s(_vm.body))])
+    ]),
+    _vm._v(" "),
+    _c(
+      "small",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: !_vm.sended,
+            expression: "!sended"
+          }
+        ]
+      },
+      [_vm._v("Das Schickst du ab...")]
+    ),
+    _vm._v(" "),
+    _c(
+      "form",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: !_vm.sended,
+            expression: "!sended"
+          }
+        ],
+        staticClass: "feedback__form"
+      },
+      [
         _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.body,
+              expression: "body"
+            }
+          ],
           staticClass: "feedback__form-input",
-          attrs: { type: "text" }
+          attrs: { type: "text" },
+          domProps: { value: _vm.body },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.body = $event.target.value
+            }
+          }
         }),
         _vm._v(" "),
-        _c("button", { staticClass: "feedback__form-button btn btn--white" }, [
-          _vm._v("Senden")
-        ])
-      ])
-    ])
-  }
-]
+        _c(
+          "button",
+          {
+            staticClass: "feedback__form-button btn btn--white",
+            on: { click: _vm.handleFeedbackInput }
+          },
+          [_vm._v("Senden 📯")]
+        )
+      ]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.sended,
+            expression: "sended"
+          }
+        ]
+      },
+      [_vm._v("Super Danke👍👍😘")]
+    )
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -65338,6 +65429,16 @@ if (false) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_moment__);
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -65352,7 +65453,38 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data: function data() {
+		return {
+			body: null,
+			returnMessage: null,
+			sended: false
+		};
+	},
+
+	methods: {
+		handleFeedbackInput: function handleFeedbackInput() {
+			this.send();
+			this.sended = true;
+		},
+		send: function send() {
+			var _this = this;
+
+			if (!this.body || this.body.trim === '') {
+				return;
+			}
+
+			axios.post('/feedback', {
+				body: this.body.trim(),
+				user_id: Laravel.user.id,
+				matchedLocationId: Laravel.user.matchedLocationId
+
+			}).catch(function () {
+				_this.returnMessage = "Hmm.. irgendwie haben wir ein server error. Sende uns einfach eine Mail unter info@padermeet.de! Wir wären Dir sehr verbunden!";
+			});
+		}
+	}
+});
 
 /***/ }),
 /* 226 */,
@@ -65394,7 +65526,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.feedback {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.feedback__form-input {\n    background: none;\n    color: white;\n    font-size: 3vw;\n    border: 2px solid white;\n    border-radius: 100px;\n    padding: 0.5vh 1vw;\n}\n.feedback__form-button {\n    margin-right: 1vw;\n}\n", ""]);
+exports.push([module.i, "\n.feedback {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.feedback__text {\n    padding: 1vw 2vw;\n    font-size: 3vw;\n}\n.feedback__form-input {\n    background: none;\n    color: white;\n    font-size: 3vw;\n    border: 2px solid white;\n    border-radius: 100px;\n    padding: 0.5vh 1vw;\n}\n.feedback__form-button {\n    margin-right: 1vw;\n    font-size: 3vw;\n}\n", ""]);
 
 // exports
 

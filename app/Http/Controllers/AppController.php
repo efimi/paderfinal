@@ -17,6 +17,7 @@ class AppController extends Controller
         		'name' => 'Gast'
         	]);
     	   Auth::login($user, true);
+           // return view('tutorial');
         }
     	return view('welcome');
     }

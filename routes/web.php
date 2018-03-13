@@ -22,6 +22,8 @@ Route::post('/chat/messages', 'Chat\ChatMessageController@store');
 // Static Stuff 
 Route::get('/frequentquestions', 'Statics\FrequentAskedQuestionsController@index');
 
+// Send Feedback
+Route::post('/feedback','Feedback\FeedbackController@store');
 
 
 Auth::routes();

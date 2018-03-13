@@ -1,19 +1,53 @@
 <template>
 	<div class="feedback"> 
-		<p>Wir würden uns über ein Feeback freuen</p>
-		<form action="" class="feedback__form">
-			<input type="text" class="feedback__form-input">
-			<button class="feedback__form-button btn btn--white">Senden</button>
+		<p v-show="!sended">Wir würden uns über ein Feeback freuen</p>
+		<p v-show="sended">Wir freuen uns über dein Feedback 😀</p>
+		<div class="feedback__text">
+			<p>{{body}}</p>
+			
+		</div>
+				<small v-show="!sended">Das Schickst du ab...</small>
+		
+		<form v-show="!sended" class="feedback__form">
+			<input type="text" class="feedback__form-input" v-model="body" >
+			<button class="feedback__form-button btn btn--white" @click="handleFeedbackInput">Senden 📯</button>
 		</form>
+		<div v-show="sended">Super Danke👍👍😘</div>
 			
 		
 	</div>
 </template>
 
 <script>
-
+	import moment from 'moment'
 	export default{
+		data(){
+			return {
+				body: null,
+				returnMessage: null,
+				sended: false, 
+			}
+		},
+		methods:{
+			handleFeedbackInput(){
+				this.send();
+				this.sended = true;
+			},
+			send(){
+				if(!this.body || this.body.trim === ''){
+					return
+				}
 
+				axios.post('/feedback', {
+					body: this.body.trim(),
+					user_id: Laravel.user.id,
+					matchedLocationId: Laravel.user.matchedLocationId,
+				
+				}).catch(() => {
+					this.returnMessage = "Hmm.. irgendwie haben wir ein server error. Sende uns einfach eine Mail unter info@padermeet.de! Wir wären Dir sehr verbunden!"
+				})
+			}
+		}
 	}
 
 </script>
@@ -25,6 +59,10 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	&__text{
+		padding: 1vw 2vw;
+		font-size: 3vw;
+	}
 	&__form{
 		&-input{
 			background:none;
@@ -36,6 +74,7 @@
 			}	
 		&-button{
 			margin-right: 1vw;
+			font-size: 3vw;
 			}
 	
 		}
