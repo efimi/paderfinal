@@ -40,8 +40,10 @@ class Location extends Model
 				return null;
 				break;
 		}
-				
-		
+	}
+	public function isFilledUp()
+	{
+		return $this->usedPlaces() >= 5;
 	}
 	public static function openLocationsTodayAt($time = 2000)
 	{	
