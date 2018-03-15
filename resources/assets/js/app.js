@@ -32,6 +32,9 @@ Vue.component('question-answer', require('./components/footer-tab/QuestionAnswer
 Vue.component('footer-tab', require('./components/footer-tab/FooterTab.vue'));
 // Vue.component('mod', require('./components/Modal.vue'));
 // Vue.component('logo', require('./components/Logo.vue'));
+Vue.component('onesignal-button', require('./components/subscribe/OneSignalSubscribe.vue'));
+
+
 import VueCollapse from 'vue2-collapse' 
 window.Vue.use(VueCollapse)
 

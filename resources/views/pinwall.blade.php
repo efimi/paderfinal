@@ -15,7 +15,8 @@
 				dabei bist!
 				Hier kannst du mit deinen anderen Padermeetern genauers für dein Treffen ausmachen!</p>
 			@include('partials.location--usedplaces')
-		
+			<p> Benachrichtigungsfunktion aktiviert?😉</p>
+                <a href="#" class="sp_notify_prompt btn btn--blue">Aktiviere 📯</a>
 			<div class="pinwall__chat card shadow">
 				<div class="pinwall__chat-info">
 					<p>Pinwand</p>

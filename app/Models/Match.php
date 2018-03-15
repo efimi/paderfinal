@@ -32,11 +32,22 @@ class Match extends Model
 	    		]);
     	return $match;
     }
-    public function participants()
+    public function associatedMatches($date)
     {
         $location = $this->location;
 
         // location, dann today, this locaiton, user 
-        return Match::mToday()->where('location_id', $location->id)->get();
+        return Match::whereDate('created_at', $date)->where('location_id', $location->id)->get();
+    }
+    public function users()
+    {   
+        // ex:created_at = "2018-03-12 09:19:35"
+        $date = explode(" ", $this->created_at)[0];
+        $match = $this->associatedMatches($date);
+        $users = collect([]);
+        foreach ($match as $m) {
+            $users->push($m->user);
+        }
+        return $users;
     }
 }

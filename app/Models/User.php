@@ -63,9 +63,8 @@ class User extends Authenticatable
     // Today
     public function matchPosition()
     {
-
         if (count($match = $this->mToday())) {
-             $participants = self::extractUsersHelper($match->participants());
+         $participants = $match->users();
             foreach ($participants as $position => $user) {
                 if ($this->id == $user->id) {
                     return $position + 1;
@@ -73,15 +72,14 @@ class User extends Authenticatable
             }
         }
         return null;
-       
     }
-
-    public static function extractUsersHelper($input)
+    
+    /**
+     * Notifications
+     */
+    public function routeNotificationForOneSignal()
     {
-        $users = collect([]);
-        foreach ($input as $i) {
-            $users->push($i->user);
-        }
-        return $users;
+        return $this->one_signal_player_id;
     }
+    
 }
