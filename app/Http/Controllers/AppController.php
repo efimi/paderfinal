@@ -14,7 +14,9 @@ class AppController extends Controller
     {   
         if(!Auth::check()){
         	$user = User::create([
-        		'name' => 'Gast'
+        		'name' => 'Gast',
+                'token' => str_random(100),
+                'subscribed' => 0,
         	]);
     	   Auth::login($user, true);
            // return view('tutorial');

@@ -27,6 +27,10 @@ Route::post('/feedback','Feedback\FeedbackController@store');
 
 // Subscribe to Notificaitons
 Route::post('/subscribeToNotifications','Account\AccountsController@subscribeToNotifications');
+Route::get('/subscribe/activate','Account\AccountsController@activate')->name('subscription.activate');
+
+// login via QRCode
+Route::get('/tokenLogin','Account\AccountsController@loginViaToken')->name('login.token');
 
 
 Auth::routes();

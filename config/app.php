@@ -161,6 +161,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\MatchMakeProvider::class,
 
+        App\Providers\SubscribtionServiceProvider::class,
+
     ],
 
     /*

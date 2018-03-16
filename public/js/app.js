@@ -65819,7 +65819,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			isSendable: false,
 			activeClass: 'active',
 			// disabledClass: 'disabled',
-			email: '',
+			email: 'efimi@me.com',
 			buttonText: '',
 			resultText: ''
 		};
