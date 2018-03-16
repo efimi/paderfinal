@@ -38,5 +38,5 @@ class AccountsController extends Controller
 
 		Auth::loginUsingId($user->id);
 		return redirect()->route('pinwall')->withSuccess('Du hast dich erfolgreich eingeloggt');
-	}
+	} 
 }
