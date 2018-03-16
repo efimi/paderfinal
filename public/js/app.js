@@ -28681,7 +28681,7 @@ return zhTw;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(141);
-module.exports = __webpack_require__(229);
+module.exports = __webpack_require__(234);
 
 
 /***/ }),
@@ -28724,7 +28724,7 @@ Vue.component('footer-tab', __webpack_require__(221));
 // Vue.component('mod', require('./components/Modal.vue'));
 // Vue.component('logo', require('./components/Logo.vue'));
 Vue.component('onesignal-button', __webpack_require__(224));
-Vue.component('email-subscirbe-button', __webpack_require__(233));
+Vue.component('email-subscirbe-button', __webpack_require__(229));
 
 
 window.Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue2_collapse__["a" /* default */]);
@@ -65682,27 +65682,18 @@ if (false) {
 
 /***/ }),
 /* 229 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 230 */,
-/* 231 */,
-/* 232 */,
-/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(234)
+  __webpack_require__(230)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(236)
+var __vue_script__ = __webpack_require__(232)
 /* template */
-var __vue_template__ = __webpack_require__(237)
+var __vue_template__ = __webpack_require__(233)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -65741,13 +65732,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 234 */
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(235);
+var content = __webpack_require__(231);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -65767,7 +65758,7 @@ if(false) {
 }
 
 /***/ }),
-/* 235 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -65781,7 +65772,7 @@ exports.push([module.i, "\n::-webkit-input-placeholder {\n  color: #ffaba6;\n  b
 
 
 /***/ }),
-/* 236 */
+/* 232 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -65878,7 +65869,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 237 */
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -65960,6 +65951,12 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-63a34208", module.exports)
   }
 }
+
+/***/ }),
+/* 234 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
