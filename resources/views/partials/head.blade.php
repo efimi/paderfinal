@@ -24,6 +24,11 @@
       notifyButton: {
         enable: true,
       },
+       welcomeNotification: {
+        "title": "🎊Padermeet > Cool das du dabei bist!",
+        "message": "Diese Push Benachrichtigungen machen das Leben einfacher👍",
+        "url": "www.padermeet.de" /* Leave commented for the notification to not open a window on Chrome and Firefox (on Safari, it opens to your webpage) */
+    }
     });
   });
 </script>
