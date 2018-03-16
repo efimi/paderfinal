@@ -14,7 +14,7 @@ class MatchMakeProvider extends ServiceProvider
      */
     public function boot()
     {
-        Match::observe(\App\Observers\MatchObserver::class);
+        // Match::observe(\App\Observers\MatchObserver::class);
     }
 
     /**

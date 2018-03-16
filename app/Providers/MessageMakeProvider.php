@@ -14,7 +14,7 @@ class MessageMakeProvider extends ServiceProvider
      */
     public function boot()
     {
-        Message::observe(\App\Observers\MessageObserver::class);
+        // Message::observe(\App\Observers\MessageObserver::class);
     }
 
     /**
