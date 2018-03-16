@@ -31,7 +31,9 @@ class SendJoinNotificationToOtherUsersMatched
         $match = $user->mToday();
         $participants = $match->users();
         $otherUsers = $participants->diff($user);
-
+        if($otherUsers === null) {
+            return;
+        }
         foreach ($otherUsers as $user) {
                 // send notification via OpenSignal
         }

@@ -25,6 +25,9 @@ Route::get('/frequentquestions', 'Statics\FrequentAskedQuestionsController@index
 // Send Feedback
 Route::post('/feedback','Feedback\FeedbackController@store');
 
+// Subscribe to Notificaitons
+Route::post('/subscribeToNotifications','Account\AccountsController@subscribeToNotifications');
+
 
 Auth::routes();
 

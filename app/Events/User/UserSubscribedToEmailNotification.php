@@ -11,7 +11,7 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class UserSuscribedToPushNotification
+class UserSubscribedToEmailNotification
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 

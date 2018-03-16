@@ -7,7 +7,7 @@ use App\Notifications\Chat\NewPinwallPostNotification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
-class SnedMessageNotificationToOtherUsersMatched
+class SendMessageNotificationToOtherUsersMatched
 {
     /**
      * Create the event listener.
@@ -28,9 +28,11 @@ class SnedMessageNotificationToOtherUsersMatched
     public function handle(MessageCreated $event)
     {
         $user = $event->message->user;
-        $participants = $user->mToday->users();
+        $participants = $user->mToday()->users();
         $otherUsers = $participants->diff($user);
-
+        if($otherUsers === null) {
+            return;
+        }
         foreach ($otherUsers as $user) {
             $user->notify(new NewPinwallPostNotification($event->message));
         }

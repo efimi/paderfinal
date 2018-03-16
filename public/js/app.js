@@ -28724,6 +28724,7 @@ Vue.component('footer-tab', __webpack_require__(221));
 // Vue.component('mod', require('./components/Modal.vue'));
 // Vue.component('logo', require('./components/Logo.vue'));
 Vue.component('onesignal-button', __webpack_require__(224));
+Vue.component('email-subscirbe-button', __webpack_require__(233));
 
 
 window.Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue2_collapse__["a" /* default */]);
@@ -65684,6 +65685,281 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 230 */,
+/* 231 */,
+/* 232 */,
+/* 233 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(234)
+}
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(236)
+/* template */
+var __vue_template__ = __webpack_require__(237)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/subscribe/EmailSubscribeButton.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-63a34208", Component.options)
+  } else {
+    hotAPI.reload("data-v-63a34208", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 234 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(235);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(4)("42b6d148", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-63a34208\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./EmailSubscribeButton.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-63a34208\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./EmailSubscribeButton.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 235 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)(false);
+// imports
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Roboto);", ""]);
+
+// module
+exports.push([module.i, "\n::-webkit-input-placeholder {\n  color: #ffaba6;\n  background-color: #fff;\n}\n.cta {\n  font-size: 18px;\n  color: #FF7B73;\n  background: #fff;\n  font-weight: bold;\n  border-radius: 25px;\n  line-height: 50px;\n  height: 50px;\n  width: 170px;\n  text-align: center;\n  -webkit-transition: width .2s ease-in-out;\n  transition: width .2s ease-in-out;\n  cursor: pointer;\n}\n.cta .hide {\n    display: none;\n}\n.cta form {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n.cta span {\n    opacity: 0;\n    width: 100%;\n    text-align: center;\n    -webkit-animation: fadeIn .3s ease-in-out;\n            animation: fadeIn .3s ease-in-out;\n    -webkit-animation-delay: .2s;\n            animation-delay: .2s;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n}\n.cta .input {\n    font-size: 18px;\n    display: none;\n    opacity: 0;\n    -webkit-box-flex: 3;\n        -ms-flex: 3;\n            flex: 3;\n    text-align: left;\n}\n.cta .input input {\n      border: 0;\n      width: 240px;\n      margin: 0 0 0 25px;\n      outline: none;\n      color: #FF7B73;\n}\n.cta .button {\n    font-size: 18px;\n    display: none;\n    opacity: 0;\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n}\n.cta .button button {\n      outline: none;\n      float: right;\n      padding: 0 15px;\n      height: 40px;\n      background: #FF7B73;\n      border-radius: 25px;\n      color: #fff;\n      border: 0;\n      margin: 5px;\n      cursor: pointer;\n      -webkit-transition: all .2s ease-in-out;\n      transition: all .2s ease-in-out;\n}\n.cta .button button:disabled {\n        color: #FC9F9D;\n        opacity: .8;\n}\n.cta.sent {\n    cursor: default;\n}\n.cta.active {\n    width: 350px;\n    text-align: left;\n    -webkit-transition: width .2s ease-in-out;\n    transition: width .2s ease-in-out;\n    cursor: default;\n}\n.cta.active span {\n      display: none;\n}\n.cta.active .input, .cta.active .button {\n      display: block;\n      -webkit-animation: fadeIn .3s ease-in-out;\n              animation: fadeIn .3s ease-in-out;\n      -webkit-animation-delay: .1s;\n              animation-delay: .1s;\n      -webkit-animation-fill-mode: forwards;\n              animation-fill-mode: forwards;\n}\n@-webkit-keyframes fadeIn {\n0% {\n    opacity: 0;\n    -webkit-transform: scale(0.7);\n            transform: scale(0.7);\n}\n100% {\n    opacity: 1;\n    -webkit-transform: scale(1);\n            transform: scale(1);\n}\n}\n@keyframes fadeIn {\n0% {\n    opacity: 0;\n    -webkit-transform: scale(0.7);\n            transform: scale(0.7);\n}\n100% {\n    opacity: 1;\n    -webkit-transform: scale(1);\n            transform: scale(1);\n}\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 236 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	props: ['subscription'],
+	data: function data() {
+		return {
+			isActive: false,
+			isSendable: false,
+			activeClass: 'active',
+			// disabledClass: 'disabled',
+			email: '',
+			buttonText: '',
+			resultText: ''
+		};
+	},
+
+	computed: {
+		subscribe: function subscribe() {
+			return this.subscription === '0';
+		}
+	},
+	created: function created() {
+		if (this.subscribe) {
+			this.buttonText = 'Notify';
+		} else {
+			this.buttonText = 'Unsubscribe';
+		}
+	},
+
+	watch: {
+		email: function email(val) {
+			var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			if (regex.test(val)) {
+				this.isSendable = true;
+			} else {
+				this.isSendable = false;
+			}
+		}
+	},
+	methods: {
+		handleEmailInput: function handleEmailInput() {
+			console.log('handle');
+			axios.post('/subscribeToNotifications/', {
+				email: this.email,
+				subscribe: this.subscribe
+			}).catch(function (e) {
+				console.log(e);
+			});
+			this.buttonText = 'Alles klar👍';
+			this.isActive = false;
+			this.resultText = 'Du wirst auf folgende Email benachrichtig: ' + this.email;
+		},
+		handleButton: function handleButton() {
+			if (this.subscribe) {
+				this.isActive = true;
+			} else {
+				axios.post('/subscribeToNotifications/', {
+					subscribe: false
+				}).catch(function (e) {
+					console.log(e);
+				});
+				this.buttonText = 'Alles klar👍';
+				this.resultText = 'Du wurdest abgemeldet';
+			}
+		}
+	}
+});
+
+/***/ }),
+/* 237 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "centerMe" }, [
+      _c(
+        "div",
+        {
+          staticClass: "cta",
+          class: [_vm.isActive ? _vm.activeClass : ""],
+          on: { click: _vm.handleButton }
+        },
+        [
+          _c("span", [_vm._v(_vm._s(_vm.buttonText))]),
+          _vm._v(" "),
+          _c(
+            "form",
+            {
+              on: {
+                submit: function($event) {
+                  $event.preventDefault()
+                }
+              }
+            },
+            [
+              _c("div", { staticClass: "input" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.email,
+                      expression: "email"
+                    }
+                  ],
+                  attrs: { placeholder: "E-mail" },
+                  domProps: { value: _vm.email },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.email = $event.target.value
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "button" }, [
+                _c(
+                  "button",
+                  {
+                    attrs: { disabled: !_vm.isSendable },
+                    on: { click: _vm.handleEmailInput }
+                  },
+                  [_vm._v("Send")]
+                )
+              ])
+            ]
+          )
+        ]
+      )
+    ]),
+    _vm._v(" "),
+    _c("small", { staticStyle: { "text-align": "center" } }, [
+      _vm._v(_vm._s(_vm.resultText))
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-63a34208", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

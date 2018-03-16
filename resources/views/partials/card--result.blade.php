@@ -10,6 +10,7 @@
 					{{ $match->location->address}}
 				</p>
 				@include('partials.location--usedplaces', ['location' => $match->location])
+				<br>
 			</div>
 		</div>
 </a>		

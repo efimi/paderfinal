@@ -12,9 +12,9 @@
 <script src="{{ asset('js/manifest.json')}}"></script>
 <script src="{{ asset('js/OneSignalSDKWorker.js')}}"></script>
 <script src="{{ asset('js/OneSignalSDKUpdaterWorker.js')}}"></script>
-<script charset="UTF-8" src="//cdn.sendpulse.com/9dae6d62c816560a842268bde2cd317d/js/push/38c8997e1f50100407cbb08531059bd0_1.js" async></script>
+{{-- <script charset="UTF-8" src="//cdn.sendpulse.com/9dae6d62c816560a842268bde2cd317d/js/push/38c8997e1f50100407cbb08531059bd0_1.js" async></script>
 
-
+ --}}
 <!--  Ajax Scripts-->
 <script>
 	window.Laravel = {!! json_encode([
