@@ -13,12 +13,12 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'App\Events\User\UserMatchedToLocation' => [
-            'App\Listeners\User\SendJoinNotificationToOtherUsersMatched',
-        ],
-        'App\Events\Chat\MessageCreated' => [
-            'App\Listeners\User\SendMessageNotificationToOtherUsersMatched',
-        ],
+        // 'App\Events\User\UserMatchedToLocation' => [
+        //     'App\Listeners\User\SendJoinNotificationToOtherUsersMatched',
+        // ],
+        // 'App\Events\Chat\MessageCreated' => [
+        //     'App\Listeners\User\SendMessageNotificationToOtherUsersMatched',
+        // ],
         'App\Events\User\UserSubscribedToEmailNotification' => [
             'App\Listeners\User\SendNotificationActivationEmail',
         ],
