@@ -1,7 +1,7 @@
 <template>
 	<div class="chat">
 		<chat-messages></chat-messages>
-		<form action="#" class="chat__form">
+		<form v-on:submit.prevent class="chat__form">
 			
 			<textarea 
 			class="chat__form-input--text"
@@ -12,15 +12,15 @@
 			@keydown="handleMessageInput"
 			></textarea>
 		
-			<div 
+			<!-- <div 
 			class="chat__form-input--button btn shadow"
 			@click="handleMessageInput">
 				📌
-			</div>
+			</div> -->
 			
 		</form>
 			<div class="chat__form-helptext flex flex__column">
-				<p>Drücke Enter um zu senden</p>
+				<p>Drücke Return um zu posten 📌</p>
 			</div>
 	</div>
 </template>
@@ -52,7 +52,7 @@
 				return {
 					id: tempId,
 					body: this.body, 
-					created_at: moment().zone('+0100').utc().format('YYYY-MM-DD HH:mm:ss'),
+					created_at: moment().utcOffset('+0100').format('YYYY-MM-DD HH:mm:ss'),
 					selfOwned: true,
 					pinwallId: Laravel.user.matchedLocationId,
 					matchPosition: Laravel.user.matchPosition, 
@@ -115,6 +115,9 @@
 					text-decoration: none;
 					border-radius: 100px;
 					background-color:#fff;
+					cursor: pointer;
+					min-height: 10px;
+					min-width: 10px;
 				}
 
 			}
