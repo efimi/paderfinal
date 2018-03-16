@@ -21,6 +21,9 @@ Route::post('/chat/messages', 'Chat\ChatMessageController@store');
 
 // Static Stuff 
 Route::get('/frequentquestions', 'Statics\FrequentAskedQuestionsController@index');
+Route::get('/survey', function(){
+	return view('survey');
+})->name('survey');
 
 // Send Feedback
 Route::post('/feedback','Feedback\FeedbackController@store');

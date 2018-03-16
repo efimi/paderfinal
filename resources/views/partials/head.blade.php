@@ -9,11 +9,24 @@
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 <!-- One Signal -->
-<script src="{{ asset('js/manifest.json')}}"></script>
-<script src="{{ asset('js/OneSignalSDKWorker.js')}}"></script>
-<script src="{{ asset('js/OneSignalSDKUpdaterWorker.js')}}"></script>
-{{-- <script charset="UTF-8" src="//cdn.sendpulse.com/9dae6d62c816560a842268bde2cd317d/js/push/38c8997e1f50100407cbb08531059bd0_1.js" async></script>
+<script src="{{ asset('manifest.json')}}"></script>
+<script src="{{ asset('OneSignalSDKWorker.js')}}"></script>
+<script src="{{ asset('OneSignalSDKUpdaterWorker.js')}}"></script>
 
+<link rel="manifest" href="manifest.json" />
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script>
+  var OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "2e680437-eebb-4b16-b97b-ee10e8fbcf1b",
+      autoRegister: false,
+      notifyButton: {
+        enable: true,
+      },
+    });
+  });
+</script>
  --}}
 <!--  Ajax Scripts-->
 <script>

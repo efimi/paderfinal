@@ -7,7 +7,8 @@
 		<div class="footer__copyright">
 			<p> Copyrighy &copy; Padermeet 2018</p>
 			<p>Made with ♥️</p>
-			@include('partials.facebook-comments')
+		 	<a class="btn btn--white" href="{{route('survey')}}">Fragebogen zur Padermeet</a>
+			{{-- @include('partials.facebook-comments') --}}
 		</div>
 
 		@include('partials.town')
