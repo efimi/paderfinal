@@ -386,7 +386,6 @@ class ComposerStaticInita07edb43db701767c1dd46efaa2fa9d1
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Events\\Chat\\MessageCreated' => __DIR__ . '/../..' . '/app/Events/Chat/MessageCreated.php',
         'App\\Events\\Location\\LocationFilledUp' => __DIR__ . '/../..' . '/app/Events/Location/LocationFilledUp.php',
-        'App\\Events\\UserUserJoinedLocation' => __DIR__ . '/../..' . '/app/Events/User/UserMatchedToLocation.php',
         'App\\Events\\User\\UserSubscribedToEmailNotification' => __DIR__ . '/../..' . '/app/Events/User/UserSubscribedToEmailNotification.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Account\\AccountsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Account/AccountsController.php',

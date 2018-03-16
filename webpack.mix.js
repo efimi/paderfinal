@@ -13,6 +13,8 @@ let mix = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js')
    .copyDirectory('resources/assets/js/oneSignal/', 'public/js')
+   .copyDirectory('resources/assets/js/preloadingEffekt/', 'public/js')
+   .copyDirectory('resources/assets/sass/preloadingEffekt/', 'public/css')
    .sass('resources/assets/sass/app.scss', 'public/css')
    .browserSync({
         proxy: 'localhost:8000'
