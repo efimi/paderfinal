@@ -213,4 +213,35 @@ return [
 
     ],
 
+    'debug_blacklist' => [
+        '_ENV' => [
+            'APP_KEY',
+            'DB_PASSWORD',
+            'DB_USERNAME',
+            'REDIS_PASSWORD',
+            'MAIL_PASSWORD',
+            'PUSHER_APP_KEY',
+            'PUSHER_APP_SECRET',
+            'FACEBOOK_CLIENT_SECRET',
+            'GITHUB_CLIENT_SECRET',
+            'INSTAGRAM_CLIENT_ID',
+        ],
+        '_SERVER' => [
+            'APP_KEY',
+            'DB_PASSWORD',
+            'DB_USERNAME',
+            'REDIS_PASSWORD',
+            'MAIL_PASSWORD',
+            'PUSHER_APP_KEY',
+            'PUSHER_APP_SECRET',
+            'FACEBOOK_CLIENT_SECRET',
+            'GITHUB_CLIENT_SECRET',
+            'INSTAGRAM_CLIENT_ID',
+
+        ],
+        '_POST' => [
+            'password',
+        ],
+    ],
+
 ];
