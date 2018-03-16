@@ -65810,7 +65810,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			isSendable: false,
 			activeClass: 'active',
 			// disabledClass: 'disabled',
-			email: 'efimi@me.com',
+			email: '',
 			buttonText: '',
 			resultText: ''
 		};
@@ -65850,7 +65850,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			});
 			this.buttonText = 'Alles klar👍';
 			this.isActive = false;
-			this.resultText = 'Du wirst auf folgende Email benachrichtig: ' + this.email;
+			this.resultText = 'Checke deine Mails, es müsste ein Aktivierungscode kommen';
 		},
 		handleButton: function handleButton() {
 			if (this.subscribe) {

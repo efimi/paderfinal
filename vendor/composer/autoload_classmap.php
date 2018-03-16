@@ -9,7 +9,6 @@ return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Events\\Chat\\MessageCreated' => $baseDir . '/app/Events/Chat/MessageCreated.php',
     'App\\Events\\Location\\LocationFilledUp' => $baseDir . '/app/Events/Location/LocationFilledUp.php',
-    'App\\Events\\UserUserJoinedLocation' => $baseDir . '/app/Events/User/UserMatchedToLocation.php',
     'App\\Events\\User\\UserSubscribedToEmailNotification' => $baseDir . '/app/Events/User/UserSubscribedToEmailNotification.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\Account\\AccountsController' => $baseDir . '/app/Http/Controllers/Account/AccountsController.php',
