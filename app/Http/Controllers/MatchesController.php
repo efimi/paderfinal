@@ -26,9 +26,17 @@ class MatchesController extends Controller
 	{
 		if ($match->user() === auth()->user()) {
 			$match->delete();
-			return ture;
+			return true;
 		}
 		return false;
+	}
+
+	public function umatch(Request $request)
+	{
+		if(Match::find($request->match_id)->user ===  auth()->user()) {
+			$match->delete();
+			return response()->json(true,200);
+		}
 	}
 
 }

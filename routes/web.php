@@ -32,6 +32,8 @@ Route::get('/subscribe/activate','Account\AccountsController@activate')->name('s
 // login via QRCode
 Route::get('/tokenLogin','Account\AccountsController@loginViaToken')->name('login.token');
 
+// umatch api
+Route::post('/umatch','MatchesController@unmatch');
 
 Auth::routes();
 
