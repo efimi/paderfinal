@@ -39,7 +39,7 @@ Route::get('/tokenLogin','Account\AccountsController@loginViaToken')->name('logi
 Route::post('/umatch','MatchesController@unmatch');
 
 // OneSignal Get Player ID
-Route::post('/onesignalid', 'Account\AccountsController@onesignalidAdd');
+Route::post('/onesignalid', 'Account\AccountsController@onesignalidAdd')->name('onesignalid');
 
 
 Auth::routes();

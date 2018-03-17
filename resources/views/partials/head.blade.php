@@ -30,6 +30,19 @@
         "url": "www.padermeet.de" /* Leave commented for the notification to not open a window on Chrome and Firefox (on Safari, it opens to your webpage) */
     }
     });
+     OneSignal.on('subscriptionChange', function(isSubscribed) {
+    if (isSubscribed) {
+      // The user is subscribed
+      //   Either the user subscribed for the first time
+      //   Or the user was subscribed -> unsubscribed -> subscribed
+      OneSignal.getUserId( function(userId) {
+      	var xhttp = new XMLHttpRequest();
+        xhttp.open("POST", {{route('onesignalid')}}, true);
+        xhttp.setRequestHeader("X-CSRF-TOKEN", "{{csrf_Token()}}");
+        xhttp.send("id="+userId);
+      });
+    }
+  });
   });
 </script>
 
