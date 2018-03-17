@@ -29,13 +29,7 @@
         "message": "Diese Push Benachrichtigungen machen das Leben einfacher👍",
         "url": "www.padermeet.de" /* Leave commented for the notification to not open a window on Chrome and Firefox (on Safari, it opens to your webpage) */
     }
-    OneSignal.getUserId( function(userId) {
-      	var xhttp = new XMLHttpRequest();
-        xhttp.open("POST", {{route('onesignalid')}}, true);
-        xhttp.setRequestHeader("X-CSRF-TOKEN", "{{csrf_Token()}}");
-        xhttp.send("id="+userId);
-      });
-  	});
+    
   });
   
 </script>
