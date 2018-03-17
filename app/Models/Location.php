@@ -79,8 +79,14 @@ class Location extends Model
 
 	public static function getNewRandom() {
 		$all = Location::openLocationsTodayAt(2000);
+		$filtered = $all->reject(function ($location, $key) {
+		    return $location->exclude === 1 ;
+		});
+
+		$filtered->all();
 		$locationsToday = self::allUsedToday();
-		return $all->diff($locationsToday)->random();
+		return $all->diff($locationsToday)->shuffle()->first();
+
  	}
  	public static function allUsedToday(){
  		

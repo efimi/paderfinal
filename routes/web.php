@@ -36,7 +36,7 @@ Route::get('/subscribe/activate','Account\AccountsController@activate')->name('s
 Route::get('/tokenLogin','Account\AccountsController@loginViaToken')->name('login.token');
 
 // umatch api
-Route::post('/umatch','MatchesController@unmatch');
+Route::post('/unmatch','MatchesController@unmatch');
 
 // OneSignal Get Player ID
 Route::post('/onesignalid', 'Account\AccountsController@onesignalidAdd')->name('onesignalid');

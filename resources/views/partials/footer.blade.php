@@ -1,9 +1,12 @@
 <footer class="footer">
 		<div class="flex flex__column">
+			<p>möchtest du dich unmachten? Dann klicke hier:</p>
+			<unmatch-button></unmatch-button>
 			<p> Benachrichtigungsfunktion aktiviert? 😉 </p>
-			{{-- <email-subscirbe-button subscription="{{auth()->user()->subscribed}}"></email-subscirbe-button> --}}
-			<small>Hier sollte ein Button sein:</small>
+			<email-subscirbe-button subscription="{{auth()->user()->subscribed}}"></email-subscirbe-button>
+			{{-- <small>Hier sollte ein Button sein:</small> --}}
 			{{-- <onesignal-button></onesignal-button> --}}
+
 		</div>
 		<footer-tab></footer-tab>
 		<div class="footer__copyright">

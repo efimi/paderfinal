@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Match;
 use Illuminate\Http\Request;
+use Auth;
 
 class MatchesController extends Controller
 {
@@ -31,12 +32,12 @@ class MatchesController extends Controller
 		return false;
 	}
 
-	public function umatch(Request $request)
-	{
-		if(Match::find($request->match_id)->user ===  auth()->user()) {
-			$match->delete();
-			return response()->json(true,200);
-		}
+	public function unmatch(Request $request)
+	{	
+		$user = Auth::user();
+		$match = $user->mToday();
+		$match->delete();
+		return response()->json(true,200);
 	}
 
 }
