@@ -82,10 +82,9 @@ class Location extends Model
 		$filtered = $all->reject(function ($location, $key) {
 		    return $location->exclude === 1 ;
 		});
-
-		$filtered->all();
+		
 		$locationsToday = self::allUsedToday();
-		return $all->diff($locationsToday)->shuffle()->first();
+		return $filtered->diff($locationsToday)->shuffle()->first();
 
  	}
  	public static function allUsedToday(){

@@ -15,6 +15,7 @@
 		color: rgb(255,255,255);
 		max-width: 320px;
 		@include movingGradient;
+		margin: 0 1vw;
 	}
 	&__body{
 		padding: 0 1rem;

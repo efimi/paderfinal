@@ -19,9 +19,13 @@ class AppController extends Controller
                 'subscribed' => 0,
         	]);
     	   Auth::login($user, true);
-           // return view('tutorial');
         }
-    	return view('welcome');
+        if(count(Auth::user()->mToday())){
+            return redirect()->url('/match');
+        }
+        else{
+        	return view('welcome');
+        }
     }
     public function makeMatch()
     {	
