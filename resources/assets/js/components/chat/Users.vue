@@ -1,15 +1,16 @@
 <template>
 	<div class="users">
-		<div class="users__header">{{ users.length }} {{ pluralize('user', users.length)}} online</div>
+		<div class="users__header">online</div>
 		<div class="users__user" v-for="user in users">
-			<a href="">{{ user.name }}</a>
-			<img :src="user.name" alt="#" class="users__user-avatar">
+			<p v-text="getRandomPersonEmoji"></p>
+			<!-- <a href="">{{ user.name }}</a>
+			<img :src="user.name" alt="#" class="users__user-avatar"> -->
 		</div>
 	</div>
 </template>
 
 <script>
-	import pluralize from 'pluralize'
+	// import pluralize from 'pluralize'
 	import Bus from '../../bus'
 	export default {
 		data() {
@@ -17,8 +18,12 @@
 				users: []
 			}
 		},
-		methods: {
-			pluralize: pluralize
+		computed: {
+			// pluralize: pluralize,
+			getRandomPersonEmoji(){
+				var emojis = Array("😬","😀","😉","😄")
+				return emojis[Math.floor(Math.random()*emojis.length)];
+			}
 		},
 		mounted() {
 			Bus.$on('users.here', (users) => {
@@ -38,24 +43,26 @@
 
 <style lang="scss">
 	.users{
-		background-color: #fff;
-		border: 1px solid #aaa;
-		border-radius: 3px;
+		margin: 3vh 3vw;
+		border-radius: 5px;
+		border: 2px solid #fff;
 
 		&__header{
 			padding: 15px;
 			font-weight: 800;
 			margin: 0;
+			text-align: center;
 		}
 
 		&__user{
 			padding: 0 15px;
+			text-align: center;
 			&:last-child {
 				padding-bottom: 15px;
 			}
 		}
 
-		&__ueser-avatar{
+		&__user-avatar{
 			border-radius: 50%;
 			margin: 0 5px;
 		}

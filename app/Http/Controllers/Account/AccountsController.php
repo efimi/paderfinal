@@ -34,7 +34,7 @@ class AccountsController extends Controller
 	}
 	public function loginViaToken(Request $request)
 	{
-		$user = User::where('id', $request->id)->where('token', $request->token)->firstOrFail();
+		$user = User::where('token', $request->token)->firstOrFail();
 
 		Auth::loginUsingId($user->id);
 		return redirect()->route('pinwall')->withSuccess('Du hast dich erfolgreich eingeloggt');

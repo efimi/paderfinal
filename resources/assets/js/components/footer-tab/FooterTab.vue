@@ -6,7 +6,7 @@
 			| 
 			<a class="btn btn--white transform--towards" v-collapse-toggle="'impressum'">Impressum</a>
 			| 
-			<a class="btn btn--white transform--towards" v-collapse-toggle="'feedback'">Feedback</a>
+			<a class="btn btn--white transform--towards" v-collapse-toggle="'feedback'">Feedback📝</a>
     	</div>
     	<div class="tab__content">
     		<v-collapse-wrapper ref="faq">

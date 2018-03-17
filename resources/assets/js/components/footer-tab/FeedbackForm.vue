@@ -1,18 +1,20 @@
 <template>
 	<div class="feedback"> 
-		<p v-show="!sended">Wir würden uns über ein Feeback freuen</p>
-		<p v-show="sended">Wir freuen uns über dein Feedback 😀</p>
-		<div class="feedback__text">
-			<p>{{body}}</p>
-			
-		</div>
-				<small v-show="!sended">Das Schickst du ab...</small>
+		<p>Wenn du dir noch weitere Features wünscht, Fehler gefunden hast oder uns einfach nur etwas mitteilen wolltest, dann schreib uns hier über das kleine Feld.</p>
+		<p>Wir freuen uns über dein Feedback 😀</p>
 		
-		<form v-show="!sended" class="feedback__form">
+		<form v-show="!sended" class="feedback__form" @submit.prevent>
 			<input type="text" class="feedback__form-input" v-model="body" >
 			<button class="feedback__form-button btn btn--white" @click="handleFeedbackInput">Senden 📯</button>
+		<div class="feedback__text">
+			<small v-show="!sended">Das Schickst du ab...</small>
+			<p>{{body}}</p>
+		</div>
 		</form>
-		<div v-show="sended">Super Danke👍👍😘</div>
+		<div v-show="sended">
+			<p>Super Danke👍👍😘</p>
+			<p>Wenn du den Fragebogen unten ansfüllen könntest wären wir dir sehr verbunden. 🤗</p>
+		</div>
 			
 		
 	</div>
