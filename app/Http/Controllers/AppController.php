@@ -21,7 +21,7 @@ class AppController extends Controller
     	   Auth::login($user, true);
         }
         if(count(Auth::user()->mToday())){
-            return redirect()->url('/match');
+            return redirect()->route('match');
         }
         else{
         	return view('welcome');
