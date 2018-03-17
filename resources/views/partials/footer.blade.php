@@ -3,7 +3,7 @@
 			<p> Benachrichtigungsfunktion aktiviert? 😉 </p>
 			{{-- <email-subscirbe-button subscription="{{auth()->user()->subscribed}}"></email-subscirbe-button> --}}
 			<small>Hier sollte ein Button sein:</small>
-			<onesignal-button></onesignal-button>
+			{{-- <onesignal-button></onesignal-button> --}}
 		</div>
 		<footer-tab></footer-tab>
 		<div class="footer__copyright">
