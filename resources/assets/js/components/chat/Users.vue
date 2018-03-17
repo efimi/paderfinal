@@ -2,7 +2,7 @@
 	<div class="users">
 		<div class="users__header">online</div>
 		<div class="users__user" v-for="user in users">
-			<p v-text="getRandomPersonEmoji"></p>
+			<span v-text="getRandomPersonEmoji"></span>
 			<!-- <a href="">{{ user.name }}</a>
 			<img :src="user.name" alt="#" class="users__user-avatar"> -->
 		</div>

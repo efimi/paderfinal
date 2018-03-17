@@ -63491,7 +63491,7 @@ var render = function() {
       _vm._v(" "),
       _vm._l(_vm.users, function(user) {
         return _c("div", { staticClass: "users__user" }, [
-          _c("p", {
+          _c("span", {
             domProps: { textContent: _vm._s(_vm.getRandomPersonEmoji) }
           })
         ])
