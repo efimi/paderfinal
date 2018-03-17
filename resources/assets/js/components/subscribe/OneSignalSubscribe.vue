@@ -1,6 +1,6 @@
 <template>
 	<div class="subscribe">
-		 <a href="#" id="my-notification-button" class="btn btn--blue" style="display: none;">Schalte Benachrichtigungen ein😉</a>
+		 <a @click="handleSubscribtion" id="my-notification-button" class="btn btn--white">Schalte Benachrichtigungen ein😉</a>
 	</div>
 </template>
 
@@ -9,34 +9,36 @@
 	export default {
 		data(){
 			return {
-				_registration: null,
 				 buttonSelector: "#my-notification-button",
 			}
 		},
 		created(){
-			var OneSignal = OneSignal || [];
-
-			/* This example assumes you've already initialized OneSignal */
-			OneSignal.push(function() {
-			    // If we're on an unsupported browser, do nothing
-			    if (!OneSignal.isPushNotificationsSupported()) {
-			        return;
-			    }
-			    this.updateMangeWebPushSubscriptionButton(this.buttonSelector);
-			    OneSignal.on("subscriptionChange", function(isSubscribed) {
-			        /* If the user's subscription state changes during the page's session, update the button text */
-			        OneSignal.getUserId( function(userId) {
-				        axios.post('/onesignalid',{
-				        	one_signal_player_id: userId,
-				        }).catch((e) => {
-							console.log(e)
-						})
-				      });
-			        this.updateMangeWebPushSubscriptionButton(this.buttonSelector);
-			    });
-			});
+			
 		},
 		methods:{
+			handleSubscribtion(){
+				var OneSignal = OneSignal || [];
+
+				/* This example assumes you've already initialized OneSignal */
+				OneSignal.push(function() {
+				    // If we're on an unsupported browser, do nothing
+				    if (!OneSignal.isPushNotificationsSupported()) {
+				        return;
+				    }
+				    this.updateMangeWebPushSubscriptionButton(this.buttonSelector);
+				    OneSignal.on("subscriptionChange", function(isSubscribed) {
+				        /* If the user's subscription state changes during the page's session, update the button text */
+				        OneSignal.getUserId( function(userId) {
+					        axios.post('/onesignalid',{
+					        	one_signal_player_id: userId,
+					        }).catch((e) => {
+								console.log(e)
+							})
+					      });
+				        this.updateMangeWebPushSubscriptionButton(this.buttonSelector);
+				    });
+				});
+			},
 			onManageWebPushSubscriptionButtonClicked(event) {
 		        getSubscriptionState().then(function(state) {
 		            if (state.isPushEnabled) {

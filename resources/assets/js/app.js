@@ -34,7 +34,6 @@ Vue.component('footer-tab', require('./components/footer-tab/FooterTab.vue'));
 // Vue.component('logo', require('./components/Logo.vue'));
 Vue.component('onesignal-button', require('./components/subscribe/OneSignalSubscribe.vue'));
 Vue.component('email-subscirbe-button', require('./components/subscribe/EmailSubscribeButton.vue'));
-Vue.component('email-subscirbe-button', require('./components/subscribe/OneSignalSubscribe.vue'));
 
 
 import VueCollapse from 'vue2-collapse' 

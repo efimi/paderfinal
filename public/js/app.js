@@ -28725,7 +28725,6 @@ Vue.component('footer-tab', __webpack_require__(221));
 // Vue.component('logo', require('./components/Logo.vue'));
 Vue.component('onesignal-button', __webpack_require__(224));
 Vue.component('email-subscirbe-button', __webpack_require__(229));
-Vue.component('email-subscirbe-button', __webpack_require__(224));
 
 
 window.Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue2_collapse__["a" /* default */]);
@@ -65631,35 +65630,35 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
 	data: function data() {
 		return {
-			_registration: null,
 			buttonSelector: "#my-notification-button"
 		};
 	},
-	created: function created() {
-		var OneSignal = OneSignal || [];
-
-		/* This example assumes you've already initialized OneSignal */
-		OneSignal.push(function () {
-			// If we're on an unsupported browser, do nothing
-			if (!OneSignal.isPushNotificationsSupported()) {
-				return;
-			}
-			this.updateMangeWebPushSubscriptionButton(this.buttonSelector);
-			OneSignal.on("subscriptionChange", function (isSubscribed) {
-				/* If the user's subscription state changes during the page's session, update the button text */
-				OneSignal.getUserId(function (userId) {
-					axios.post('/onesignalid', {
-						one_signal_player_id: userId
-					}).catch(function (e) {
-						console.log(e);
-					});
-				});
-				this.updateMangeWebPushSubscriptionButton(this.buttonSelector);
-			});
-		});
-	},
+	created: function created() {},
 
 	methods: {
+		handleSubscribtion: function handleSubscribtion() {
+			var OneSignal = OneSignal || [];
+
+			/* This example assumes you've already initialized OneSignal */
+			OneSignal.push(function () {
+				// If we're on an unsupported browser, do nothing
+				if (!OneSignal.isPushNotificationsSupported()) {
+					return;
+				}
+				this.updateMangeWebPushSubscriptionButton(this.buttonSelector);
+				OneSignal.on("subscriptionChange", function (isSubscribed) {
+					/* If the user's subscription state changes during the page's session, update the button text */
+					OneSignal.getUserId(function (userId) {
+						axios.post('/onesignalid', {
+							one_signal_player_id: userId
+						}).catch(function (e) {
+							console.log(e);
+						});
+					});
+					this.updateMangeWebPushSubscriptionButton(this.buttonSelector);
+				});
+			});
+		},
 		onManageWebPushSubscriptionButtonClicked: function onManageWebPushSubscriptionButtonClicked(event) {
 			getSubscriptionState().then(function (state) {
 				if (state.isPushEnabled) {
@@ -65723,26 +65722,19 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "subscribe" }, [
+    _c(
+      "a",
+      {
+        staticClass: "btn btn--white",
+        attrs: { id: "my-notification-button" },
+        on: { click: _vm.handleSubscribtion }
+      },
+      [_vm._v("Schalte Benachrichtigungen ein😉")]
+    )
+  ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "subscribe" }, [
-      _c(
-        "a",
-        {
-          staticClass: "btn btn--blue",
-          staticStyle: { display: "none" },
-          attrs: { href: "#", id: "my-notification-button" }
-        },
-        [_vm._v("Schalte Benachrichtigungen ein😉")]
-      )
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
