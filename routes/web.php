@@ -38,6 +38,10 @@ Route::get('/tokenLogin','Account\AccountsController@loginViaToken')->name('logi
 // umatch api
 Route::post('/umatch','MatchesController@unmatch');
 
+// OneSignal Get Player ID
+Route::post('/onesignalid', 'Account\AccountsController@onesignalidAdd');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

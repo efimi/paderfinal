@@ -14,4 +14,4 @@
                 <div class="result__container"></div>
 
             </div>
-@endsection
+@endsection 

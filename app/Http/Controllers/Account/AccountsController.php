@@ -39,4 +39,12 @@ class AccountsController extends Controller
 		Auth::loginUsingId($user->id);
 		return redirect()->route('pinwall')->withSuccess('Du hast dich erfolgreich eingeloggt');
 	} 
+
+	public function onesignalidAdd(Request $request)
+	{
+		$user = Auth::user();
+		$user->one_signal_player_id = $request->one_signal_player_id;
+		$user->save();
+		return response()->json($user, 200);
+	}
 }
