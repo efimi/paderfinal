@@ -29,12 +29,17 @@ class AppController extends Controller
     }
     public function makeMatch()
     {	
-        $user = Auth::user();
-        if (count($user->mToday())) {
-            $match = $user->mToday();
-        }else{
-    	   $match = Match::makeNewMatch($user);
+        if (Auth::check()){
+            $user = Auth::user();
+            if (count($user->mToday())) {
+                $match = $user->mToday();
+            }else{
+        	   $match = Match::makeNewMatch($user);
+            }
+        	return view('match', compact('match'));
         }
-    	return view('match', compact('match'));
+        else {
+            return redirect()->to('/');
+        }
     }
 }

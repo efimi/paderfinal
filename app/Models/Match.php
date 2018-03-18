@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Location;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Match extends Model
@@ -49,5 +50,12 @@ class Match extends Model
             $users->push($m->user);
         }
         return $users;
+    }
+    public function unmatch(User $user)
+    {
+        $match = $user->mToday();
+        if(count($match)){
+            $match->delete();
+        }
     }
 }

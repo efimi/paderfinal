@@ -25,7 +25,7 @@
                 </div>
             </header>  
             <div class="preload-main">
-                <div class="space--120"></div>
+                <a href="{{route('start')}}"><div class="space--120"></div></a>
                 <div id="app" class="app">
                     @yield('main')
                     @include('partials.footer')

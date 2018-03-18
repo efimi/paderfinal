@@ -34,14 +34,16 @@ Vue.component('footer-tab', require('./components/footer-tab/FooterTab.vue'));
 // Vue.component('logo', require('./components/Logo.vue'));
 Vue.component('unmatch-button', require('./components/match/UnmatchButton.vue'));
 Vue.component('email-subscirbe-button', require('./components/subscribe/EmailSubscribeButton.vue'));
+Vue.component('translate-email-button', require('./components/translate/TranslateViaMail.vue'));
 
 
 import VueCollapse from 'vue2-collapse' 
 window.Vue.use(VueCollapse)
 
-import VueQrcodeReader from 'vue-qrcode-reader'
-window.Vue.use(VueQrcodeReader)
-
+// import VueQrcodeReader from 'vue-qrcode-reader'
+// window.Vue.use(VueQrcodeReader)
+// import vueConfirmationButton from 'vue-confirmation-button';
+// window.Vue.use(vueConfirmationButton)
 
 const app = new Vue({
     el: '#app',

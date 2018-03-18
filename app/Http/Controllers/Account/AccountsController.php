@@ -7,6 +7,9 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Auth;
 use Illuminate\Http\Request;
+use App\Mail\TranslateSession;
+use Mail;
+
 
 class AccountsController extends Controller
 {
@@ -34,10 +37,12 @@ class AccountsController extends Controller
 	}
 	public function loginViaToken(Request $request)
 	{
-		$user = User::where('token', $request->token)->firstOrFail();
+			$user = User::where('id', $request->id)->where('token', $request->token)->firstOrFail();
 
-		Auth::loginUsingId($user->id);
-		return redirect()->route('pinwall')->withSuccess('Du hast dich erfolgreich eingeloggt');
+			Auth::loginUsingId($user->id);
+			$location =  $user->mToday()->location;
+			return view('pinwall', compact('location'))->withSuccess('Du hast dich erfolgreich eingeloggt');
+
 	} 
 
 	public function onesignalidAdd(Request $request)
@@ -46,5 +51,12 @@ class AccountsController extends Controller
 		$user->one_signal_player_id = $request->id;
 		$user->save();
 		return response()->json($user, 200);
+	}
+	public function translateViaMail(Request $request)
+	{
+		$user = Auth::user();
+		$user->email = $request->email;
+		$user->save;
+		Mail::to($request->email)->send(new TranslateSession($user));
 	}
 }

@@ -1,21 +1,30 @@
 <template>
 	<div>
-		<div>
-		  	<a class="btn btn--white" @click="unmatch">unmatch</a>
+		<div class="flex flex__column">
+		  	<a class="btn btn--white" @click="unmatch">{{buttonText}}</a>
 		
+		<small style="text-align: center" v-show="showtext">Wenn du ein neues Match willst dann <a href="/match">klicke hier</a></small>
 		</div>
-		<small style="text-align: center">{{resultText}}</small>
+		<!-- <div class="confirmation__button">
+		  <vue-confirmation-button
+		    :messages="customMessages"
+		    v-on:confirmation-success="unmatch()">
+		  </vue-confirmation-button>
+		<small style="text-align: center" v-show="showtext">Wenn du ein neues Match willst dann <a href="/match">klicke hier</a></small> -->
+</div>
 		
 	</div>
 </template>
 
 <script>
-	
+	// import vueConfirmationButton from 'vue-confirmation-button';
+
 	export default {
 		data(){
 			return {
-				
-				resultText:''
+				buttonText: "unmatch",
+				showtext: false,
+				customMessages: ['unmatchen☝️', 'Bist du dir sicher? 💔']
 			}
 		},
 		created(){
@@ -30,12 +39,10 @@
 				}).catch((e) => {
 					console.log(e)
 				});
-				this.resultText = 'Du kannst nun wieder auf den Button Klicken bzw. die Seite neu laden und neu gematch werden.';
+				this.buttonText = "du wurdest ungematch"
+				this.showtext =true;
 				
 			}, 
-			handleButton(){
-				
-			}
 		}
 	}
 </script>

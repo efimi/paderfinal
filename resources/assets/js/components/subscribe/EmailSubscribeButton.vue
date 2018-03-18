@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class='centerMe'>
-		  <div class='cta' @click="handleButton" :class="[(isActive) ? activeClass : '']">
+		  <div class='cta' @click.once="handleButton" :class="[(isActive) ? activeClass : '']">
 		
 		   <!--  <span v-if="!subscribed">Notify me</span>
 		    <span v-else>Unsubscirbe</span> -->
@@ -66,7 +66,10 @@
 				console.log('handle')
 				axios.post('/subscribeToNotifications/', {
 					email: this.email,
-					subscribe: this.subscribe
+					subscribe: this.subscribe,
+			        headers: {
+				        'Content-Type': 'application/json'
+				    }
 				}).catch((e) => {
 					console.log(e)
 				});

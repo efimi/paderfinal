@@ -15,5 +15,5 @@
 				<br>
 			</div>
 		</div>
-</a>		
+</a>	
 {{-- <card-result :location="{{json_encode($match->location)}}" :used={{$match->location->usedPlaces()}}></card-result> --}}

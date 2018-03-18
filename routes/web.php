@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'AppController@start');
+Route::get('/', 'AppController@start')->name('start');
 Route::get('/match', 'AppController@makeMatch')->name('match');
 Route::get('/pinwall', 'LocationsController@showPinwall')->name('pinwall');
 
@@ -32,6 +32,8 @@ Route::post('/feedback','Feedback\FeedbackController@store');
 Route::post('/subscribeToNotifications','Account\AccountsController@subscribeToNotifications');
 Route::get('/subscribe/activate','Account\AccountsController@activate')->name('subscription.activate');
 
+// send send Mail with token
+Route::post('/translateViaMail', 'Account\AccountsController@translateViaMail');
 // login via QRCode or sending Email with token and this url
 Route::get('/tokenLogin','Account\AccountsController@loginViaToken')->name('login.token');
 
