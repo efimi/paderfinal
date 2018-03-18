@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="flex flex__column">
 		<div class='centerMe'>
 		  <div class='cta' @click.once="handleButton" :class="[(isActive) ? activeClass : '']">
 		
@@ -54,7 +54,7 @@
 		methods:{
 			handleEmailInput(){
 				console.log('handle')
-				axios.post('/translateViaMail/', {
+				axios.get('/translateViaMail/', {
 					email: this.email,
 					id: window.Laravel.user.id,
 					headers: {
@@ -66,7 +66,7 @@
 				});
 				this.buttonText = 'Wurde gesendet 👍'
 				this.isActive = false
-				this.resultText = 'Clicke in den Mails auf den Button und öffne das Match auf dem anderen Device';
+				this.resultText = 'Clicke in der Mail auf den Button und öffne das Match auf einem anderen Device';
 				
 			}, 
 			handleButton(){
