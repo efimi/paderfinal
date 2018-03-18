@@ -55,7 +55,6 @@ class AccountsController extends Controller
 	public function translateViaMail(Request $request)
 	{
 		$user = User::find($request->id);
-		return response()->json($user, 200);
 		$user->email = $request->email;
 		$user->save;
 		Mail::to($request->email)->send(new TranslateSession($user));

@@ -54,12 +54,12 @@
 		methods:{
 			handleEmailInput(){
 				console.log('handle')
-				axios.get('/translateViaMail/', {
+				axios.post('/translateViaMail/', {
 					email: this.email,
 					id: window.Laravel.user.id,
 					headers: {
-				        'Content-Type': 'application/json'
-				    }
+				        'Content-Type': 'text/plain;charset=utf-8',
+				    },
 
 				}).catch((e) => {
 					console.log(e)
