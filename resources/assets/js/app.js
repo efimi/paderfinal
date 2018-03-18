@@ -39,6 +39,9 @@ Vue.component('email-subscirbe-button', require('./components/subscribe/EmailSub
 import VueCollapse from 'vue2-collapse' 
 window.Vue.use(VueCollapse)
 
+import VueQrcodeReader from 'vue-qrcode-reader'
+window.Vue.use(VueQrcodeReader)
+
 
 const app = new Vue({
     el: '#app',

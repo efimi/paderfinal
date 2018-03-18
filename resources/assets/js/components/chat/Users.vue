@@ -2,7 +2,7 @@
 	<div class="users">
 		<div class="users__header">online</div>
 		<div class="users__user" v-for="user in users">
-			<span v-text="getRandomPersonEmoji"></span>
+			{{emojis}}
 			<!-- <a href="">{{ user.name }}</a>
 			<img :src="user.name" alt="#" class="users__user-avatar"> -->
 		</div>
@@ -15,14 +15,17 @@
 	export default {
 		data() {
 			return {
-				users: []
+				users: [],
+				emojis: ""
 			}
 		},
-		computed: {
+		watch: {
 			// pluralize: pluralize,
-			getRandomPersonEmoji(){
-				var emojis = Array("😬","😀","😉","😄")
-				return emojis[Math.floor(Math.random()*emojis.length)];
+			users: function(){
+				var emojiset = Array("😬","😀","😉","😄")
+				for (var i = this.users.length; i <= 0; i--) {
+					this.emojis = this.emojis + " " + emojiset[Math.floor(Math.random()*emojiset.length)]
+				}
 			}
 		},
 		mounted() {
