@@ -311,10 +311,10 @@
      transform="matrix(0.85600691,0,0,0.85600691,0.00163515,1.4460198e-8)">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:38.03320312px;line-height:125%;font-family:lato;-inkscape-font-specification:'lato, Normal';text-align:center;letter-spacing:-3.68679476px;word-spacing:2px;writing-mode:lr-tb;text-anchor:middle;fill:#c83737;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30.03320312px;line-height:125%;font-family:lato;-inkscape-font-specification:'lato, Normal';text-align:center;letter-spacing:-0.68679476px;word-spacing:2px;writing-mode:lr-tb;text-anchor:middle;fill:#c83737;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="174.35971"
        y="209.06442"
-       id="text4353">Und schon was vor? 😉</text>
+       id="text4353">Heute schon was vor? 😉</text>
     <g
        id="g4271"
        transform="translate(25.230316,-6.9235857)">
