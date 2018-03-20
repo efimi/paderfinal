@@ -15,7 +15,7 @@ Route::get('/', 'AppController@start')->name('start');
 Route::get('/match', 'AppController@makeMatch')->name('match');
 Route::get('/pinwall', 'LocationsController@showPinwall')->name('pinwall');
 Route::get('/intro', function(){
-	return view('intro')
+	return view('intro');
 });
 Route::get('/chat/messages', 'Chat\ChatMessageController@index');
 Route::post('/chat/messages', 'Chat\ChatMessageController@store');
