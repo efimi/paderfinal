@@ -4,7 +4,8 @@
                 <div class="title">
                     <p>Willkommen bei Padermeet!</p>
                     @include('partials.logo')
-                    <p class="title__caption">Klicke auf den Button und erfahre wo es heute für dich hingeht!</p>
+                    <p>Heute um 20:00 Uhr!!!</p>
+                    <p class="title__caption">Klicke auf den Button und erfahre wo es für dich hingeht!</p>
                 
                 </div>
                 

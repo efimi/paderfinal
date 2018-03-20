@@ -19,6 +19,7 @@ class AppController extends Controller
                 'subscribed' => 0,
         	]);
     	   Auth::login($user, true);
+           // return view('intro');
         }
         if(count(Auth::user()->mToday())){
             return redirect()->route('match');
