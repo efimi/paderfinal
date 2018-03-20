@@ -3,7 +3,7 @@
 		<div class="flex flex__column">
 		  	<a class="btn btn--white" @click="unmatch">{{buttonText}}</a>
 		
-		<small style="text-align: center" v-show="showtext">Wenn du ein neues Match willst dann <a href="/match">klicke hier</a></small>
+		<small style="text-align: center" v-show="showtext">Wenn du ein neues Match willst dann <a href="/">klicke hier</a></small>
 		</div>
 		<!-- <div class="confirmation__button">
 		  <vue-confirmation-button

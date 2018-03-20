@@ -17,6 +17,10 @@ Route::get('/pinwall', 'LocationsController@showPinwall')->name('pinwall');
 Route::get('/intro', function(){
 	return view('intro');
 });
+Route::get('/click', function(){
+	return redirect('/');
+});
+
 Route::get('/chat/messages', 'Chat\ChatMessageController@index');
 Route::post('/chat/messages', 'Chat\ChatMessageController@store');
 

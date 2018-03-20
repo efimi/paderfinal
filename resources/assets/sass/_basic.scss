@@ -44,3 +44,29 @@
 .m-b-md {
     
 }
+
+.title{
+    p {
+        animation: animLoadedContent 1s cubic-bezier(0.7,0,0.3,1) both;
+        &:first-child {
+        -webkit-animation-delay: 0.1s;
+        animation-delay: 0.1s;
+        }
+        &:nth-child(2) {
+            -webkit-animation-delay: 0.3s;
+            animation-delay: 0.3s;
+        }
+        &:nth-child(3) {
+            -webkit-animation-delay: 0.5s;
+            animation-delay: 0.5s;
+        }
+        &:nth-child(4) {
+            -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+        }
+        &:nth-child(5) {
+            -webkit-animation-delay: 0.8s;
+            animation-delay: 0.8s;
+        }
+    }
+}
