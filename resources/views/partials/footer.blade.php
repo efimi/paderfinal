@@ -2,7 +2,7 @@
 		<div class="flex flex__column">
 			<p>möchtest du dich unmachten? Dann klicke hier:</p>
 			<unmatch-button></unmatch-button>
-			<p>Wenn du padermeet von einem anderen Device nutzen möchtest dann schicke dir zunächst eine Mail:</p>
+			<p>Wenn du Padermeet von einem anderen Device nutzen möchtest dann schicke dir zunächst eine Mail:</p>
 			<translate-email-button></ranslate-email-button>
 			<p> Benachrichtigungsfunktion aktiviert? 😉 </p>
 			<email-subscirbe-button subscription="{{auth()->user()->subscribed}}"></email-subscirbe-button>

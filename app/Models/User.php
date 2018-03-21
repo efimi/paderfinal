@@ -82,4 +82,13 @@ class User extends Authenticatable
         return $this->one_signal_player_id;
     }
     
+    public static function allUnmatchedToday()
+    {
+        $all = User::all();
+        $filtered = $all->reject(function ($user, $key) {
+            return count($user->mToday()) === 1 ;
+        });
+        return $filtered;
+    }
+  
 }

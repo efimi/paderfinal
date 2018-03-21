@@ -3,7 +3,7 @@
 return [
 
 	'events' => [
-		'created' => \App\Events\User\UserMatchedToLocation::class,
+		'created' => \App\Events\Match\UserMatchedToLocation::class,
 		'filledUp' => \App\Events\Location\LocationFilledUp::class,
 	],
 ];

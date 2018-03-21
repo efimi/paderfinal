@@ -4,11 +4,12 @@ namespace App\Http\Controllers\Account;
 
 use App\Events\User\UserSubscribedToEmailNotification;
 use App\Http\Controllers\Controller;
+use App\Mail\TranslateSession;
 use App\Models\User;
 use Auth;
 use Illuminate\Http\Request;
-use App\Mail\TranslateSession;
 use Mail;
+use App\Mail\Account\Unsubscribed;
 
 
 class AccountsController extends Controller
@@ -58,5 +59,20 @@ class AccountsController extends Controller
 		$user->email = $request->email;
 		$user->save;
 		Mail::to($request->email)->send(new TranslateSession($user));
+	}
+	public function unsubscirbeFromEmail(Request $request)
+	{
+		$token = $request->t;
+		$id = $request->i;
+
+		$user = User::find($id);
+		if ($user->token === $token){
+			$user->subscribed = 0;
+			$user->save();
+			Mail::to($user->email)->send(new Unsubscribed);
+			return view('unsubscribed')
+		}
+
+
 	}
 }

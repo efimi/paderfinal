@@ -1,3 +1,6 @@
+@keyframes animLoadedContent {
+	from { opacity: 0; -webkit-transform: translate3d(0,200px,0); transform: translate3d(0,200px,0); }
+}
 @keyframes DropFromHeaven{
 	0%{
 		z-index: 900;

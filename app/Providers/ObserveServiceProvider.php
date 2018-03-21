@@ -3,9 +3,10 @@
 namespace App\Providers;
 
 use App\Models\Chat\Message;
+use App\Models\Match;
 use Illuminate\Support\ServiceProvider;
 
-class MessageMakeProvider extends ServiceProvider
+class ObserveServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap services.
@@ -14,7 +15,9 @@ class MessageMakeProvider extends ServiceProvider
      */
     public function boot()
     {
+        Match::observe(\App\Observers\MatchObserver::class);
         // Message::observe(\App\Observers\MessageObserver::class);
+        
     }
 
     /**

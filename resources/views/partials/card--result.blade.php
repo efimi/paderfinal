@@ -11,7 +11,7 @@
 				</p>
 				@include('partials.location--usedplaces', ['location' => $match->location])
 				<br>
-				<small>Klicke hier auf diese Karte für weitere Infos</small>
+				<small>Klicke hier auf diese Ergebnisskarte für weitere Infos</small>
 				<br>
 			</div>
 		</div>

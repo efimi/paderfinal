@@ -14,6 +14,12 @@
 Route::get('/', 'AppController@start')->name('start');
 Route::get('/match', 'AppController@makeMatch')->name('match');
 Route::get('/pinwall', 'LocationsController@showPinwall')->name('pinwall');
+Route::get('/intro', function(){
+	return view('intro');
+});
+Route::get('/click', function(){
+	return redirect('/');
+});
 
 Route::get('/chat/messages', 'Chat\ChatMessageController@index');
 Route::post('/chat/messages', 'Chat\ChatMessageController@store');
@@ -36,6 +42,9 @@ Route::get('/subscribe/activate','Account\AccountsController@activate')->name('s
 Route::post('/translateViaMail', 'Account\AccountsController@translateViaMail');
 // login via QRCode or sending Email with token and this url
 Route::get('/tokenLogin','Account\AccountsController@loginViaToken')->name('login.token');
+
+// unsubscribe from email
+Route::get('/unsubscirbe', 'Account\AccountsController@unsubscirbeFromEmail')->name('unsubscirbe');
 
 // umatch api
 Route::post('/unmatch','MatchesController@unmatch');
