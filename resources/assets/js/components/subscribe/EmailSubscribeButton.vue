@@ -34,7 +34,7 @@
 				activeClass: 'active', 
 				subscribed: false,
 				email: '',
-				buttonText: 'Benachrichtigen',
+				buttonText: 'Benachrichtigung einschalten',
 				resultText:''
 			}
 		},
@@ -72,7 +72,7 @@
 				});
 				this.buttonText = 'Alles klar👍'
 				this.isActive = false
-				this.resultText = 'Checke deine Mails, es müsste ein Aktivierungscode kommen';
+				this.resultText = 'Die Benachrichtigung ist aktiviert!';
 				
 			}, 
 			handleButton(){

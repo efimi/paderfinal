@@ -1,7 +1,7 @@
 <template>
 	<div class="users">
-		<div class="users__header">online</div>
-		<div class="users__user" v-for="user in users">
+		<div class="users__header">gerade online</div>
+		<div class="users__user">
 			{{emojis}}
 			<!-- <a href="">{{ user.name }}</a>
 			<img :src="user.name" alt="#" class="users__user-avatar"> -->
@@ -23,7 +23,7 @@
 			// pluralize: pluralize,
 			users: function(){
 				var emojiset = Array("😬","😀","😉","😄")
-				for (var i = this.users.length; i <= 0; i--) {
+				for (var i = 0; i < this.users.length; i++) {
 					this.emojis = this.emojis + " " + emojiset[Math.floor(Math.random()*emojiset.length)]
 				}
 			}
