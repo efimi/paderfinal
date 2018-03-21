@@ -28,7 +28,7 @@ class SendNotificationActivationEmail
      */
     public function handle(UserSubscribedToEmailNotification $event)
     {
-
+        
         Mail::to($event->user->email)->send(new SubscribeActivationEmail($event->user));
 
     }
