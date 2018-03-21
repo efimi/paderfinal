@@ -9,7 +9,13 @@
                     <p>Auf die selbe Location werden bis zu 4 weitere Personen 🙋 gematcht</p>
                     <p>Das Padermeet-Treffen findet dort statt. 😀</p>
                     <p>Die Uhrzeit ist "fest" 🙃 um 20:00 Uhr.</p>
+                    {{-- <p>Am besten ist, wenn du die Benachrichtigungsfunktion aktivierst!</p> --}}
+                    <p>
+                        <div><email-subscribe-button></email-subscribe-button></div>
+                    </p>                    
                     <p>Probiert es einfach aus!</p>
+
+
 
                     <p class="title__caption">Klicke auf den Button und erfahre wo es heute für dich hingeht! </p>
                 

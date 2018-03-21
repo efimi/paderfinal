@@ -29,13 +29,13 @@ class SendAllUsersToJoinMail
      */
     public function handle(UserMatchedToLocation $event)
     {
-        $unmatchedUsers = User::allSubscribed();
+        $unmatchedUsers = User::allUnmatchedToday();
 
         $subscribers = $unmatchedUsers->reject(function ($user, $key) {
             return $user->subscribed === 0 ;
         });
         foreach ($subscribers as $user) {
-            Mail::to($user->email)->send( new JoinTodayEmail($user))
+            Mail::to($user->email)->send( new JoinTodayEmail($user));
         }
     }
 }

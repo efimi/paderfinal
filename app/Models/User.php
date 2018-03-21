@@ -86,7 +86,7 @@ class User extends Authenticatable
     {
         $all = User::all();
         $filtered = $all->reject(function ($user, $key) {
-            return count($user->mToday) === 1 ;
+            return count($user->mToday()) === 1 ;
         });
         return $filtered;
     }

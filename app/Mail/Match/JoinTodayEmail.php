@@ -2,10 +2,11 @@
 
 namespace App\Mail\Match;
 
+use App\Models\User;
 use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Contracts\Queue\ShouldQueue;
 
 class JoinTodayEmail extends Mailable
 {
@@ -30,7 +31,7 @@ class JoinTodayEmail extends Mailable
     public function build()
     {
         return $this->from('info@padermeet.de', 'Padermeet🎉')
-                    ->subject('Neues Match erstellt 📯!!! Heute schon was vor 😉?')
+                    ->subject('Gerade neues Match erstellt 🎉! Heute schon was vor 😉?')
                     ->markdown('emails.match.new_registered');
     }
 }
