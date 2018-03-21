@@ -171,25 +171,25 @@ body{
 }
 
 .loaded .preload-main .flex,
-.loaded .preload-main .flex:first-child {
+.loaded .preload-main .flex .box:first-child {
 	-webkit-animation-delay: 0.1s;
 	animation-delay: 0.1s;
 }
 
-.loaded .preload-main .flex:nth-child(2) {
+.loaded .preload-main .flex .box:nth-child(2) {
 	-webkit-animation-delay: 0.3s;
 	animation-delay: 0.3s;
 }
 
-.loaded .preload-main .flex:nth-child(3) {
+.loaded .preload-main .flex .box:nth-child(3) {
 	-webkit-animation-delay: 0.5s;
 	animation-delay: 0.5s;
 }
-.loaded .preload-main .flex:nth-child(4) {
+.loaded .preload-main .flex .box:nth-child(4) {
 	-webkit-animation-delay: 1s;
 	animation-delay: 1s;
 }
-.loaded .preload-main .flex:nth-child(5) {
+.loaded .preload-main .flex .box:nth-child(5) {
 	-webkit-animation-delay: 0.8s;
 	animation-delay: 0.8s;
 }
