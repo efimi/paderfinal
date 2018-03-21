@@ -1,8 +1,11 @@
 <template>
-	<div class="flex flex__column">
+	<div>
+		<small>Trage hier deine Email ein, um Benachrichtigungen zu erhalten</small>
 		<div class='centerMe'>
 		  <div class='cta' @click.once="handleButton" :class="[(isActive) ? activeClass : '']">
 		
+		   <!--  <span v-if="!subscribed">Notify me</span>
+		    <span v-else>Unsubscirbe</span> -->
 			<span>{{buttonText}}</span>
 		    <form v-on:submit.prevent>
 		      <div class='input'>
@@ -35,9 +38,17 @@
 			}
 		},
 		computed:{
+			subscribe(){
+				return this.subscription === '0';
+			}
 		},
 		created(){
-			this.buttonText =  "Eingabe"
+			if(this.subscribe) {
+			this.buttonText = 'Notify'
+			}
+			else{
+				this.buttonText = 'Unsubscribe'
+			}
 		},
 		watch: {
 			email: function(val){
@@ -54,24 +65,33 @@
 		methods:{
 			handleEmailInput(){
 				console.log('handle')
-				axios.post('/translateViaMail', {
+				axios.post('/subscribeToNotifications/', {
 					email: this.email,
-					id: window.Laravel.user.id,
-					// headers: {
-				 //        'Content-Type': 'text/plain;charset=utf-8',
-				 //    },
-
+					subscribe: this.subscribe,
+			        headers: {
+				        'Content-Type': 'application/json'
+				    }
 				}).catch((e) => {
 					console.log(e)
 				});
-				this.buttonText = 'Wurde gesendet 👍'
+				this.buttonText = 'Alles klar👍'
 				this.isActive = false
-				this.resultText = 'Clicke in der Mail auf den Button und öffne das Match auf einem anderen Device';
+				this.resultText = 'Checke deine Mails, es müsste ein Aktivierungscode kommen';
 				
 			}, 
 			handleButton(){
+				if (this.subscribe) {
 					this.isActive = true
-				
+				}
+				else{
+					axios.post('/subscribeToNotifications/', {
+					subscribe: false
+					}).catch((e) => {
+						console.log(e)
+					});
+					this.buttonText = 'Alles klar👍'
+					this.resultText = 'Du wurdest abgemeldet'
+				}
 			}
 		}
 	}
@@ -80,8 +100,8 @@
 <style lang="scss">
 	$paderblue: hsl(201, 100%, 50%);
 	
-	// @import url('https://fonts.googleapis.com/css?family=Roboto');
-	$button-text: $paderblue; 
+	@import url('https://fonts.googleapis.com/css?family=Roboto');
+	$button-text: #FF7B73; 
 	$background: #fff;
 	$font-size:18px;
 	.centerMe {  

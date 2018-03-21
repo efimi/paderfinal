@@ -28724,7 +28724,7 @@ Vue.component('footer-tab', __webpack_require__(220));
 // Vue.component('mod', require('./components/Modal.vue'));
 // Vue.component('logo', require('./components/Logo.vue'));
 Vue.component('unmatch-button', __webpack_require__(223));
-Vue.component('email-subscirbe-button', __webpack_require__(228));
+Vue.component('email-subscirbe', __webpack_require__(228));
 Vue.component('translate-email-button', __webpack_require__(233));
 
 
@@ -65288,10 +65288,10 @@ if(false) {
 
 exports = module.exports = __webpack_require__(3)(false);
 // imports
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Roboto);", ""]);
+
 
 // module
-exports.push([module.i, "\n::-webkit-input-placeholder {\n  color: #ffaba6;\n  background-color: #fff;\n}\n.cta {\n  font-size: 18px;\n  color: #FF7B73;\n  background: #fff;\n  font-weight: bold;\n  border-radius: 25px;\n  line-height: 50px;\n  height: 50px;\n  width: 170px;\n  text-align: center;\n  -webkit-transition: width .2s ease-in-out;\n  transition: width .2s ease-in-out;\n  cursor: pointer;\n}\n.cta .hide {\n    display: none;\n}\n.cta form {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n.cta span {\n    opacity: 0;\n    width: 100%;\n    text-align: center;\n    -webkit-animation: fadeIn .3s ease-in-out;\n            animation: fadeIn .3s ease-in-out;\n    -webkit-animation-delay: .2s;\n            animation-delay: .2s;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n}\n.cta .input {\n    font-size: 18px;\n    display: none;\n    opacity: 0;\n    -webkit-box-flex: 3;\n        -ms-flex: 3;\n            flex: 3;\n    text-align: left;\n}\n.cta .input input {\n      border: 0;\n      width: 240px;\n      margin: 0 0 0 25px;\n      outline: none;\n      color: #FF7B73;\n}\n.cta .button {\n    font-size: 18px;\n    display: none;\n    opacity: 0;\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n}\n.cta .button button {\n      outline: none;\n      float: right;\n      padding: 0 15px;\n      height: 40px;\n      background: #FF7B73;\n      border-radius: 25px;\n      color: #fff;\n      border: 0;\n      margin: 5px;\n      cursor: pointer;\n      -webkit-transition: all .2s ease-in-out;\n      transition: all .2s ease-in-out;\n}\n.cta .button button:disabled {\n        color: #FC9F9D;\n        opacity: .8;\n}\n.cta.sent {\n    cursor: default;\n}\n.cta.active {\n    width: 350px;\n    text-align: left;\n    -webkit-transition: width .2s ease-in-out;\n    transition: width .2s ease-in-out;\n    cursor: default;\n}\n.cta.active span {\n      display: none;\n}\n.cta.active .input, .cta.active .button {\n      display: block;\n      -webkit-animation: fadeIn .3s ease-in-out;\n              animation: fadeIn .3s ease-in-out;\n      -webkit-animation-delay: .1s;\n              animation-delay: .1s;\n      -webkit-animation-fill-mode: forwards;\n              animation-fill-mode: forwards;\n}\n@-webkit-keyframes fadeIn {\n0% {\n    opacity: 0;\n    -webkit-transform: scale(0.7);\n            transform: scale(0.7);\n}\n100% {\n    opacity: 1;\n    -webkit-transform: scale(1);\n            transform: scale(1);\n}\n}\n@keyframes fadeIn {\n0% {\n    opacity: 0;\n    -webkit-transform: scale(0.7);\n            transform: scale(0.7);\n}\n100% {\n    opacity: 1;\n    -webkit-transform: scale(1);\n            transform: scale(1);\n}\n}\n", ""]);
+exports.push([module.i, "\n::-webkit-input-placeholder {\n  color: #4d4d4d;\n  background-color: #00a6ff;\n}\n.cta {\n  font-size: 18px;\n  color: #333;\n  background: #00a6ff;\n  font-weight: bold;\n  border-radius: 25px;\n  line-height: 50px;\n  height: 50px;\n  width: 170px;\n  text-align: center;\n  -webkit-transition: width .2s ease-in-out;\n  transition: width .2s ease-in-out;\n  cursor: pointer;\n}\n.cta .hide {\n    display: none;\n}\n.cta form {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n.cta span {\n    opacity: 0;\n    width: 100%;\n    text-align: center;\n    -webkit-animation: fadeIn .3s ease-in-out;\n            animation: fadeIn .3s ease-in-out;\n    -webkit-animation-delay: .2s;\n            animation-delay: .2s;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n}\n.cta .input {\n    font-size: 18px;\n    display: none;\n    opacity: 0;\n    -webkit-box-flex: 3;\n        -ms-flex: 3;\n            flex: 3;\n    text-align: left;\n}\n.cta .input input {\n      border: 0;\n      width: 240px;\n      margin: 0 0 0 25px;\n      outline: none;\n      color: #333;\n}\n.cta .button {\n    font-size: 18px;\n    display: none;\n    opacity: 0;\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n}\n.cta .button button {\n      outline: none;\n      float: right;\n      padding: 0 15px;\n      height: 40px;\n      background: #333;\n      border-radius: 25px;\n      color: #00a6ff;\n      border: 0;\n      margin: 5px;\n      cursor: pointer;\n      -webkit-transition: all .2s ease-in-out;\n      transition: all .2s ease-in-out;\n}\n.cta .button button:disabled {\n        color: #FC9F9D;\n        opacity: .8;\n}\n.cta.sent {\n    cursor: default;\n}\n.cta.active {\n    width: 350px;\n    text-align: left;\n    -webkit-transition: width .2s ease-in-out;\n    transition: width .2s ease-in-out;\n    cursor: default;\n}\n.cta.active span {\n      display: none;\n}\n.cta.active .input, .cta.active .button {\n      display: block;\n      -webkit-animation: fadeIn .3s ease-in-out;\n              animation: fadeIn .3s ease-in-out;\n      -webkit-animation-delay: .1s;\n              animation-delay: .1s;\n      -webkit-animation-fill-mode: forwards;\n              animation-fill-mode: forwards;\n}\n@-webkit-keyframes fadeIn {\n0% {\n    opacity: 0;\n    -webkit-transform: scale(0.7);\n            transform: scale(0.7);\n}\n100% {\n    opacity: 1;\n    -webkit-transform: scale(1);\n            transform: scale(1);\n}\n}\n@keyframes fadeIn {\n0% {\n    opacity: 0;\n    -webkit-transform: scale(0.7);\n            transform: scale(0.7);\n}\n100% {\n    opacity: 1;\n    -webkit-transform: scale(1);\n            transform: scale(1);\n}\n}\n", ""]);
 
 // exports
 
@@ -65325,32 +65325,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	props: ['subscription'],
 	data: function data() {
 		return {
+
 			isActive: false,
 			isSendable: false,
 			activeClass: 'active',
-			// disabledClass: 'disabled',
+			subscribed: false,
 			email: '',
-			buttonText: '',
+			buttonText: 'Benachrichtigen',
 			resultText: ''
 		};
 	},
 
-	computed: {
-		subscribe: function subscribe() {
-			return this.subscription === '0';
-		}
-	},
+	computed: {},
 	created: function created() {
-		if (this.subscribe) {
-			this.buttonText = 'Notify';
+		if (subscription === 1) {
+			this.subscribed = true;
 		} else {
-			this.buttonText = 'Unsubscribe';
+			this.subscribed = false;
 		}
 	},
 
@@ -65366,13 +65364,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	},
 	methods: {
 		handleEmailInput: function handleEmailInput() {
-			console.log('handle');
+			console.log('handle Email Subscirbe');
 			axios.post('/subscribeToNotifications/', {
 				email: this.email,
-				subscribe: this.subscribe,
-				headers: {
-					'Content-Type': 'application/json'
-				}
+				subscribe: this.subscribe
 			}).catch(function (e) {
 				console.log(e);
 			});
@@ -65381,17 +65376,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			this.resultText = 'Checke deine Mails, es müsste ein Aktivierungscode kommen';
 		},
 		handleButton: function handleButton() {
-			if (this.subscribe) {
-				this.isActive = true;
-			} else {
-				axios.post('/subscribeToNotifications/', {
-					subscribe: false
-				}).catch(function (e) {
-					console.log(e);
-				});
-				this.buttonText = 'Alles klar👍';
-				this.resultText = 'Du wurdest abgemeldet';
-			}
+			this.isActive = true;
 		}
 	}
 });
@@ -65404,7 +65389,11 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticClass: "flex flex__column" }, [
+    _c("small", [
+      _vm._v("Trage hier deine Email ein, um Benachrichtigungen zu erhalten")
+    ]),
+    _vm._v(" "),
     _c("div", { staticClass: "centerMe" }, [
       _c(
         "div",
@@ -65567,7 +65556,7 @@ if(false) {
 
 exports = module.exports = __webpack_require__(3)(false);
 // imports
-exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Roboto);", ""]);
+
 
 // module
 exports.push([module.i, "\n::-webkit-input-placeholder {\n  color: #33b8ff;\n  background-color: #fff;\n}\n.cta {\n  font-size: 18px;\n  color: #00a6ff;\n  background: #fff;\n  font-weight: bold;\n  border-radius: 25px;\n  line-height: 50px;\n  height: 50px;\n  width: 170px;\n  text-align: center;\n  -webkit-transition: width .2s ease-in-out;\n  transition: width .2s ease-in-out;\n  cursor: pointer;\n}\n.cta .hide {\n    display: none;\n}\n.cta form {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n.cta span {\n    opacity: 0;\n    width: 100%;\n    text-align: center;\n    -webkit-animation: fadeIn .3s ease-in-out;\n            animation: fadeIn .3s ease-in-out;\n    -webkit-animation-delay: .2s;\n            animation-delay: .2s;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n}\n.cta .input {\n    font-size: 18px;\n    display: none;\n    opacity: 0;\n    -webkit-box-flex: 3;\n        -ms-flex: 3;\n            flex: 3;\n    text-align: left;\n}\n.cta .input input {\n      border: 0;\n      width: 240px;\n      margin: 0 0 0 25px;\n      outline: none;\n      color: #00a6ff;\n}\n.cta .button {\n    font-size: 18px;\n    display: none;\n    opacity: 0;\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n}\n.cta .button button {\n      outline: none;\n      float: right;\n      padding: 0 15px;\n      height: 40px;\n      background: #00a6ff;\n      border-radius: 25px;\n      color: #fff;\n      border: 0;\n      margin: 5px;\n      cursor: pointer;\n      -webkit-transition: all .2s ease-in-out;\n      transition: all .2s ease-in-out;\n}\n.cta .button button:disabled {\n        color: #FC9F9D;\n        opacity: .8;\n}\n.cta.sent {\n    cursor: default;\n}\n.cta.active {\n    width: 350px;\n    text-align: left;\n    -webkit-transition: width .2s ease-in-out;\n    transition: width .2s ease-in-out;\n    cursor: default;\n}\n.cta.active span {\n      display: none;\n}\n.cta.active .input, .cta.active .button {\n      display: block;\n      -webkit-animation: fadeIn .3s ease-in-out;\n              animation: fadeIn .3s ease-in-out;\n      -webkit-animation-delay: .1s;\n              animation-delay: .1s;\n      -webkit-animation-fill-mode: forwards;\n              animation-fill-mode: forwards;\n}\n@-webkit-keyframes fadeIn {\n0% {\n    opacity: 0;\n    -webkit-transform: scale(0.7);\n            transform: scale(0.7);\n}\n100% {\n    opacity: 1;\n    -webkit-transform: scale(1);\n            transform: scale(1);\n}\n}\n@keyframes fadeIn {\n0% {\n    opacity: 0;\n    -webkit-transform: scale(0.7);\n            transform: scale(0.7);\n}\n100% {\n    opacity: 1;\n    -webkit-transform: scale(1);\n            transform: scale(1);\n}\n}\n", ""]);

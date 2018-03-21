@@ -33,7 +33,7 @@ Vue.component('footer-tab', require('./components/footer-tab/FooterTab.vue'));
 // Vue.component('mod', require('./components/Modal.vue'));
 // Vue.component('logo', require('./components/Logo.vue'));
 Vue.component('unmatch-button', require('./components/match/UnmatchButton.vue'));
-Vue.component('email-subscirbe-button', require('./components/subscribe/EmailSubscribeButton.vue'));
+Vue.component('email-subscirbe', require('./components/subscribe/EmailSubscribeButton.vue'));
 Vue.component('translate-email-button', require('./components/translate/TranslateViaMail.vue'));
 
 

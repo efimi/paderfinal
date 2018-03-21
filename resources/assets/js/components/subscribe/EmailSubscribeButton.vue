@@ -1,5 +1,6 @@
 <template>
-	<div>
+	<div class="flex flex__column">
+		<small>Trage hier deine Email ein, um Benachrichtigungen zu erhalten</small>
 		<div class='centerMe'>
 		  <div class='cta' @click.once="handleButton" :class="[(isActive) ? activeClass : '']">
 		
@@ -27,26 +28,25 @@
 		props:['subscription'],
 		data(){
 			return {
+
 				isActive: false,
 				isSendable: false,
 				activeClass: 'active', 
-				// disabledClass: 'disabled',
+				subscribed: false,
 				email: '',
-				buttonText: '',
+				buttonText: 'Benachrichtigen',
 				resultText:''
 			}
 		},
 		computed:{
-			subscribe(){
-				return this.subscription === '0';
-			}
 		},
 		created(){
-			if(this.subscribe) {
-			this.buttonText = 'Notify'
+			if (subscription === 1) {
+				this.subscribed = true
 			}
-			else{
-				this.buttonText = 'Unsubscribe'
+			else
+			{
+				this.subscribed = false
 			}
 		},
 		watch: {
@@ -63,13 +63,10 @@
 		},
 		methods:{
 			handleEmailInput(){
-				console.log('handle')
+				console.log('handle Email Subscirbe')
 				axios.post('/subscribeToNotifications/', {
 					email: this.email,
 					subscribe: this.subscribe,
-			        headers: {
-				        'Content-Type': 'application/json'
-				    }
 				}).catch((e) => {
 					console.log(e)
 				});
@@ -79,18 +76,7 @@
 				
 			}, 
 			handleButton(){
-				if (this.subscribe) {
 					this.isActive = true
-				}
-				else{
-					axios.post('/subscribeToNotifications/', {
-					subscribe: false
-					}).catch((e) => {
-						console.log(e)
-					});
-					this.buttonText = 'Alles klar👍'
-					this.resultText = 'Du wurdest abgemeldet'
-				}
 			}
 		}
 	}
@@ -99,9 +85,9 @@
 <style lang="scss">
 	$paderblue: hsl(201, 100%, 50%);
 	
-	@import url('https://fonts.googleapis.com/css?family=Roboto');
-	$button-text: #FF7B73; 
-	$background: #fff;
+	// @import url('https://fonts.googleapis.com/css?family=Roboto');
+	$button-text: #333; 
+	$background: $paderblue;
 	$font-size:18px;
 	.centerMe {  
 		}

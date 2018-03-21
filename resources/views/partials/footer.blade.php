@@ -5,7 +5,7 @@
 			<p>Wenn du Padermeet von einem anderen Device nutzen möchtest dann schicke dir zunächst eine Mail:</p>
 			<translate-email-button></ranslate-email-button>
 			<p> Benachrichtigungsfunktion aktiviert? 😉 </p>
-			<email-subscirbe-button subscription="{{auth()->user()->subscribed}}"></email-subscirbe-button>
+			<email-subscirbe subscription="{{auth()->user()->subscribed}}"></email-subscirbe>
 			{{-- <small>Hier sollte ein Button sein:</small> --}}
 			{{-- <onesignal-button></onesignal-button> --}}
 			
