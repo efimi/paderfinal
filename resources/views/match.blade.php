@@ -23,6 +23,10 @@
 					<chat></chat>
 				</div>
 	</div>
+
+	<p>möchtest du dich unmachten? Dann klicke hier:</p>
+			<unmatch-button></unmatch-button>
+	
 </div>
     
 @endsection

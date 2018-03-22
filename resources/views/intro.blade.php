@@ -13,7 +13,7 @@
                     <p>
                         <div><email-subscirbe></email-subscirbe></div>
                     </p>                    
-                    <p>Probiert es einfach aus!</p>
+                    <p>Probier es einfach aus!</p>
 
 
 

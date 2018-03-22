@@ -1,7 +1,7 @@
 <template>
 	<div class="flex flex__column">
 		<small>Trage hier deine Email ein, um Benachrichtigungen zu erhalten</small>
-		<div class='centerMe'>
+		<div class='centerMe btn btn--white'>
 		  <div class='cta' @click.once="handleButton" :class="[(isActive) ? activeClass : '']">
 		
 		   <!--  <span v-if="!subscribed">Notify me</span>
@@ -34,7 +34,7 @@
 				activeClass: 'active', 
 				subscribed: false,
 				email: '',
-				buttonText: 'Benachrichtigung einschalten',
+				buttonText: 'benachrichtigen',
 				resultText:''
 			}
 		},
@@ -86,8 +86,8 @@
 	$paderblue: hsl(201, 100%, 50%);
 	
 	// @import url('https://fonts.googleapis.com/css?family=Roboto');
-	$button-text: #333; 
-	$background: $paderblue;
+	$button-text: $paderblue; 
+	$background: #fff;
 	$font-size:18px;
 	.centerMe {  
 		}

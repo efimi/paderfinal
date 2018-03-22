@@ -32,10 +32,10 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-     public function history()
-    {
-        return $this->hasMany(History::class);
-    }
+    protected $appends = [
+        'score',
+    ];
+
     public function matches()
     {
         return $this->hasMany(Match::class);
@@ -48,6 +48,17 @@ class User extends Authenticatable
     {
         return $this->hasMany(Feedback::class);
     }
+
+    
+
+    public function getScoreAttribute()
+    {
+        // every Match 100
+        $score_matches = $this->matches()->count() * 100;
+        $score_messages = $this->messages()->count();
+        return $score_messages + $score_matches;
+    }
+
 
     public function mToday()
     {
