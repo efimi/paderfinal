@@ -1,5 +1,5 @@
 <template>
-	<div class="users">
+	<div class="users flex flex__column">
 		<div class="users__header">gerade online</div>
 		<div class="users__user">
 			{{emojis}}
@@ -46,9 +46,9 @@
 
 <style lang="scss">
 	.users{
-		margin: 3vh 3vw;
-		border-radius: 5px;
-		border: 2px solid #fff;
+		margin: 2vh 3vw;
+		// border-radius: 5px;
+		// border: 2px solid #fff;
 
 		&__header{
 			padding: 15px;

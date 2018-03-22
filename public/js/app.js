@@ -63427,7 +63427,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.users {\n  margin: 3vh 3vw;\n  border-radius: 5px;\n  border: 2px solid #fff;\n}\n.users__header {\n    padding: 15px;\n    font-weight: 800;\n    margin: 0;\n    text-align: center;\n}\n.users__user {\n    padding: 0 15px;\n    text-align: center;\n}\n.users__user:last-child {\n      padding-bottom: 15px;\n}\n.users__user-avatar {\n    border-radius: 50%;\n    margin: 0 5px;\n}\n", ""]);
+exports.push([module.i, "\n.users {\n  margin: 2vh 3vw;\n}\n.users__header {\n    padding: 15px;\n    font-weight: 800;\n    margin: 0;\n    text-align: center;\n}\n.users__user {\n    padding: 0 15px;\n    text-align: center;\n}\n.users__user:last-child {\n      padding-bottom: 15px;\n}\n.users__user-avatar {\n    border-radius: 50%;\n    margin: 0 5px;\n}\n", ""]);
 
 // exports
 
@@ -63493,7 +63493,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "users" }, [
+  return _c("div", { staticClass: "users flex flex__column" }, [
     _c("div", { staticClass: "users__header" }, [_vm._v("gerade online")]),
     _vm._v(" "),
     _c("div", { staticClass: "users__user" }, [
@@ -66083,28 +66083,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	created: function created() {},
 
 	methods: {
-		handelButtonClick: function handelButtonClick() {
-			OneSignal.getUserId(function (userId) {
-				console.log("OneSignal User ID:", userId);
-				// var data = new Object();
-				// data.user_id = {{auth()->user()->id}};
-				// data.one_signal_player_id = userId;
+		handelButtonCLick: function handelButtonCLick() {
+			OneSignal.push(function () {
+				OneSignal.getUserId(function (userId) {
+					console.log("OneSignal User ID:", userId);
+					// var data = new Object();
+					// data.user_id = {{auth()->user()->id}};
+					// data.one_signal_player_id = userId;
 
-				// var url = "/onesignalid";
-				// var xhr = new XMLHttpRequest();
+					// var url = "/onesignalid";
+					// var xhr = new XMLHttpRequest();
 
-				// xhr.open("POST", url);
-				// xhr.setRequestHeader("X-CSRF-TOKEN", "{{ csrf_token() }}");
-				// xhr.setRequestHeader("content-type", "application/json");
-				// // xhr.onload = function() {
-				// //   var response = xhr.responseText;
-				// //   if (xhr.readyState == 4 && xhr.status == "200") {
-				// //           console.log(response);
-				// //   } else {
-				// //           console.log(response);
-				// //   }
-				// // }
-				// xhr.send(JSON.stringify(data));
+					// xhr.open("POST", url);
+					// xhr.setRequestHeader("X-CSRF-TOKEN", "{{ csrf_token() }}");
+					// xhr.setRequestHeader("content-type", "application/json");
+					// // xhr.onload = function() {
+					// //   var response = xhr.responseText;
+					// //   if (xhr.readyState == 4 && xhr.status == "200") {
+					// //           console.log(response);
+					// //   } else {
+					// //           console.log(response);
+					// //   }
+					// // }
+					// xhr.send(JSON.stringify(data));
+				});
 			});
 		}
 	}
