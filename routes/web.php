@@ -50,7 +50,7 @@ Route::get('/unsubscirbe', 'Account\AccountsController@unsubscirbeFromEmail')->n
 Route::post('/unmatch','MatchesController@unmatch');
 
 // OneSignal Get Player ID
-Route::post('/onesignalid', 'Account\AccountsController@onesignalidAdd')->name('onesignalid');
+Route::any('/onesignalid', 'Account\AccountsController@onesignalidAdd')->name('onesignalid');
 
 
 Auth::routes();

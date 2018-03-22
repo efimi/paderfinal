@@ -51,15 +51,15 @@
             'message.action.resubscribed': "Benachrichtigungen sind wieder aktiviert",
             'message.action.unsubscribed': "Du wirst keine Benachrichtiungen mehr erhalten",
             'dialog.main.title': 'Manage deine Benachrichtigungen',
-            'dialog.main.button.subscribe': 'SUBSCRIBE',
-            'dialog.main.button.unsubscribe': 'UNSUBSCRIBE',
+            'dialog.main.button.subscribe': 'aktivieren',
+            'dialog.main.button.unsubscribe': 'deaktiviern',
             'dialog.blocked.title': 'Deblockiere deine Benachrichtungen',
             'dialog.blocked.message': "Folge diesen Schritten🚶 um Benachrichtigungen zu erlauben:"
         }
     }
     
   });
-    
+
     OneSignal.getUserId(function(userId) {
       console.log("OneSignal User ID:", userId);
       var data = new Object();
@@ -72,14 +72,14 @@
       xhr.open("POST", url, true);
       xhr.setRequestHeader("X-CSRF-TOKEN", "{{ csrf_token() }}");
       xhr.setRequestHeader("content-type", "application/json");
-      xhr.onload = function() {
-        var response = xhr.responseText;
-        if (xhr.readyState == 4 && xhr.status == "200") {
-                console.log(response);
-        } else {
-                console.log(response);
-        }
-      }
+      // xhr.onload = function() {
+      //   var response = xhr.responseText;
+      //   if (xhr.readyState == 4 && xhr.status == "200") {
+      //           console.log(response);
+      //   } else {
+      //           console.log(response);
+      //   }
+      // }
       xhr.send(JSON.stringify(data));
      });
 
