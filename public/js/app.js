@@ -65296,6 +65296,7 @@ exports.push([module.i, "\n::-webkit-input-placeholder {\n  color: #33b8ff;\n  b
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__bus__ = __webpack_require__(5);
 //
 //
 //
@@ -65368,6 +65369,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			this.buttonText = 'Alles klar👍';
 			this.isActive = false;
 			this.resultText = 'Die Benachrichtigung ist aktiviert!';
+
+			__WEBPACK_IMPORTED_MODULE_0__bus__["a" /* default */].$emit('user.subscribed');
 		},
 		handleButton: function handleButton() {
 			this.isActive = true;
@@ -65740,7 +65743,7 @@ var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(241)
 /* template */
-var __vue_template__ = null
+var __vue_template__ = __webpack_require__(246)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -65758,7 +65761,6 @@ var Component = normalizeComponent(
   __vue_module_identifier__
 )
 Component.options.__file = "resources/assets/js/components/score/PaderPoints.vue"
-
 
 /* hot reload */
 if (false) {(function () {
@@ -65835,17 +65837,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	props: ['score'],
 	data: function data() {
 		return {
-			points: 0
+			points: 0,
+			explain: false
 		};
 	},
 	created: function created() {
-		this.points = this.score;
+		this.points = Number(this.score);
 	},
 	mounted: function mounted() {
 		var _this = this;
@@ -65855,6 +65864,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				_this.points = _this.points + 1;
 			}
 		});
+		__WEBPACK_IMPORTED_MODULE_0__bus__["a" /* default */].$on('user.subscribed', function () {
+			_this.points = _this.points + 200;
+		});
+	},
+
+	methods: {
+		showExplain: function showExplain() {
+			this.explain = !this.explain;
+		}
 	}
 });
 
@@ -65863,6 +65881,92 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 243 */,
+/* 244 */,
+/* 245 */,
+/* 246 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "div",
+      {
+        staticClass: "score btn btn--white flex flex__column",
+        on: { click: _vm.showExplain }
+      },
+      [_vm._v("\n\t\tDeine PaderPoints: " + _vm._s(_vm.points) + "\n\t")]
+    ),
+    _vm._v(" "),
+    _c(
+      "small",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.explain,
+            expression: "explain"
+          }
+        ]
+      },
+      [_vm._v(" Pro Match bekommst du "), _c("b", [_vm._v("100 Pp")])]
+    ),
+    _vm._v(" "),
+    _c("br"),
+    _vm._v(" "),
+    _c(
+      "small",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.explain,
+            expression: "explain"
+          }
+        ]
+      },
+      [_vm._v("Pro Pinnwand Post "), _c("b", [_vm._v("1 Pp")])]
+    ),
+    _vm._v(" "),
+    _c("br"),
+    _vm._v(" "),
+    _c(
+      "small",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.explain,
+            expression: "explain"
+          }
+        ]
+      },
+      [
+        _vm._v(
+          "Für das Einschalten der Benachrichtigungsfunktion bekommst du "
+        ),
+        _c("b", [_vm._v("200Pp")])
+      ]
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-4631415f", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

@@ -1,15 +1,15 @@
 <footer class="footer">
 		<div class="flex " style="justify-content: flex-end; ">
 
-			<div class="btn btn--white" style="margin-right: 5px;">Deine Paderponts: {{auth()->user()->score}}</div>			
-			<paderpoints score="{{ auth()->user()->score }}"></paderpoints>
+					
 		</div>
 		<div class="flex flex__column">
-			
+
+			<paderpoints score="{{ auth()->user()->score }}"></paderpoints>	
 			{{-- <p>Wenn du Padermeet von einem anderen Device nutzen möchtest dann schicke dir zunächst eine Mail:</p>
 			<translate-email-button></ranslate-email-button> --}}
 
-				
+
 			<p> Benachrichtigungsfunktion aktiviert? 😉 </p>
 			<email-subscirbe subscription="{{auth()->user()->subscribed}}"></email-subscirbe>
 			{{-- <small>Hier sollte ein Button sein:</small> --}}

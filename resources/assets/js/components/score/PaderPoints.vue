@@ -1,11 +1,17 @@
-<tempalte>
+<template>
 	<div>	
-		<div class="score btn btn--white">
-			<div class="score__description">Deine PaderPoints: </div>
-			<div class="score__points">{{points}}</div>
+		<div class="score btn btn--white flex flex__column" @click="showExplain">
+			Deine PaderPoints: {{points}}
 		</div>
+		
+			<small v-show="explain"> Pro Match bekommst du <b>100 Pp</b></small>
+			<br>
+			<small v-show="explain">Pro Pinnwand Post <b>1 Pp</b></small>
+			<br>
+			<small v-show="explain">Für das Einschalten der Benachrichtigungsfunktion bekommst du <b>200Pp</b> </small>
+		
 	</div>
-</tempalte>
+</template>
 
 <script>
 	import Bus from '../../bus'
@@ -13,11 +19,12 @@
 		props: ['score'],
 		data(){
 			return {
-				points: 0
+				points: 0,
+				explain: false
 			}
 		},
 		created(){
-			this.points = this.score;
+			this.points = Number(this.score);
 		},
 		mounted(){
 			Bus.$on('message.added',  (message) => {
@@ -25,6 +32,14 @@
 					this.points = this.points + 1 
 				}
 			});
+			Bus.$on('user.subscribed',() =>{
+				this.points = this.points + 200
+			})
+		},
+		methods:{
+			showExplain(){
+				this.explain = !this.explain
+			},
 		}
 	}
 

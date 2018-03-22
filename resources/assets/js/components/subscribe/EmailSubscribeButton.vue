@@ -23,7 +23,7 @@
 </template>
 
 <script>
-
+	import Bus from '../../bus'
 	export default {
 		props:['subscription'],
 		data(){
@@ -73,6 +73,8 @@
 				this.buttonText = 'Alles klar👍'
 				this.isActive = false
 				this.resultText = 'Die Benachrichtigung ist aktiviert!';
+
+				Bus.$emit('user.subscribed')
 				
 			}, 
 			handleButton(){

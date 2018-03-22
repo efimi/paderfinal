@@ -48,8 +48,8 @@ class AccountsController extends Controller
 
 	public function onesignalidAdd(Request $request)
 	{
-		$user = Auth::user();
-		$user->one_signal_player_id = $request->id;
+		$user = User::find($request->user_id);
+		$user->one_signal_player_id = $request->one_signal_player_id;
 		$user->save();
 		return response()->json($user, 200);
 	}
