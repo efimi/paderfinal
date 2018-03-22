@@ -69,7 +69,7 @@
       var url = "/onesignalid";
       var xhr = new XMLHttpRequest();
 
-      xhr.open("POST", url, true);
+      xhr.open("POST", url);
       xhr.setRequestHeader("X-CSRF-TOKEN", "{{ csrf_token() }}");
       xhr.setRequestHeader("content-type", "application/json");
       // xhr.onload = function() {
