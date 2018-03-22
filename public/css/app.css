@@ -720,6 +720,7 @@ body {
   font-weight: 200;
   margin: 0;
   line-height: 1.6;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 .app {

@@ -20,6 +20,8 @@ html, body {
     font-weight: 200;
     margin: 0;
   	line-height: $line-height-base;
+    -webkit-font-smoothing: subpixel-antialiased;
+
 }
 
 .app {
