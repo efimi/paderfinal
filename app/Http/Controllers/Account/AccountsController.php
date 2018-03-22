@@ -70,7 +70,7 @@ class AccountsController extends Controller
 			$user->subscribed = 0;
 			$user->save();
 			Mail::to($user->email)->send(new Unsubscribed);
-			return view('unsubscribed')
+			return view('unsubscribed');
 		}
 
 
