@@ -56,7 +56,7 @@ class User extends Authenticatable
         // every Match 100
         $score_matches = $this->matches()->count() * 100;
         $score_messages = $this->messages()->count();
-        $score_subscribtion = $this->subscribed * 200;w
+        $score_subscribtion = $this->subscribed * 200;
         return $score_messages + $score_matches + $score_subscribtion;
     }
 
