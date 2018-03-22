@@ -18,28 +18,14 @@
 		methods:{
 			handelButtonCLick(){
 				OneSignal.push(function() {
-					OneSignal.getUserId(function(userId) {
+				  // Occurs when the user's subscription changes to a new value.
+				  OneSignal.on('subscriptionChange', function (isSubscribed) {
+				    console.log("The user's subscription state is now:", isSubscribed);
+				    OneSignal.getUserId(function(userId) {
 				      console.log("OneSignal User ID:", userId);
-				      // var data = new Object();
-				      // data.user_id = {{auth()->user()->id}};
-				      // data.one_signal_player_id = userId;
-
-				      // var url = "/onesignalid";
-				      // var xhr = new XMLHttpRequest();
-
-				      // xhr.open("POST", url);
-				      // xhr.setRequestHeader("X-CSRF-TOKEN", "{{ csrf_token() }}");
-				      // xhr.setRequestHeader("content-type", "application/json");
-				      // // xhr.onload = function() {
-				      // //   var response = xhr.responseText;
-				      // //   if (xhr.readyState == 4 && xhr.status == "200") {
-				      // //           console.log(response);
-				      // //   } else {
-				      // //           console.log(response);
-				      // //   }
-				      // // }
-				      // xhr.send(JSON.stringify(data));
+				      // (Output) OneSignal User ID: 270a35cd-4dda-4b3f-b04e-41d7463a2316    
 				     });
+				  });
 				});
 			},
 		}
