@@ -38,10 +38,10 @@
         offset: {
             bottom: '30px',
             left: '0px', /* Only applied if bottom-left */
-            right: '0px' /* Only applied if bottom-right */
+            right: '30px' /* Only applied if bottom-right */
         },
         prenotify: true, /* Show an icon with 1 unread message for first-time site visitors */
-        showCredit: true, /* Hide the OneSignal logo */
+        showCredit: false, /* Hide the OneSignal logo */
         text: {
             'tip.state.unsubscribed': 'Schalte die Benachrichtigungen ein 😀',
             'tip.state.subscribed': "Benachrichtigungen sind eingeschaltet ✅",
@@ -59,10 +59,7 @@
     }
     
   });
-});
-
-OneSignal.on('subscriptionChange', function (isSubscribed) {
-    console.log("The user's subscription state is now:", isSubscribed);
+    
     OneSignal.getUserId(function(userId) {
       console.log("OneSignal User ID:", userId);
       var data = new Object();
@@ -85,7 +82,12 @@ OneSignal.on('subscriptionChange', function (isSubscribed) {
       }
       xhr.send(JSON.stringify(data));
      });
+
 });
+
+
+    
+
   
 </script>
 
