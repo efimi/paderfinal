@@ -28681,7 +28681,7 @@ return zhTw;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(141);
-module.exports = __webpack_require__(242);
+module.exports = __webpack_require__(248);
 
 
 /***/ }),
@@ -28725,9 +28725,9 @@ Vue.component('footer-tab', __webpack_require__(220));
 // Vue.component('logo', require('./components/Logo.vue'));
 Vue.component('unmatch-button', __webpack_require__(223));
 Vue.component('email-subscirbe', __webpack_require__(228));
-Vue.component('one-signal', __webpack_require__(247));
-Vue.component('translate-email-button', __webpack_require__(233));
-Vue.component('paderpoints', __webpack_require__(238));
+Vue.component('one-signal', __webpack_require__(233));
+Vue.component('translate-email-button', __webpack_require__(238));
+Vue.component('paderpoints', __webpack_require__(243));
 
 
 window.Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue2_collapse__["a" /* default */]);
@@ -64952,7 +64952,7 @@ var render = function() {
             ],
             staticClass: "btn btn--white transform--towards"
           },
-          [_vm._v("Feedback📝")]
+          [_vm._v("Feedback")]
         )
       ]),
       _vm._v(" "),
@@ -65286,7 +65286,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n::-webkit-input-placeholder {\n  color: #33b8ff;\n  background-color: #fff;\n}\n.cta {\n  font-size: 18px;\n  color: #00a6ff;\n  background: #fff;\n  font-weight: bold;\n  border-radius: 25px;\n  line-height: 50px;\n  height: 50px;\n  width: 170px;\n  text-align: center;\n  -webkit-transition: width .2s ease-in-out;\n  transition: width .2s ease-in-out;\n  cursor: pointer;\n}\n.cta .hide {\n    display: none;\n}\n.cta form {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n.cta span {\n    opacity: 0;\n    width: 100%;\n    text-align: center;\n    -webkit-animation: fadeIn .3s ease-in-out;\n            animation: fadeIn .3s ease-in-out;\n    -webkit-animation-delay: .2s;\n            animation-delay: .2s;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n}\n.cta .input {\n    font-size: 18px;\n    display: none;\n    opacity: 0;\n    -webkit-box-flex: 3;\n        -ms-flex: 3;\n            flex: 3;\n    text-align: left;\n}\n.cta .input input {\n      border: 0;\n      width: 240px;\n      margin: 0 0 0 25px;\n      outline: none;\n      color: #00a6ff;\n}\n.cta .button {\n    font-size: 18px;\n    display: none;\n    opacity: 0;\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n}\n.cta .button button {\n      outline: none;\n      float: right;\n      padding: 0 15px;\n      height: 40px;\n      background: #00a6ff;\n      border-radius: 25px;\n      color: #fff;\n      border: 0;\n      margin: 5px;\n      cursor: pointer;\n      -webkit-transition: all .2s ease-in-out;\n      transition: all .2s ease-in-out;\n}\n.cta .button button:disabled {\n        color: #FC9F9D;\n        opacity: .8;\n}\n.cta.sent {\n    cursor: default;\n}\n.cta.active {\n    width: 350px;\n    text-align: left;\n    -webkit-transition: width .2s ease-in-out;\n    transition: width .2s ease-in-out;\n    cursor: default;\n}\n.cta.active span {\n      display: none;\n}\n.cta.active .input, .cta.active .button {\n      display: block;\n      -webkit-animation: fadeIn .3s ease-in-out;\n              animation: fadeIn .3s ease-in-out;\n      -webkit-animation-delay: .1s;\n              animation-delay: .1s;\n      -webkit-animation-fill-mode: forwards;\n              animation-fill-mode: forwards;\n}\n@-webkit-keyframes fadeIn {\n0% {\n    opacity: 0;\n    -webkit-transform: scale(0.7);\n            transform: scale(0.7);\n}\n100% {\n    opacity: 1;\n    -webkit-transform: scale(1);\n            transform: scale(1);\n}\n}\n@keyframes fadeIn {\n0% {\n    opacity: 0;\n    -webkit-transform: scale(0.7);\n            transform: scale(0.7);\n}\n100% {\n    opacity: 1;\n    -webkit-transform: scale(1);\n            transform: scale(1);\n}\n}\n", ""]);
+exports.push([module.i, "\n::-webkit-input-placeholder {\n  color: #33b8ff;\n  background-color: #fff;\n}\n.cta {\n  font-size: 18px;\n  color: #00a6ff;\n  background: #fff;\n  font-weight: bold;\n  border-radius: 25px;\n  line-height: 50px;\n  height: 50px;\n  width: 170px;\n  text-align: center;\n  -webkit-transition: width .2s ease-in-out;\n  transition: width .2s ease-in-out;\n  cursor: pointer;\n}\n.cta .hide {\n    display: none;\n}\n.cta form {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n.cta span {\n    opacity: 0;\n    width: 100%;\n    text-align: center;\n    -webkit-animation: fadeIn .3s ease-in-out;\n            animation: fadeIn .3s ease-in-out;\n    -webkit-animation-delay: .2s;\n            animation-delay: .2s;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n}\n.cta .input {\n    font-size: 18px;\n    display: none;\n    opacity: 0;\n    -webkit-box-flex: 3;\n        -ms-flex: 3;\n            flex: 3;\n    text-align: left;\n}\n.cta .input input {\n      border: 0;\n      width: 190px;\n      margin: 0 0 0 25px;\n      outline: none;\n      color: #00a6ff;\n}\n.cta .button {\n    font-size: 18px;\n    display: none;\n    opacity: 0;\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n}\n.cta .button button {\n      outline: none;\n      float: right;\n      padding: 0 15px;\n      height: 40px;\n      background: #00a6ff;\n      border-radius: 25px;\n      color: #fff;\n      border: 0;\n      margin: 5px;\n      cursor: pointer;\n      -webkit-transition: all .2s ease-in-out;\n      transition: all .2s ease-in-out;\n}\n.cta .button button:disabled {\n        color: #FC9F9D;\n        opacity: .8;\n}\n.cta.sent {\n    cursor: default;\n}\n.cta.active {\n    width: 300px;\n    text-align: left;\n    -webkit-transition: width .2s ease-in-out;\n    transition: width .2s ease-in-out;\n    cursor: default;\n}\n.cta.active span {\n      display: none;\n}\n.cta.active .input, .cta.active .button {\n      display: block;\n      -webkit-animation: fadeIn .3s ease-in-out;\n              animation: fadeIn .3s ease-in-out;\n      -webkit-animation-delay: .1s;\n              animation-delay: .1s;\n      -webkit-animation-fill-mode: forwards;\n              animation-fill-mode: forwards;\n}\n@-webkit-keyframes fadeIn {\n0% {\n    opacity: 0;\n    -webkit-transform: scale(0.7);\n            transform: scale(0.7);\n}\n100% {\n    opacity: 1;\n    -webkit-transform: scale(1);\n            transform: scale(1);\n}\n}\n@keyframes fadeIn {\n0% {\n    opacity: 0;\n    -webkit-transform: scale(0.7);\n            transform: scale(0.7);\n}\n100% {\n    opacity: 1;\n    -webkit-transform: scale(1);\n            transform: scale(1);\n}\n}\n", ""]);
 
 // exports
 
@@ -65392,7 +65392,7 @@ var render = function() {
       _vm._v("Trage hier deine Email ein, um Benachrichtigungen zu erhalten")
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "centerMe btn btn--white" }, [
+    _c("div", { staticClass: "centerMe" }, [
       _c(
         "div",
         {
@@ -65501,6 +65501,190 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
+Component.options.__file = "resources/assets/js/components/subscribe/OneSignalSubscribe.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-1b876750", Component.options)
+  } else {
+    hotAPI.reload("data-v-1b876750", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 234 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(235);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(4)("3f9c293d", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1b876750\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./OneSignalSubscribe.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1b876750\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./OneSignalSubscribe.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 235 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+/* 236 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data: function data() {
+		return {
+			subscribed: false,
+			buttonText: "Schalte Benachrichtigungen ein😉"
+		};
+	},
+	mounted: function mounted() {
+		var OneSignal = OneSignal || [];
+		OneSignal.push(function () {
+			// Occurs when the user's subscription changes to a new value.
+			OneSignal.on('subscriptionChange', function (isSubscribed) {
+				console.log("The user's subscription state is now:", isSubscribed);
+				OneSignal.getUserId(function (userId) {
+					console.log("OneSignal User ID:", userId);
+					// (Output) OneSignal User ID: 270a35cd-4dda-4b3f-b04e-41d7463a2316    
+				});
+			});
+		});
+	},
+
+	methods: {
+		handelButtonCLick: function handelButtonCLick() {
+			this.getSubscriptionState().then(function (state) {
+				if (state.isPushEnabled) {
+					/* Subscribed, opt them out */
+					OneSignal.setSubscription(false);
+				} else {
+					if (state.isOptedOut) {
+						/* Opted out, opt them back in */
+						OneSignal.setSubscription(true);
+					} else {
+						/* Unsubscribed, subscribe them */
+						OneSignal.registerForPushNotifications();
+					}
+				}
+			});
+		},
+		getSubscriptionState: function getSubscriptionState() {
+			return Promise.all([OneSignal.isPushNotificationsEnabled(), OneSignal.isOptedOut()]).then(function (result) {
+				var isPushEnabled = result[0];
+				var isOptedOut = result[1];
+
+				return {
+					isPushEnabled: isPushEnabled,
+					isOptedOut: isOptedOut
+				};
+			});
+		}
+	}
+});
+
+/***/ }),
+/* 237 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "subscribe" }, [
+    _c("a", {
+      staticClass: "btn btn--white",
+      attrs: { id: "my-notification-button" },
+      domProps: { textContent: _vm._s(_vm.buttonText) },
+      on: { click: _vm.handelButtonCLick }
+    })
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-1b876750", module.exports)
+  }
+}
+
+/***/ }),
+/* 238 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(239)
+}
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(241)
+/* template */
+var __vue_template__ = __webpack_require__(242)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
 Component.options.__file = "resources/assets/js/components/translate/TranslateViaMail.vue"
 
 /* hot reload */
@@ -65523,13 +65707,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 234 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(235);
+var content = __webpack_require__(240);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -65549,7 +65733,7 @@ if(false) {
 }
 
 /***/ }),
-/* 235 */
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -65563,7 +65747,7 @@ exports.push([module.i, "\n::-webkit-input-placeholder {\n  color: #33b8ff;\n  b
 
 
 /***/ }),
-/* 236 */
+/* 241 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -65644,7 +65828,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 237 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -65732,19 +65916,19 @@ if (false) {
 }
 
 /***/ }),
-/* 238 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(239)
+  __webpack_require__(244)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(241)
+var __vue_script__ = __webpack_require__(246)
 /* template */
-var __vue_template__ = __webpack_require__(246)
+var __vue_template__ = __webpack_require__(247)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -65783,13 +65967,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 239 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(240);
+var content = __webpack_require__(245);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -65809,7 +65993,7 @@ if(false) {
 }
 
 /***/ }),
-/* 240 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -65823,7 +66007,7 @@ exports.push([module.i, "", ""]);
 
 
 /***/ }),
-/* 241 */
+/* 246 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -65878,16 +66062,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 242 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 243 */,
-/* 244 */,
-/* 245 */,
-/* 246 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -65970,163 +66145,10 @@ if (false) {
 }
 
 /***/ }),
-/* 247 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(248)
-}
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(250)
-/* template */
-var __vue_template__ = __webpack_require__(251)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/subscribe/OneSignalSubscribe.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-1b876750", Component.options)
-  } else {
-    hotAPI.reload("data-v-1b876750", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
 /* 248 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(249);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(4)("3f9c293d", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1b876750\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./OneSignalSubscribe.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1b876750\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./OneSignalSubscribe.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 249 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(3)(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/***/ }),
-/* 250 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-	data: function data() {
-		return {
-			buttonSelector: "#my-notification-button"
-		};
-	},
-	created: function created() {},
-
-	methods: {
-		handelButtonCLick: function handelButtonCLick() {
-			OneSignal.push(function () {
-				// Occurs when the user's subscription changes to a new value.
-				OneSignal.on('subscriptionChange', function (isSubscribed) {
-					console.log("The user's subscription state is now:", isSubscribed);
-					OneSignal.getUserId(function (userId) {
-						console.log("OneSignal User ID:", userId);
-						// (Output) OneSignal User ID: 270a35cd-4dda-4b3f-b04e-41d7463a2316    
-					});
-				});
-			});
-		}
-	}
-});
-
-/***/ }),
-/* 251 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "subscribe" }, [
-    _c(
-      "a",
-      {
-        staticClass: "btn btn--white",
-        attrs: { id: "my-notification-button" },
-        on: { click: _vm.handelButtonCLick }
-      },
-      [_vm._v("Schalte Benachrichtigungen ein😉")]
-    )
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-1b876750", module.exports)
-  }
-}
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

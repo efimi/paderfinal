@@ -12,7 +12,7 @@
                     {{-- <p>Am besten ist, wenn du die Benachrichtigungsfunktion aktivierst!</p> --}}
                     <p>
                         <div><email-subscirbe></email-subscirbe></div>
-                        <one-signal></one-signal>
+                        {{-- <one-signal></one-signal> --}}
                     </p>                    
                     <p>Probier es einfach aus!</p>
 

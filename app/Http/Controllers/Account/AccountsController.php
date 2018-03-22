@@ -50,6 +50,7 @@ class AccountsController extends Controller
 	{
 		$user = User::find($request->user_id);
 		$user->one_signal_player_id = $request->one_signal_player_id;
+		$user->subscribed = 1;
 		$user->save();
 		return response()->json($user, 200);
 	}

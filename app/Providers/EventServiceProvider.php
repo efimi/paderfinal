@@ -15,6 +15,8 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         'App\Events\Match\UserMatchedToLocation' => [
             'App\Listeners\Match\SendAllUsersToJoinMail',
+            'App\Listeners\Match\SendAllUsersToJoinSignal',
+
         ],
         // 'App\Events\Chat\MessageCreated' => [
         //     'App\Listeners\User\SendNotificationToAllParticipants',

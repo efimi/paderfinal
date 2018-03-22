@@ -1,6 +1,6 @@
 <template>
 	<div class="subscribe">
-		 <a @click="handelButtonCLick" id="my-notification-button" class="btn btn--white">Schalte Benachrichtigungen ein😉</a>
+		 <a @click="handelButtonCLick" id="my-notification-button" class="btn btn--white" v-text="buttonText"></a>
 	</div>
 </template>
 
@@ -9,14 +9,12 @@
 	export default {
 		data(){
 			return {
-				 buttonSelector: "#my-notification-button",
+				 subscribed: false,
+				 buttonText: "Schalte Benachrichtigungen ein😉"
 			}
 		},
-		created(){
-			
-		},
-		methods:{
-			handelButtonCLick(){
+		mounted(){
+				var OneSignal = OneSignal || [];
 				OneSignal.push(function() {
 				  // Occurs when the user's subscription changes to a new value.
 				  OneSignal.on('subscriptionChange', function (isSubscribed) {
@@ -27,8 +25,42 @@
 				     });
 				  });
 				});
+			
+		},
+		methods:{
+			handelButtonCLick(){
+				this.getSubscriptionState().then(function(state) {
+					if (state.isPushEnabled) {
+		                /* Subscribed, opt them out */
+		                OneSignal.setSubscription(false);
+		            } else {
+		                if (state.isOptedOut) {
+		                    /* Opted out, opt them back in */
+		                    OneSignal.setSubscription(true);
+		                } else {
+		                    /* Unsubscribed, subscribe them */
+		                  OneSignal.registerForPushNotifications();
+		                }
+		            }
+				});
+		            
+		            
 			},
-		}
+			getSubscriptionState(){
+		        return Promise.all([
+		          OneSignal.isPushNotificationsEnabled(),
+		          OneSignal.isOptedOut()
+			        ]).then(function(result) {
+			            var isPushEnabled = result[0];
+			            var isOptedOut = result[1];
+
+			            return {
+			                isPushEnabled: isPushEnabled,
+			                isOptedOut: isOptedOut
+				            };
+				        });
+		    },
+		}	
 	}
 </script>
 

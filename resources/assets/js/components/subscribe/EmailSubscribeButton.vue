@@ -1,7 +1,7 @@
 <template>
 	<div class="flex flex__column">
 		<small>Trage hier deine Email ein, um Benachrichtigungen zu erhalten</small>
-		<div class='centerMe btn btn--white'>
+		<div class='centerMe'>
 		  <div class='cta' @click.once="handleButton" :class="[(isActive) ? activeClass : '']">
 		
 		   <!--  <span v-if="!subscribed">Notify me</span>
@@ -131,7 +131,7 @@
 		text-align: left;
 		input {
 			border: 0;
-			width: 240px;
+			width: 190px;
 			// height: 45px;
 			margin: 0 0 0 25px;
 			outline: none;
@@ -160,7 +160,7 @@
 	}
 	&.sent { cursor: default; }
 	&.active {
-		width: 350px;
+		width: 300px;
 		text-align: left;
 		transition: width .2s ease-in-out;
 		cursor: default;

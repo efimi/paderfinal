@@ -26,6 +26,10 @@
 		<div>
 			<users-online></users-online>
 		</div>
+	
+		<div class="flex flex__column">{{\App\Models\Match::mToday()->count()}} Match{{\App\Models\Match::mToday()->count() === 1 ? '' : 'es'}} heute | {{\App\Models\Match::all()->count()}} Matches total </div>
+
+		
 
 		@include('partials.town')
 </footer>
