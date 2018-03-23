@@ -100,7 +100,8 @@
 			'id' => auth()->check() ? auth()->user()->id : null,
 			'name' => auth()->check() ? auth()->user()->name : null,
 			'matchedLocationId' => auth()->check() ? auth()->user()->mLocationID() : null,
-			'matchPosition' => auth()->user()->matchPosition(),
+      'matchPosition' => auth()->user()->matchPosition(),
+			'avatarPath' => auth()->user()->avatarPath(),
 		], 
 		'keys' => [
 			'pusher' => config('broadcasting.connections.pusher.key'),

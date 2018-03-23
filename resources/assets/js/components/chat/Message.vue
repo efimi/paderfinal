@@ -1,10 +1,13 @@
 <template>
-	<div class="chat__message shadow" :class="{'chat__message--own': message.selfOwned}">
-		<div class="chat__message-user">
-			
+	<div>
+		<img class="chat__message-avatar" :src="message.user.avatarPath" alt="">
+		<div class="chat__message" :class="[classObject, cardColor]">
+					
+				<div class="chat__message-body">
+					<span style="margin: 20px;">{{message.body}}</span>
+					<span class="chat__message-timestamp">{{ time }}</span>
+				</div>
 		</div>
-			<span class="chat__message-timestamp">{{ time }}</span>
-			<p class="chat__message-body">{{ message.body }}</p>
 	</div>
 </template>
 
@@ -16,69 +19,96 @@
 			var self = this;
 			return{
 				time: '',
-				colorArray: ['hsl(210 , 82 , 50 )', 'hsl(130 , 50 , 51 )', 'hsl(337 , 50 , 46 )','hsl(133 , 50 , 65 )', 'hsl(28 , 50 , 70 )','hsl(180 , 50 , 59 )' , 'hsl(274 , 50 , 82 )'],
-				colorClass:'',
-				styles: {
-					'background-color' : this.colorArray[2]
-				},
+				classObject: {
+			      'chat__message--own': this.message.selfOwned
+			    },
+			    cardColor: ''
 			}
 		},
 		created(){
 			this.time = moment(this.message.created_at).format('HH:mm');
-			this.setColorClass(this.message.matchPosition);
+			this.cardColor = "color--" + this.message.matchPosition
 		},
-		methods: {
-			setColorClass(number){
-				this.colorClass = "color--" + number ;
-			}
-		}
 	}
 </script>
 
 <style lang="scss">
 	.color{
-			&--1{background-color: hsl(210 , 82 , 50 );}
-			&--2{background-color: hsl(130 , 50 , 51 );}
-			&--3{background-color: hsl(337 , 50 , 46 );}
-			&--4{background-color: hsl(133 , 50 , 65 );}
-			&--5{background-color: hsl(28 , 50 , 70 );}
-			&--6{background-color: hsl(180 , 50 , 59 );}
-			&--7{background-color: hsl(274 , 50 , 82 );}
+			&--1{
+				background-image: linear-gradient(112deg, #ff4f81, #ff6c5f);
+				background-shadow: 0 2px 6px 0 rgba(255,108,95, 0.4);
+			} 
+			&--2{
+				background-image: linear-gradient(284deg, #1cc7d0, #2dde98);
+				background-shadow: 0 2px 6px 0 rgba(45,222,152, 0.4);
+			}
+			&--3{
+				background-image: linear-gradient(80deg, #00aeff, #3369e7);
+				background-shadow: 0 2px 6px 0 rgba(51,105,231, 0.4);
+			}
+			&--4{
+				background-image: linear-gradient(80deg, #8E63E0, #401bb1);
+				background-shadow: 0 2px 6px 0 rgba(64,27,177, 0.4);
+			}
+
+			&--5{
+				background-image: linear-gradient(80deg, #ffc168, #e0350e);
+				background-shadow: 0 2px 6px 0 rgba(64,27,177, 0.4);
+			}
+			&--6{
+				background-image: linear-gradient(80deg, #f3c481, #a7616e);
+				background-shadow: 0 2px 6px 0 rgba(167,97,110, 0.4);
+			}
+			&--7{
+				background-image: linear-gradient(80deg, #ff4f81, #152e8a);
+				background-shadow: 0 2px 6px 0 rgba(21,46,138, 0.4);			}
 	}
 	.chat{
+		
 		&__message{
-			padding: 2vw 4vw;
-			// border-bottom: 1px solid hsl(234, 100%, 40%);
-			display: flex;
-			flex-direction: column;
-			align-content:center;
-			margin: 4vh 5vw;
-			border-radius: 30px;
 
+			
+		    margin: 2vh 0;
+			border-radius: 30px;
+			display: flex;
+			flex-direction:row;
+			justify-content: center;
+			
+			&__header{
+			flex-direction:row;
+				
+			}
+			&__footer{
+				flex-direction:row;
+				justif-conten:center;				
+			}
+			
+			&-avatar{
+				border-radius: 50%;
+				max-width: 60px;
+				margin: -45px 40%;
+			}
 
 			&--own{
-				background-color: hsl(201, 100%, 55%);
-				color: rgba(255,255,255,1);
-				text-align: right;
+				
 			}
-
-			&-user{
-				font-weight: 800;
-				&-avatar{
-					border-radius: 50%;
-					margin: 0 5px;
+			&-body{
+			    hyphens: auto;
+			    max-width: 240px;
+				color: #fff;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				white-space: pre-wrap;
+				& span {
+				    display: inline-block;
 				}
 			}
-
 			&-timestamp{
 				color: hsl(201, 100%, 30%);
-				text-align: center;
 				font-weight: 800;
-			}
-
-			&-body{
-				margin-bottom: 0;
-				white-space: pre-wrap; 
+				margin: 0 20px;
 			}
 		}
 	}

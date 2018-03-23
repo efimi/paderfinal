@@ -15,6 +15,7 @@
                         {{-- <one-signal></one-signal> --}}
                     </p>                    
                     <p>Probier es einfach aus!</p>
+                    <small>Es ist vollkommen unverbindlich!</small>
 
 
 

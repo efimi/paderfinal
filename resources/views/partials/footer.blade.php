@@ -10,8 +10,7 @@
 			<translate-email-button></ranslate-email-button> --}}
 
 
-			<p> Benachrichtigungsfunktion aktiviert? 😉 </p>
-			<email-subscirbe subscription="{{auth()->user()->subscribed}}"></email-subscirbe>
+			<a href="{{ route('home') }}" class="btn btn--white">Dein Dashboard📋</a>  
 			{{-- <small>Hier sollte ein Button sein:</small> --}}
 			{{-- <onesignal-button></onesignal-button> --}}
 			

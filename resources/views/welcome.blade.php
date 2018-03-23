@@ -6,7 +6,7 @@
                     @include('partials.logo')
                     <p>Heute um 20:00 Uhr!!!</p>
                     <p class="title__caption">Klicke auf den Button und erfahre wo es für dich hingeht!</p>
-                
+                    <small>vollkommen unverbindlich!</small>
                 </div>
                 
                 <div>

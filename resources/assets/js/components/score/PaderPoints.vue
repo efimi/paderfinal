@@ -1,7 +1,7 @@
 <template>
 	<div>	
 		<div class="score btn btn--white flex flex__column" @click="showExplain">
-			Deine PaderPoints: {{points}}
+			Deine PaderPoints: {{points}} ⭐️
 		</div>
 		
 			<small v-show="explain"> Pro Match bekommst du <b>100 Pp</b></small>

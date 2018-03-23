@@ -370,10 +370,17 @@
   font-size: 3vh;
 }
 
+.table__avatar {
+  border-radius: 100%;
+  max-width: 50px;
+  margin-left: -14px;
+}
+
 .card {
   overflow: hidden;
   border-radius: 40px;
   text-decoration: none;
+  padding: 2vh 1vw;
 }
 
 .card--result {
@@ -384,6 +391,7 @@
   -webkit-animation: Gradient 15s ease infinite;
   animation: Gradient 15s ease infinite;
   margin: 0 1vw;
+  padding: 0;
 }
 
 .card__body {

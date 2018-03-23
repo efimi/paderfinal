@@ -52,11 +52,10 @@ Route::post('/unmatch','MatchesController@unmatch');
 // OneSignal Get Player ID
 Route::any('/onesignalid', 'Account\AccountsController@onesignalidAdd')->name('onesignalid');
 
-// dashboard
-Route::get('/dashboard', 'Account\AccountsController@dashboard')->name('dashboard');
-
 // Avatar Upload
 Route::post('/account/avatar', 'Account\AvatarController@store')->name('account.avatar.store');
+Route::patch('/account', 'Account\AccountsController@update')->name('account.update');
+
 
 Auth::routes();
 

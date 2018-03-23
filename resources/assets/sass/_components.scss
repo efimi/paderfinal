@@ -6,16 +6,26 @@
     }
 }
 
+.table{
+	&__avatar{
+		border-radius: 100%;
+		max-width: 50px;
+		margin-left: -14px;
+	}
+}
+
 .card {
 	overflow: hidden;
 	// border: 3px solid $paderblue;
 	border-radius: 40px;
 	text-decoration: none;
+	padding: 2vh 1vw;
 	&--result{
 		color: rgb(255,255,255);
 		max-width: 320px;
 		@include movingGradient;
 		margin: 0 1vw;
+		padding: 0;
 	}
 	&__body{
 		padding: 0 1rem;

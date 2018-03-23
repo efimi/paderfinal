@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Image;
+use App\Models\Image;
 use App\Models\Chat\Message;
 use App\Models\Feedback;
 use App\Models\Location;
@@ -36,7 +36,7 @@ class User extends Authenticatable
     ];
 
     protected $appends = [
-        'score',
+        'score', 'avatarPath'
     ];
 
     public function matches()
@@ -63,10 +63,14 @@ class User extends Authenticatable
     public function avatarPath()
     {
          if (!$this->avatar) {
-            return"img/avatarDummy.png";
+            return"img/avatar/avatar.png";
         }
 
         return $this->avatar->path();
+    }
+    public function getAvatarPathAttribute()
+    {
+        return $this->avatarPath();
     }
     
 

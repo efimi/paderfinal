@@ -58,7 +58,7 @@
 					matchPosition: Laravel.user.matchPosition, 
 					user: {
 						name: Laravel.user.name,
-						// avatar: Laravel.user.avatarPath
+						avatarPath: Laravel.user.avatarPath
 					}
 				}
 			},

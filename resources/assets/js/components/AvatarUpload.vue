@@ -1,6 +1,6 @@
 <template>
-	<div class="upload">
-		Lade Hier dienen Avatar hoch:
+	<div class="upload flex flex__column">
+		Lade hier deinen Avatar hoch:
 		<div class="upload__form-group" :class="{'has-error': errors[this.sendAs]}">
 			<label :for="sendAs">Avatar</label>
 			<div v-if="uploading">Prozess...</div>
@@ -58,5 +58,7 @@
 </script>
 
 <style>
-	
+	.avatar{
+		border-radius: 100%;
+	}
 </style>

@@ -62644,8 +62644,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				pinwallId: Laravel.user.matchedLocationId,
 				matchPosition: Laravel.user.matchPosition,
 				user: {
-					name: Laravel.user.name
-					// avatar: Laravel.user.avatarPath
+					name: Laravel.user.name,
+					avatarPath: Laravel.user.avatarPath
 				}
 			};
 		},
@@ -63268,7 +63268,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.color--1 {\n  background-color: #1780e8;\n}\n.color--2 {\n  background-color: #44c158;\n}\n.color--3 {\n  background-color: #b03b68;\n}\n.color--4 {\n  background-color: #79d28c;\n}\n.color--5 {\n  background-color: #d9b08c;\n}\n.color--6 {\n  background-color: #62cbcb;\n}\n.color--7 {\n  background-color: #d4bae8;\n}\n.chat__message {\n  padding: 2vw 4vw;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -ms-flex-line-pack: center;\n      align-content: center;\n  margin: 4vh 5vw;\n  border-radius: 30px;\n}\n.chat__message--own {\n    background-color: #1aafff;\n    color: white;\n    text-align: right;\n}\n.chat__message-user {\n    font-weight: 800;\n}\n.chat__message-user-avatar {\n      border-radius: 50%;\n      margin: 0 5px;\n}\n.chat__message-timestamp {\n    color: #006399;\n    text-align: center;\n    font-weight: 800;\n}\n.chat__message-body {\n    margin-bottom: 0;\n    white-space: pre-wrap;\n}\n", ""]);
+exports.push([module.i, "\n.color--1 {\n  background-image: linear-gradient(112deg, #ff4f81, #ff6c5f);\n  background-shadow: 0 2px 6px 0 rgba(255, 108, 95, 0.4);\n}\n.color--2 {\n  background-image: linear-gradient(284deg, #1cc7d0, #2dde98);\n  background-shadow: 0 2px 6px 0 rgba(45, 222, 152, 0.4);\n}\n.color--3 {\n  background-image: linear-gradient(80deg, #00aeff, #3369e7);\n  background-shadow: 0 2px 6px 0 rgba(51, 105, 231, 0.4);\n}\n.color--4 {\n  background-image: linear-gradient(80deg, #8E63E0, #401bb1);\n  background-shadow: 0 2px 6px 0 rgba(64, 27, 177, 0.4);\n}\n.color--5 {\n  background-image: linear-gradient(80deg, #ffc168, #e0350e);\n  background-shadow: 0 2px 6px 0 rgba(64, 27, 177, 0.4);\n}\n.color--6 {\n  background-image: linear-gradient(80deg, #f3c481, #a7616e);\n  background-shadow: 0 2px 6px 0 rgba(167, 97, 110, 0.4);\n}\n.color--7 {\n  background-image: linear-gradient(80deg, #ff4f81, #152e8a);\n  background-shadow: 0 2px 6px 0 rgba(21, 46, 138, 0.4);\n}\n.chat__message {\n  margin: 2vh 0;\n  border-radius: 30px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: row;\n          flex-direction: row;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\n.chat__message__header {\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n}\n.chat__message__footer {\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: row;\n            flex-direction: row;\n    justif-conten: center;\n}\n.chat__message-avatar {\n    border-radius: 50%;\n    max-width: 60px;\n    margin: -45px 40%;\n}\n.chat__message-body {\n    -webkit-hyphens: auto;\n        -ms-hyphens: auto;\n            hyphens: auto;\n    max-width: 240px;\n    color: #fff;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    white-space: pre-wrap;\n}\n.chat__message-body span {\n      display: inline-block;\n}\n.chat__message-timestamp {\n    color: #006399;\n    font-weight: 800;\n    margin: 0 20px;\n}\n", ""]);
 
 // exports
 
@@ -63291,6 +63291,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -63299,22 +63302,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		var self = this;
 		return {
 			time: '',
-			colorArray: ['hsl(210 , 82 , 50 )', 'hsl(130 , 50 , 51 )', 'hsl(337 , 50 , 46 )', 'hsl(133 , 50 , 65 )', 'hsl(28 , 50 , 70 )', 'hsl(180 , 50 , 59 )', 'hsl(274 , 50 , 82 )'],
-			colorClass: '',
-			styles: {
-				'background-color': this.colorArray[2]
-			}
+			classObject: {
+				'chat__message--own': this.message.selfOwned
+			},
+			cardColor: ''
 		};
 	},
 	created: function created() {
 		this.time = __WEBPACK_IMPORTED_MODULE_0_moment___default()(this.message.created_at).format('HH:mm');
-		this.setColorClass(this.message.matchPosition);
-	},
-
-	methods: {
-		setColorClass: function setColorClass(number) {
-			this.colorClass = "color--" + number;
-		}
+		this.cardColor = "color--" + this.message.matchPosition;
 	}
 });
 
@@ -63326,24 +63322,28 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {
-      staticClass: "chat__message shadow",
-      class: { "chat__message--own": _vm.message.selfOwned }
-    },
-    [
-      _c("div", { staticClass: "chat__message-user" }),
-      _vm._v(" "),
-      _c("span", { staticClass: "chat__message-timestamp" }, [
-        _vm._v(_vm._s(_vm.time))
-      ]),
-      _vm._v(" "),
-      _c("p", { staticClass: "chat__message-body" }, [
-        _vm._v(_vm._s(_vm.message.body))
-      ])
-    ]
-  )
+  return _c("div", [
+    _c("img", {
+      staticClass: "chat__message-avatar",
+      attrs: { src: _vm.message.user.avatarPath, alt: "" }
+    }),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "chat__message", class: [_vm.classObject, _vm.cardColor] },
+      [
+        _c("div", { staticClass: "chat__message-body" }, [
+          _c("span", { staticStyle: { margin: "20px" } }, [
+            _vm._v(_vm._s(_vm.message.body))
+          ]),
+          _vm._v(" "),
+          _c("span", { staticClass: "chat__message-timestamp" }, [
+            _vm._v(_vm._s(_vm.time))
+          ])
+        ])
+      ]
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -63611,7 +63611,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.avatar{\n\tborder-radius: 100%;\n}\n", ""]);
 
 // exports
 
@@ -63732,8 +63732,8 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "upload" }, [
-    _vm._v("\n\tLade Hier dienen Avatar hoch:\n\t"),
+  return _c("div", { staticClass: "upload flex flex__column" }, [
+    _vm._v("\n\tLade hier deinen Avatar hoch:\n\t"),
     _c(
       "div",
       {
@@ -66168,7 +66168,7 @@ var render = function() {
         staticClass: "score btn btn--white flex flex__column",
         on: { click: _vm.showExplain }
       },
-      [_vm._v("\n\t\tDeine PaderPoints: " + _vm._s(_vm.points) + "\n\t")]
+      [_vm._v("\n\t\tDeine PaderPoints: " + _vm._s(_vm.points) + " ⭐️\n\t")]
     ),
     _vm._v(" "),
     _c(

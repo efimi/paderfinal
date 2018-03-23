@@ -8,11 +8,13 @@
     @include('partials.card--result')
 	
 	<div class="title">
-		<p>Hinterlasse einen Fußabdruck für die anderen 
-		
-			</p>
-		<p>
-		 schreibe etwas auf die Pinnwand von {{$match->location->name}}</p>
+		 Heute 20:00!
+		 
+	</div>
+	<div>
+		<small>Tausche dich mit den anderen über die Pinnwand von {{$match->location->name}} aus.</small>
+		<br>
+		<small>Setzt Zeitpunkte, oder weiteres Organisatorisches hier fest!</small>
 	</div>
 
     <div class="pinwall__chat card shadow">
@@ -24,8 +26,8 @@
 				</div>
 	</div>
 
-	<p>möchtest du dich unmachten? Dann klicke hier:</p>
-			<unmatch-button></unmatch-button>
+	<small> Passt dir die Location nicht? Dann löse dein Match auf:</small>
+	<unmatch-button></unmatch-button>
 	
 </div>
     
