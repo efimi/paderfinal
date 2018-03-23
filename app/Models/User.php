@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Image;
 use App\Models\Chat\Message;
 use App\Models\Feedback;
 use App\Models\Location;
@@ -58,6 +59,14 @@ class User extends Authenticatable
     public function avatar()
     {
         return $this->hasOne(Image::class, 'id', 'avatar_id');
+    }
+    public function avatarPath()
+    {
+         if (!$this->avatar) {
+            return"img/avatarDummy.png";
+        }
+
+        return $this->avatar->path();
     }
     
 

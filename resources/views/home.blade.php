@@ -7,19 +7,13 @@
     </div>
     <div class="dashboard__body">
         <div class="dashboard__body-settings">
-            <div class="dashboard__body-settings__avatar"></div>
+            <div class="dashboard__body-settings__avatar">
+               <avatar-upload endpoint="{{ route('account.avatar.store') }}" send-as="image" current-avatar="{{ Auth::user()->avatarPath() }}"></avatar-upload>
+            </div>
             <div class="dashboard__body-setting__email"></div>
         </div>
         <div class="dashboard__body-table" style="overflow-x:auto;">
-           <table style="border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-   ">
-    {{-- th, td {
-    text-align: left;
-    padding: 8px;
-}
- --}}
+           <table>
                <tr>
                    <th>Datum</th>
                    <th>Location</th>

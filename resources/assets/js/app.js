@@ -34,10 +34,10 @@ Vue.component('footer-tab', require('./components/footer-tab/FooterTab.vue'));
 // Vue.component('logo', require('./components/Logo.vue'));
 Vue.component('unmatch-button', require('./components/match/UnmatchButton.vue'));
 Vue.component('email-subscirbe', require('./components/subscribe/EmailSubscribeButton.vue'));
-Vue.component('one-signal', require('./components/subscribe/OneSignalSubscribe.vue'));
+// Vue.component('one-signal', require('./components/subscribe/OneSignalSubscribe.vue'));
 Vue.component('translate-email-button', require('./components/translate/TranslateViaMail.vue'));
 Vue.component('paderpoints', require('./components/score/PaderPoints.vue'));
-Vue.component('rating-stars', require('./components/rating/RatingStars.vue'));
+// Vue.component('rating-stars', require('./components/rating/RatingStars.vue'));
 
 
 import VueCollapse from 'vue2-collapse' 

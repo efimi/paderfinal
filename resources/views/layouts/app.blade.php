@@ -5,7 +5,7 @@
 </head>
 <body>
     <div id="app">
-       @yield('main')e
+       @yield('main')
     </div>
 
     <!-- Scripts -->

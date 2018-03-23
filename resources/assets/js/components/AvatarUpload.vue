@@ -1,5 +1,6 @@
 <template>
 	<div class="upload">
+		Lade Hier dienen Avatar hoch:
 		<div class="upload__form-group" :class="{'has-error': errors[this.sendAs]}">
 			<label :for="sendAs">Avatar</label>
 			<div v-if="uploading">Prozess...</div>
@@ -57,11 +58,5 @@
 </script>
 
 <style>
-	.upload card shadow{
-		display: flex;
-		flex-direction: column;
-	}
-	.has-error{
-		border-color:red;
-	}
+	
 </style>
