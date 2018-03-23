@@ -10,7 +10,7 @@
                 </div>
                 
                 <div>
-                    <a href="{{route('match')}}" class="btn btn--big shadow animate--shake">Hier Clicken!</a>
+                    <a href="{{route('match')}}" class="btn btn--big shadow animate--shake">Hier Klicken!</a>
                 </div>
                 <div class="result__container"></div>
 
