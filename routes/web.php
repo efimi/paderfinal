@@ -52,6 +52,8 @@ Route::post('/unmatch','MatchesController@unmatch');
 // OneSignal Get Player ID
 Route::any('/onesignalid', 'Account\AccountsController@onesignalidAdd')->name('onesignalid');
 
+// dashboard
+Route::get('/dashboard', 'Account\AccountsController@dashboard')->name('dashboard');
 
 Auth::routes();
 

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Location;
+use App\Models\Rating;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 
@@ -19,6 +20,10 @@ class Match extends Model
     public function location()
     {
     	return $this->belongsTo(Location::class);
+    }
+    public function rating()
+    {
+        return $this->hasMany(Rating::class);
     }
     public static function mToday()
     {
