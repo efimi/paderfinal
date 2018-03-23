@@ -8,7 +8,7 @@ use App\Models\Image;
 use Illuminate\Http\Request;
 use Intervention\Image\ImageManager;
 
-class AvatarsController extends Controller
+class AvatarController extends Controller
 {
 	protected $imageManager;
 

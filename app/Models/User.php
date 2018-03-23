@@ -21,7 +21,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'subscribed', 'one_signal_player_id', 'token'
+        'name', 'email', 'password', 'subscribed', 'one_signal_player_id', 'token',
+        'avatar_id'
     ];
 
     /**
@@ -54,6 +55,10 @@ class User extends Authenticatable
         return $this->hasMany(Rating::class);
     }
 
+    public function avatar()
+    {
+        return $this->hasOne(Image::class, 'id', 'avatar_id');
+    }
     
 
     public function getScoreAttribute()
