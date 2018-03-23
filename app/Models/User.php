@@ -6,6 +6,7 @@ use App\Models\Chat\Message;
 use App\Models\Feedback;
 use App\Models\Location;
 use App\Models\Match;
+use App\Models\Rating;
 use Carbon\Carbon;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -47,6 +48,10 @@ class User extends Authenticatable
     public function feedback()
     {
         return $this->hasMany(Feedback::class);
+    }
+    public function ratings()
+    {
+        return $this->hasMany(Rating::class);
     }
 
     

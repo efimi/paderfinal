@@ -37,10 +37,14 @@ Vue.component('email-subscirbe', require('./components/subscribe/EmailSubscribeB
 Vue.component('one-signal', require('./components/subscribe/OneSignalSubscribe.vue'));
 Vue.component('translate-email-button', require('./components/translate/TranslateViaMail.vue'));
 Vue.component('paderpoints', require('./components/score/PaderPoints.vue'));
+Vue.component('rating-stars', require('./components/rating/RatingStars.vue'));
 
 
 import VueCollapse from 'vue2-collapse' 
 window.Vue.use(VueCollapse)
+
+import StarRating from 'vue-star-rating'
+window.Vue.use(StarRating)
 
 // import VueQrcodeReader from 'vue-qrcode-reader'
 // window.Vue.use(VueQrcodeReader)

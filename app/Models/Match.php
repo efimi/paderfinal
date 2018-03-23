@@ -12,6 +12,9 @@ class Match extends Model
      protected $fillable = [
         'location_id', 'user_id',
     ];
+    protected $appends = [
+        'averageRating'
+    ];
 
     public function user()
     {
@@ -21,9 +24,20 @@ class Match extends Model
     {
     	return $this->belongsTo(Location::class);
     }
-    public function rating()
+    public function ratings()
     {
         return $this->hasMany(Rating::class);
+    }
+    public function setAverageRatingAttribute()
+    {   
+        if($this->ratings()->count() === 0){
+            // $divisor = 1;
+            return null;
+        }
+        else{
+            $divisor = $this->ratings()->count();
+        }
+        return $this->ratings()->sum('score') / $divisor;
     }
     public static function mToday()
     {

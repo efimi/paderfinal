@@ -49,3 +49,27 @@
 		}
 	}
 }
+
+.dashboard{
+	&__header{
+
+	}
+	&__body{
+		&-table{
+			& table{
+
+			}
+			& tr {
+
+			}
+			& th {
+				text-align: center;
+			}
+			& td {
+				padding: 0.5vw 1vw;
+				text-align: center;
+				
+			}
+		}
+	}
+}

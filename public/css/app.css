@@ -712,6 +712,15 @@
   margin: 2vw;
 }
 
+.dashboard__body-table th {
+  text-align: center;
+}
+
+.dashboard__body-table td {
+  padding: 0.5vw 1vw;
+  text-align: center;
+}
+
 html,
 body {
   background-color: white;
