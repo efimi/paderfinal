@@ -55,7 +55,7 @@ Route::any('/onesignalid', 'Account\AccountsController@onesignalidAdd')->name('o
 // dashboard
 Route::get('/dashboard', 'Account\AccountsController@dashboard')->name('dashboard');
 
-// Avatar Uploade
+// Avatar Upload
 Route::post('/account/avatar', 'Account\AvatarController@store')->name('account.avatar.store');
 
 Auth::routes();

@@ -12,7 +12,7 @@ class AvatarController extends Controller
 {
 	protected $imageManager;
 
-    public function __construct( ImageManager $imageManager)
+    public function __construct(ImageManager $imageManager)
     {
         $this->imageManager = $imageManager;
     }
