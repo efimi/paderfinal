@@ -86,7 +86,7 @@
 			&-avatar{
 				border-radius: 50%;
 				max-width: 60px;
-				margin: -45px 40%;
+				margin: -50px 0;
 			}
 
 			&--own{

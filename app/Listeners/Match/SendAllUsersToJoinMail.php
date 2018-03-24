@@ -34,7 +34,10 @@ class SendAllUsersToJoinMail
         $subscribers = $unmatchedUsers->reject(function ($user, $key) {
             return $user->subscribed === 0 ;
         });
-        foreach ($subscribers as $user) {
+        $withMail = $subscribers->reject(function($user){
+            return $user->email === null;
+        });
+        foreach ($withMail as $user) {
             Mail::to($user->email)->send( new JoinTodayEmail($user));
         }
     }
