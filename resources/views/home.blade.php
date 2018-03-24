@@ -19,7 +19,7 @@
       <email-subscirbe subscription="{{auth()->user()->subscribed}}"></email-subscirbe>
 
       @if(count(auth()->user()->mToday()))
-      <div class="pinwall__chat card shadow">
+      <div class="pinwall__chat">
         <div class="pinwall__chat-info">
           <p>Aktuelle Pinnwand</p>
         </div>
@@ -29,7 +29,7 @@
       </div>
       @endif
       <div class="dashboard__body">
-        <div class="dashboard__body-settings">
+        <div class="dashboard__body-settings flex flex__column">
                   <form action="{{ route('account.update') }}" method="post" class="flex flex__column">
                         {{ csrf_field() }}
                         {{ method_field('PATCH') }}
