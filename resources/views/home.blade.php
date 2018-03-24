@@ -30,7 +30,7 @@
       @endif
       <div class="dashboard__body">
         <div class="dashboard__body-settings">
-                  <form action="{{ route('account.update') }}" method="post" class="flex flex__column" style="padding: 0 20px;">
+                  <form action="{{ route('account.update') }}" method="post" class="flex flex__column">
                         {{ csrf_field() }}
                         {{ method_field('PATCH') }}
                       <div class="form-group">
