@@ -25,7 +25,7 @@ class StoreAvatarFormRequest extends FormRequest
     {
         return [
             
-            'image' => 'required|image|max:1024'
+            'image' => 'required|image|max:3072'
         ];
     }
     public function messages()
