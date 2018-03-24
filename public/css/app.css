@@ -720,6 +720,10 @@
   margin: 2vw;
 }
 
+.dashboard__body {
+  margin-left: 20vw;
+}
+
 .dashboard__body-table th {
   text-align: center;
 }
