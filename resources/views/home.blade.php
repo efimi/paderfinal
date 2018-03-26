@@ -53,6 +53,7 @@
                    <th>Teilnehmer</th>
                    {{-- <th>Bewertung</th> --}}
                </tr>
+               @if(count(auth()->user()->matches))
                @foreach (auth()->user()->matches as $match)
                 <tr>
                    <td> {{$match->created_at->format('d.m.Y')}}</td>
@@ -65,6 +66,7 @@
                    {{-- <td> <star-rating></star-rating></td> --}}
                </tr>
                @endforeach
+               @endif
                
            </table>
 
@@ -72,7 +74,7 @@
     </div>
 
     <div>
-        <a href="{{ route('show-match') }}" class="btn btn--blue">zurück zur deine Match 👈</a>
+        <a href="{{ route('show-match') }}" class="btn btn--blue">zurück zur deinem Match 👈</a>
     </div>
 
 
