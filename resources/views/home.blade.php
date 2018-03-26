@@ -50,29 +50,7 @@
          @if(empty(auth()->user()->matches()))
                 <p> Du hast noch keine Matches</p>
           @else
-           <table>
-               <tr>
-                   <th>Datum</th>
-                   <th>Location</th>
-                   <th>Teilnehmer</th>
-                   {{-- <th>Bewertung</th> --}}
-               </tr>
-          
-              
-                 @foreach (auth()->user()->matches as $match)
-                  <tr>
-                     <td>{{$match->created_at->format('d.m.Y')}}</td>
-                     <td><a href="{{$match->location->website}}">{{$match->location->name}}</a></td>
-                     <td> 
-                          @foreach ($match->users() as $user)
-                          <img src="{{$user->avatarPath}}" alt="" class="table__avatar">
-                          @endforeach
-                     </td>
-                     {{-- <td> <star-rating></star-rating></td> --}}
-                 </tr>
-                @endforeach
-               
-           </table>
+           @include('partials.table')
         @endif
 
         </div>
