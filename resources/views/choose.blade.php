@@ -3,13 +3,15 @@
 @section('main')
 
 	<div class="content  flex flex__column">
-		<div class="choice flex flex__row">
-		@foreach ($locations as $location)
-			<div class="choice__box">
-		 		@include('partials.card--choice')
-			</div>
-		@endforeach
+		<div class="title">
+			😀
+			<p>Schau mal was wir für 📍dich gefunden haben!</p>
 		</div>
+		<small> Scrolle runter und suche dir eine ☝️ Location aus!</small>
+		@foreach ($locations as $location)
+			@include('partials.card--choice')
+		@endforeach
+		
 	</div>
 @endsection
 

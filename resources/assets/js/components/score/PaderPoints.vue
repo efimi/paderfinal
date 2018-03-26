@@ -8,6 +8,8 @@
 			<br>
 			<small v-show="explain">Pro Pinnwand Post <b>1 Pp</b></small>
 			<br>
+			<small v-show="explain">Für das hochladen eines Avatarbildchens <b>150 Pp</b></small>
+			<br>
 			<small v-show="explain">Für das Einschalten der Benachrichtigungsfunktion bekommst du <b>200Pp</b> </small>
 		
 	</div>

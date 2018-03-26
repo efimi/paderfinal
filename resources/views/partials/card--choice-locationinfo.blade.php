@@ -1,9 +1,9 @@
 @if( $location->usedPlaces() === 0)
-	<p>Nice du würdes diese Location neu eröffnen!👍😉</p>
+	<p>Nice!!! Du würdes diese Location neu eröffnen!🎉😀</p>
 @endif
 @if( $location->usedPlaces() === 1)
 	<p>
-		Derzeit kommt noch eine weitere Person!🙋
+		Derzeit kommt noch eine ☝️ weitere Person!🙋
 	</p>
 @endif
 @if ($location->usedPlaces() > 1 )	

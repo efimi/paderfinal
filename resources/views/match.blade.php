@@ -19,7 +19,7 @@
 
     <div class="pinwall__chat card shadow">
 				<div class="pinwall__chat-info">
-					<p>{{$match->location->name}}'s Pinnwand 📌</p>
+					<p>{{$match->location->name}}'s Pinnwand 📜</p>
 				</div>
 				<div class="pinwall__chat-box">
 					<chat></chat>

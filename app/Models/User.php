@@ -77,10 +77,11 @@ class User extends Authenticatable
     public function getScoreAttribute()
     {
         // every Match 100
+        $avatar_bonus = $this->avatar()->count() * 150;
         $score_matches = $this->matches()->count() * 100;
         $score_messages = $this->messages()->count();
         $score_subscribtion = $this->subscribed * 200;
-        return $score_messages + $score_matches + $score_subscribtion;
+        return $score_messages + $score_matches + $score_subscribtion + $avatar_bonus;
     }
 
 

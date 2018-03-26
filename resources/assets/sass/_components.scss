@@ -7,10 +7,14 @@
 }
 
 .table{
+	@include flex-center;
 	&__avatar{
 		border-radius: 100%;
 		max-width: 50px;
 		margin-left: -14px;
+		@include breakpoint(mobileonly){
+			max-width: 30px;
+		}
 	}
 }
 

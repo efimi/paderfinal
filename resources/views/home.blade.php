@@ -18,7 +18,7 @@
       <p> Deine Benachrichtigungsfunktion, kannst du hier aktivieren:</p>
       <email-subscirbe subscription="{{auth()->user()->subscribed}}"></email-subscirbe>
 
-      @if(count(auth()->user()->mToday()))
+      {{-- @if(count(auth()->user()->mToday()))
       <div class="pinwall__chat">
         <div class="pinwall__chat-info">
           <p>Aktuelle Pinnwand</p>
@@ -27,7 +27,7 @@
           <chat></chat>
         </div>
       </div>
-      @endif
+      @endif --}}
       <div class="dashboard__body">
         <div class="dashboard__body-settings flex flex__column">
                   <form action="{{ route('account.update') }}" method="post" class="flex flex__column">

@@ -13,7 +13,7 @@
 	</div>
 	<input type="hidden" name="LocId"	value="{{$location->id}}">
 	<button type='submit' class="btn btn--white">
-		Ich wähle das
+		Ich wähle die hier👌
 	</button>
 	<div class="" style="height: 1vh;"></div>
 </form>

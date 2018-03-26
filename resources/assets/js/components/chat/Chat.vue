@@ -1,6 +1,6 @@
 <template>
 	<div class="chat">
-		<chat-messages></chat-messages>
+		
 		<form v-on:submit.prevent class="chat__form">
 			
 			<textarea 
@@ -12,16 +12,17 @@
 			@keydown="handleMessageInput"
 			></textarea>
 		
-			<!-- <div 
-			class="chat__form-input--button btn shadow"
-			@click="handleMessageInput">
+			<a 
+			class="chat__form-input--button btn bnt--white shadow"
+			@click="handleButtonClick">
 				📌
-			</div> -->
+			</a>
 			
 		</form>
 			<div class="chat__form-helptext flex flex__column">
 				<p>Drücke Return um zu posten 📌</p>
 			</div>
+		<chat-messages></chat-messages>
 	</div>
 </template>
 
@@ -45,6 +46,10 @@
 					this.body = null;
 
 				}
+			},
+			handleButtonClick(){
+					this.send();
+					this.body = null;
 			},
 			buildTempMessage(){
 				let tempId = Date.now();

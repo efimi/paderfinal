@@ -46,6 +46,9 @@ window.Vue.use(VueCollapse)
 import StarRating from 'vue-star-rating'
 window.Vue.use(StarRating)
 
+// import VSwipe from 'vswipe'
+// window.Vue.use(VSwipe)
+
 // import VueQrcodeReader from 'vue-qrcode-reader'
 // window.Vue.use(VueQrcodeReader)
 // import vueConfirmationButton from 'vue-confirmation-button';

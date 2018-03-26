@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Match extends Model 
 {
     use SoftDeletes;
-    
+
      protected $fillable = [
         'location_id', 'user_id',
     ];
