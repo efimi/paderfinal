@@ -16,6 +16,8 @@ class AppController extends Controller
         if(!Auth::check()){
         	$user = User::create([
         		'name' => 'Gast',
+                'email' => null,
+                'password' => null,
                 'token' => str_random(100),
                 'subscribed' => 0,
         	]);
