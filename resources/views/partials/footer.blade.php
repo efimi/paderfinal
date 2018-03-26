@@ -9,7 +9,7 @@
 			{{-- <p>Wenn du Padermeet von einem anderen Device nutzen möchtest dann schicke dir zunächst eine Mail:</p>
 			<translate-email-button></ranslate-email-button> --}}
 
-
+			
 			<a href="{{ route('home') }}" class="btn btn--white">Dein Dashboard📋</a>  
 			{{-- <small>Hier sollte ein Button sein:</small> --}}
 			{{-- <onesignal-button></onesignal-button> --}}

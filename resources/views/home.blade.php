@@ -53,7 +53,7 @@
                    <th>Teilnehmer</th>
                    {{-- <th>Bewertung</th> --}}
                </tr>
-               @if(count(auth()->user()->matches()))
+               @if(auth()->user()->matches()->count() >= 1)
                @foreach (auth()->user()->matches as $match)
                 <tr>
                    <td> {{$match->created_at->format('d.m.Y')}}</td>
