@@ -43,7 +43,7 @@
 
 			<small> {{$location->name}} passt dir nicht? Dann löse dein Match auf:</small>
 			<unmatch-button></unmatch-button>
-	</div>
+		</div>
 	</div>
 	
 

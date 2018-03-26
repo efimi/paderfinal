@@ -59,6 +59,6 @@
     <div>
         <a href="{{ route('show-match') }}" class="btn btn--blue">zurück zur deinem Match 👈</a>
     </div>
-
+  </div>
 
 @endsection

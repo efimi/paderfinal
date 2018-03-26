@@ -62,7 +62,7 @@ class User extends Authenticatable
     }
     public function avatarPath()
     {
-         if (!$this->avatar) {
+         if (empty($this->avatar)) {
             return"img/avatar/avatar.png";
         }
 

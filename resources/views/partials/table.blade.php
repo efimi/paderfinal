@@ -16,7 +16,7 @@
                      <td><a href="{{$match->location->website}}">{{$match->location->name}}</a></td>
                      <td> 
                           @foreach ($match->users() as $user)
-                          <img src="{{$user->avatarPath}}" alt="" class="table__avatar">
+                          <img src="{{$user->avatarPath()}}" alt="" class="table__avatar">
                           @endforeach
                      </td>
                      {{-- <td> <star-rating></star-rating></td> --}}
