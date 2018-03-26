@@ -71,10 +71,28 @@ class Location extends Model
 		}
 	}
  	public static function getFillableLocation() {
+ 		return self::getFillableLocations()->first();
+ 	}
+ 	public static function getFillableLocations()
+ 	{
  		$locationsWithLessThen5 = self::allUsedToday()->filter(function($loc){
  			return $loc->usedPlaces() < 5;
  		});
- 		return $locationsWithLessThen5->first();
+ 		return $locationsWithLessThen5;
+ 	}
+ 	public static function choosableLocations(){
+ 		$number = 3;
+ 		$fillable = self::getFillableLocations()->take($number);
+ 		if ($fillable->count() === $number){
+ 			return $fillable;
+ 		}
+ 		else{
+ 			$locations = $fillable;
+ 			for ($i=0; $i < $number - $fillable->count() ; $i++) { 
+ 				$locations->push(self::getNewRandom());
+ 			}
+ 			return $locations;
+ 		}
  	}
 
 	public static function getNewRandom() {
@@ -100,6 +118,11 @@ class Location extends Model
  			$locations->push($i->location);
  		}
  		return $locations;
+ 	}
+
+ 	public function usedNotFilledToday()
+ 	{
+ 		 
  	}
 
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Location;
 use App\Models\Match;
 use App\Models\User;
 use Auth;
@@ -42,5 +43,17 @@ class AppController extends Controller
         else {
             return redirect()->to('/');
         }
+    }
+    public function chooseLocations()
+    {
+        $locations = Location::chooseableLocations();
+
+        return view('choose', compact('location'));
+    }
+    public function matchById(Request $request)
+    {
+        $user = Auth::user();
+        $match = Match::matchToLocationId($user, $request->id);
+        return view('match', compact('match'));
     }
 }

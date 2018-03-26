@@ -52,6 +52,13 @@ class Match extends Model
 	    		]);
     	return $match;
     }
+    public function matchToLocationId($user, $locationId)
+    {
+        $match = new Match;
+        $match->location_id = $locationId;
+        $match->user_id = $user->id;
+        $match->save();
+    }
     public function associatedMatches($date)
     {
         $location = $this->location;

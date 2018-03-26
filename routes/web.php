@@ -11,6 +11,10 @@
 |
 */
 
+if (env('APP_ENV') === 'production') {
+    URL::forceSchema('https');
+}
+
 Route::get('/', 'AppController@start')->name('start');
 Route::get('/match', 'AppController@makeMatch')->name('match');
 Route::get('/pinwall', 'LocationsController@showPinwall')->name('pinwall');
@@ -21,6 +25,11 @@ Route::get('/click', function(){
 	return redirect('/');
 });
 
+Route::get('/choose', 'AppController@chooseLocations')->name('choose');
+Route::post('/match', 'AppController@matchById')->name('match-by-id');
+
+
+// Chat Messages
 Route::get('/chat/messages', 'Chat\ChatMessageController@index');
 Route::post('/chat/messages', 'Chat\ChatMessageController@store');
 
