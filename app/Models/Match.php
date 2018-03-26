@@ -6,9 +6,12 @@ use App\Models\Location;
 use App\Models\Rating;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Match extends Model
+class Match extends Model 
 {
+    use SoftDeletes;
+    
      protected $fillable = [
         'location_id', 'user_id',
     ];
@@ -52,12 +55,13 @@ class Match extends Model
 	    		]);
     	return $match;
     }
-    public function matchToLocationId($user, $locationId)
+    public static function matchToLocationId($user, $locationId)
     {
         $match = new Match;
         $match->location_id = $locationId;
         $match->user_id = $user->id;
         $match->save();
+        return $match;
     }
     public function associatedMatches($date)
     {

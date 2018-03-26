@@ -108,6 +108,14 @@ class User extends Authenticatable
         }
         return null;
     }
+    // umatch last one
+     public function unmatch()
+    {
+        $match = $this->mToday();
+        if(count($match)){
+            $match->delete();
+        }
+    }
     
     /**
      * Notifications

@@ -26,7 +26,8 @@ Route::get('/click', function(){
 });
 
 Route::get('/choose', 'AppController@chooseLocations')->name('choose');
-Route::post('/match', 'AppController@matchById')->name('match-by-id');
+Route::post('/choose', 'AppController@matchById')->name('match-by-id');
+Route::get('/showmatch', 'AppController@showMatch')->name('show-match');
 
 
 // Chat Messages
@@ -65,6 +66,9 @@ Route::any('/onesignalid', 'Account\AccountsController@onesignalidAdd')->name('o
 Route::post('/account/avatar', 'Account\AvatarController@store')->name('account.avatar.store');
 Route::patch('/account', 'Account\AccountsController@update')->name('account.update');
 
+Route::get('/myid', function(){
+	dd(Auth::user()->id);
+});
 
 Auth::routes();
 

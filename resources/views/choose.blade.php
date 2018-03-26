@@ -1,23 +1,30 @@
-{{-- @extends('layouts.master')
+@extends('layouts.master')
 
 @section('main')
 
-@endsection --}}
+	<div class="content  flex flex__column">
+		<div class="choice flex flex__row">
+		@foreach ($locations as $location)
+			<div class="choice__box">
+		 		@include('partials.card--choice')
+			</div>
+		@endforeach
+		</div>
+	</div>
+@endsection
 
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Choose</title>
 	@include('partials.head')
 </head>
-<body>
-	@foreach ($locations as $location)
-		<card-result location="{{$location}}"></card-result>
+<body> --}}
 
-	@endforeach
-	
+
+{{-- 
 	<script src="{{ asset('js/app.js') }}"></script>	
 </body>
 
-</html>
+</html> --}}

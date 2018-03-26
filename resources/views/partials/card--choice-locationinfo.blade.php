@@ -1,6 +1,10 @@
+@if( $location->usedPlaces() === 0)
+	<p>Nice du würdes diese Location neu eröffnen!👍😉</p>
+@endif
 @if( $location->usedPlaces() === 1)
-	<p>Woooooooowwww!! Du hast die Location {{ $location->name}} neu zum matchen eröffnet! </p>
-	<p>🎊🎉🎈👏👏👏</p>
+	<p>
+		Derzeit kommt noch eine weitere Person!🙋
+	</p>
 @endif
 @if ($location->usedPlaces() > 1 )	
 	<p>

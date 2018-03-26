@@ -80,7 +80,7 @@ class Location extends Model
  		});
  		return $locationsWithLessThen5;
  	}
- 	public static function choosableLocations(){
+ 	public static function chooseableLocations(){
  		$number = 3;
  		$fillable = self::getFillableLocations()->take($number);
  		if ($fillable->count() === $number){
@@ -88,8 +88,10 @@ class Location extends Model
  		}
  		else{
  			$locations = $fillable;
- 			for ($i=0; $i < $number - $fillable->count() ; $i++) { 
- 				$locations->push(self::getNewRandom());
+ 			$addedAmout = $number - $fillable->count();
+ 			for ($i=0; $i < $addedAmout; $i++) { 
+ 				$exclude = $locations;
+ 				$locations->push(self::getNewRandomForChooseable($exclude));
  			}
  			return $locations;
  		}
@@ -103,6 +105,16 @@ class Location extends Model
 		
 		$locationsToday = self::allUsedToday();
 		return $filtered->diff($locationsToday)->shuffle()->first();
+
+ 	}
+	public static function getNewRandomForChooseable($exclude) {
+		$all = Location::openLocationsTodayAt(2000);
+		$filtered = $all->reject(function ($location, $key) {
+		    return $location->exclude === 1 ;
+		});
+		
+		$locationsToday = self::allUsedToday();
+		return $filtered->diff($locationsToday)->diff($exclude)->shuffle()->first();
 
  	}
  	public static function allUsedToday(){
