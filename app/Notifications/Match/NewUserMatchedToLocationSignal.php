@@ -1,25 +1,29 @@
 <?php
 
-namespace App\Notifications\Chat;
+namespace App\Notifications\Match;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Notifications\Notification;
+use NotificationChannels\OneSignal\OneSignalChannel;
+use NotificationChannels\OneSignal\OneSignalMessage;
+use NotificationChannels\OneSignal\OneSignalWebButton;
+use Illuminate\Notifications\Notification;
 
-class NewPinwallPostNotification extends Notification
+class NewUserMatchedToLocationSignal extends Notification
 {
     use Queueable;
 
-    public $message;
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($message)
+    public $user;
+    public function __construct($user)
     {
-        $this->message = $message;
+        $this->user = $user
     }
 
     /**
@@ -35,29 +39,21 @@ class NewPinwallPostNotification extends Notification
 
     public function toOneSignal($notifiable)
     {
-        //now you can build your message with the $this->data information
         return OneSignalMessage::create()
-            ->subject("Padermeet🎉 - Neue Nachricht")
-            ->body("Klicke hier für details")
-            ->url('https://padermeet.de/pinwall')
+            ->subject("Padermeet")
+            ->body("Neues Match heute...")
+            ->url('https://padermeet.de')
             ->webButton(
-                OneSignalWebButton::create('Pinnwand')
-                    ->text('Klicke hier')
-                    ->icon('https://padermeet.de/img/logo.png')
-                    ->url('https://padermeet.de/pinwall')
+                OneSignalWebButton::create('☝️ ich komme mit')
+                    ->text('Klick hier')
+                    ->icon('https://padermeet.de/images/padermeetLogo.png')
+                    ->url('https://padermeet.de/choose')
             );
     }
     public function routeNotificationForOneSignal()
     {
-        /*
-         * you have to return the one signal player id tat will 
-         * receive the message of if you want you can return 
-         * an array of players id
-         */
-        
-         return $this->message->user->user_one_signal_id;
+        return $user->one_signal_player_id;
     }
-
 
     /**
      * Get the mail representation of the notification.

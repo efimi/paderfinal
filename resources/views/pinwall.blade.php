@@ -13,12 +13,13 @@
 			<p>Cool dass du bei 
 				<a class="btn btn--blue" href="{{$location->website}}">{{$location->name}}</a> 
 				dabei bist!
-				Hier kannst du mit deinen anderen Padermeetern genauers für dein Treffen ausmachen!</p>
+				Hier kannst du mit deinen anderen Padermeetern genauers für dein Treffen ausmachen!
+			</p>
 			@include('partials.location--usedplaces')
 			
 			<div class="pinwall__chat card shadow">
 				<div class="pinwall__chat-info">
-					<p>Pinwand</p>
+					<p>Pinnwand</p>
 				</div>
 				<div class="pinwall__chat-box">
 					<chat></chat>

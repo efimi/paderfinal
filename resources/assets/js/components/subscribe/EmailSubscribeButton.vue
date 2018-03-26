@@ -64,7 +64,7 @@
 		methods:{
 			handleEmailInput(){
 				console.log('handle Email Subscirbe')
-				axios.post('/subscribeToNotifications/', {
+				axios.post('/subscribeToNotifications', {
 					email: this.email,
 					subscribe: this.subscribe,
 				}).catch((e) => {

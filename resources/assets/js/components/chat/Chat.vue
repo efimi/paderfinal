@@ -57,7 +57,7 @@
 				return {
 					id: tempId,
 					body: this.body, 
-					created_at: moment().utcOffset('+0100').format('YYYY-MM-DD HH:mm:ss'),
+					created_at: moment().utcOffset('+0200').format('YYYY-MM-DD HH:mm:ss'),
 					selfOwned: true,
 					pinwallId: Laravel.user.matchedLocationId,
 					matchPosition: Laravel.user.matchPosition, 
