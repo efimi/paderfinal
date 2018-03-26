@@ -70,14 +70,10 @@
 
         </div>
     </div>
-      
-        
 
-      
-  </div>
-  </div>
-  
+    <div>
+        <a href="{{ route('show-match') }}" class="btn btn--blue">zurück zur deine Match 👈</a>
+    </div>
 
-</div>
 
 @endsection

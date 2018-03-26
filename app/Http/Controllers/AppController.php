@@ -34,9 +34,15 @@ class AppController extends Controller
     }
     public function showMatch()
     {
-        $match = Auth::user()->mToday();
 
-        return view('match', compact('match'));
+        $match = Auth::user()->mToday();
+        if (count($match)) {
+            return view('match', compact('match'));
+        }
+        else{
+            return redirect('/');
+        }
+
     }
     public function makeMatch()
     {	
