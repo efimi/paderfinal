@@ -3,11 +3,11 @@
 @endif
 @if( $location->usedPlaces() === 1)
 	<p>
-		Derzeit kommt noch eine ☝️ weitere Person!🙋
+		Derzeit kommt noch eine ☝ weitere Person!🙋
 	</p>
 @endif
 @if ($location->usedPlaces() > 1 )	
 	<p>
-		Derzeit komm{{ $location->usedPlaces() <= 2 ? 't' : 'en'}} noch {{$location->usedPlaces() - 1}} weitere Person{{ $location->usedPlaces() <= 2 ? '' : 'en'}}!🙋
+		Derzeit kommen noch {{$location->usedPlaces()}} weitere Personen!🙋
 	</p>
 @endif
