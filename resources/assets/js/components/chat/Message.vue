@@ -1,5 +1,5 @@
 <template>
-	<div class="chat__message shadow" :class="{'chat__message--own': message.selfOwned}">
+	<div class="chat__message shadow" :class="{}" :style="randcolor">
 		<div class="chat__message-user">
 			
 		</div>
@@ -13,23 +13,35 @@
 	export default {
 		props: ['message'],
 		data(){
-			var self = this;
 			return{
 				time: '',
-				colorArray: ['hsl(210 , 82 , 50 )', 'hsl(130 , 50 , 51 )', 'hsl(337 , 50 , 46 )','hsl(133 , 50 , 65 )', 'hsl(28 , 50 , 70 )','hsl(180 , 50 , 59 )' , 'hsl(274 , 50 , 82 )'],
-				colorClass:'',
-				styles: {
-					'background-color' : this.colorArray[2]
-				},
+
 			}
 		},
+		computed(){
+			colorClass:{
+				var number = Math.floor(Math.random() * 7) + 1;
+				return{
+					"color--" + number + "";
+				}
+			},
+			classObject: function() {
+				     // returns a number between 1 and 7
+				return{
+					'chat__message--own': message.selfOwned,
+					colorClass: true
+
+				}
+
+			}
+		}
 		created(){
 			this.time = moment(this.message.created_at).format('HH:mm');
-			this.setColorClass(this.message.matchPosition);
+			this.setColor();
 		},
 		methods: {
-			setColorClass(number){
-				this.colorClass = "color--" + number ;
+			setColorClass(){
+				
 			}
 		}
 	}
