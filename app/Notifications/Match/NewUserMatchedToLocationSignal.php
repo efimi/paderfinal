@@ -9,7 +9,6 @@ use Illuminate\Notifications\Notification;
 use NotificationChannels\OneSignal\OneSignalChannel;
 use NotificationChannels\OneSignal\OneSignalMessage;
 use NotificationChannels\OneSignal\OneSignalWebButton;
-use Illuminate\Notifications\Notification;
 
 class NewUserMatchedToLocationSignal extends Notification
 {
@@ -23,7 +22,7 @@ class NewUserMatchedToLocationSignal extends Notification
     public $user;
     public function __construct($user)
     {
-        $this->user = $user
+        $this->user = $user;
     }
 
     /**
@@ -41,14 +40,8 @@ class NewUserMatchedToLocationSignal extends Notification
     {
         return OneSignalMessage::create()
             ->subject("Padermeet")
-            ->body("Neues Match heute...")
-            ->url('https://padermeet.de')
-            ->webButton(
-                OneSignalWebButton::create('☝️ ich komme mit')
-                    ->text('Klick hier')
-                    ->icon('https://padermeet.de/images/padermeetLogo.png')
-                    ->url('https://padermeet.de/choose')
-            );
+            ->body("Heute wurde wieder jemand gematch 🎉 ")
+            ->url('https://padermeet.de');
     }
     public function routeNotificationForOneSignal()
     {
