@@ -22,7 +22,7 @@ class NewUserMatchedToLocationSignal extends Notification
     public $user;
     public function __construct($user)
     {
-        $this->user = $user
+        $this->user = $user;
     }
 
     /**
