@@ -16,7 +16,7 @@
 		mounted(){
 				var OneSignal = OneSignal || [];
 				OneSignal.push(function() {
-				  // Occurs when the user's subscription changes to a new value.
+				  // Occurs when the user's subscription changes to a new valude.
 				  OneSignal.on('subscriptionChange', function (isSubscribed) {
 				    console.log("The user's subscription state is now:", isSubscribed);
 				    OneSignal.getUserId(function(userId) {

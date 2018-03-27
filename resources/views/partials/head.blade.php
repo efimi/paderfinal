@@ -72,7 +72,7 @@
 
       xhr.open("POST", url);
       xhr.setRequestHeader("X-CSRF-TOKEN", "{{ csrf_token() }}");
-      xhr.setRequestHeader("content-type", "application/json");
+      xhr.setRequestHeader( );
       // xhr.onload = function() {
       //   var response = xhr.responseText;
       //   if (xhr.readyState == 4 && xhr.status == "200") {

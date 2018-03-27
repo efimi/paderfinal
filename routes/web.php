@@ -45,7 +45,7 @@ Route::get('/survey', function(){
 Route::post('/feedback','Feedback\FeedbackController@store');
 
 // Subscribe to Notificaitons
-Route::post('/subscribeToNotifications','Account\AccountsController@subscribeToNotifications');
+Route::post('/subscribeToNotifications','Account\AccountsController@subscribeToNotifications')->;
 Route::get('/subscribe/activate','Account\AccountsController@activate')->name('subscription.activate');
 
 // send send Mail with token
