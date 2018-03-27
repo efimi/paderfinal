@@ -24,23 +24,6 @@
 			    cardColor: ''
 			}
 		},
-		computed(){
-			colorClass:{
-				var number = Math.floor(Math.random() * 7) + 1;
-				return{
-					"color--" + number + "";
-				}
-			},
-			classObject: function() {
-				     // returns a number between 1 and 7
-				return{
-					'chat__message--own': message.selfOwned,
-					colorClass: true
-
-				}
-
-			}
-		}
 		created(){
 			this.time = moment(this.message.created_at).format('HH:mm');
 			this.cardColor = "color--" + this.message.matchPosition

@@ -22,7 +22,7 @@ class NewUserMatchedToLocationSignal extends Notification
     public $user;
     public function __construct($user)
     {
-        $this->user = $user;
+        $this->user = $user
     }
 
     /**
@@ -40,8 +40,14 @@ class NewUserMatchedToLocationSignal extends Notification
     {
         return OneSignalMessage::create()
             ->subject("Padermeet")
-            ->body("Heute wurde wieder jemand gematch 🎉 ")
-            ->url('https://padermeet.de');
+            ->body("Neues Match heute...")
+            ->url('https://padermeet.de')
+            ->webButton(
+                OneSignalWebButton::create('☝️ ich komme mit')
+                    ->text('Klick hier')
+                    ->icon('https://padermeet.de/images/padermeetLogo.png')
+                    ->url('https://padermeet.de/choose')
+            );
     }
     public function routeNotificationForOneSignal()
     {
