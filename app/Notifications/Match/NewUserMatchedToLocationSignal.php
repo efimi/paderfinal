@@ -51,7 +51,7 @@ class NewUserMatchedToLocationSignal extends Notification
     }
     public function routeNotificationForOneSignal()
     {
-        return ['7af5b2cf-2701-4960-a195-bce6e567e979','6828eea8-dbf0-4436-8b89-93398a853ca7']
+        return ['7af5b2cf-2701-4960-a195-bce6e567e979','6828eea8-dbf0-4436-8b89-93398a853ca7'];
         // return $user->one_signal_player_id;
     }
 
