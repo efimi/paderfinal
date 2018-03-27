@@ -93,7 +93,8 @@ class Location extends Model
  				$exclude = $locations;
  				$locations->push(self::getNewRandomForChooseable($exclude));
  			}
- 			return $locations;
+ 			$choosable = collect($locations);
+ 			return $choosable;
  		}
  	}
 
