@@ -9,7 +9,6 @@ use Illuminate\Notifications\Notification;
 use NotificationChannels\OneSignal\OneSignalChannel;
 use NotificationChannels\OneSignal\OneSignalMessage;
 use NotificationChannels\OneSignal\OneSignalWebButton;
-use Illuminate\Notifications\Notification;
 
 class NewUserMatchedToLocationSignal extends Notification
 {
