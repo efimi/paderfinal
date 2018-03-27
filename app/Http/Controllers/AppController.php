@@ -68,7 +68,7 @@ class AppController extends Controller
             }
             $locations = Location::chooseableLocations();
             
-            Choice::saveChoices($user, $locations->get(0), $locations->get(1), $locations->get(2));
+            Choice::saveChoices($user, $locations->get(1), $locations->get(2), $locations->get(3));
 
             return view('choose', compact('locations'));
         }
