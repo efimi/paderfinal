@@ -40,13 +40,8 @@ class NewUserMatchedToLocationSignal extends Notification
     {
         return OneSignalMessage::create()
             ->subject("Padermeet")
-            ->body("Neues Match heute...")
-            ->url('https://padermeet.de')
-            ->button(
-                OneSignalWebButton::create('☝️ ich komme mit')
-                    ->text('Klick hier')
-                    ->icon('https://padermeet.de/images/padermeetLogo.png')
-            );
+            ->body("Heute wurde wieder jemand gematch 🎉 ")
+            ->url('https://padermeet.de');
     }
     public function routeNotificationForOneSignal()
     {
