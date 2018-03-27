@@ -11,6 +11,10 @@
 |
 */
 
+if (env('APP_ENV') === 'production') {
+    URL::forceSchema('https');
+}
+
 Route::get('/', 'AppController@start')->name('start');
 Route::get('/match', 'AppController@makeMatch')->name('match');
 Route::get('/pinwall', 'LocationsController@showPinwall')->name('pinwall');
@@ -21,6 +25,12 @@ Route::get('/click', function(){
 	return redirect('/');
 });
 
+Route::get('/choose', 'AppController@chooseLocations')->name('choose');
+Route::post('/choose', 'AppController@matchById')->name('match-by-id');
+Route::get('/showmatch', 'AppController@showMatch')->name('show-match');
+
+
+// Chat Messages
 Route::get('/chat/messages', 'Chat\ChatMessageController@index');
 Route::post('/chat/messages', 'Chat\ChatMessageController@store');
 
@@ -50,8 +60,15 @@ Route::get('/unsubscirbe', 'Account\AccountsController@unsubscirbeFromEmail')->n
 Route::post('/unmatch','MatchesController@unmatch');
 
 // OneSignal Get Player ID
-Route::post('/onesignalid', 'Account\AccountsController@onesignalidAdd')->name('onesignalid');
+Route::any('/onesignalid', 'Account\AccountsController@onesignalidAdd')->name('onesignalid');
 
+// Avatar Upload
+Route::post('/account/avatar', 'Account\AvatarController@store')->name('account.avatar.store');
+Route::patch('/account', 'Account\AccountsController@update')->name('account.update');
+
+Route::get('/myid', function(){
+	dd(Auth::user()->id);
+});
 
 Auth::routes();
 

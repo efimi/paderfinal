@@ -23,7 +23,7 @@
 </template>
 
 <script>
-
+	import Bus from '../../bus'
 	export default {
 		props:['subscription'],
 		data(){
@@ -34,7 +34,7 @@
 				activeClass: 'active', 
 				subscribed: false,
 				email: '',
-				buttonText: 'Benachrichtigung einschalten',
+				buttonText: 'benachrichtigen',
 				resultText:''
 			}
 		},
@@ -64,7 +64,7 @@
 		methods:{
 			handleEmailInput(){
 				console.log('handle Email Subscirbe')
-				axios.post('/subscribeToNotifications/', {
+				axios.post('/subscribeToNotifications', {
 					email: this.email,
 					subscribe: this.subscribe,
 				}).catch((e) => {
@@ -73,6 +73,8 @@
 				this.buttonText = 'Alles klar👍'
 				this.isActive = false
 				this.resultText = 'Die Benachrichtigung ist aktiviert!';
+
+				Bus.$emit('user.subscribed')
 				
 			}, 
 			handleButton(){
@@ -86,8 +88,8 @@
 	$paderblue: hsl(201, 100%, 50%);
 	
 	// @import url('https://fonts.googleapis.com/css?family=Roboto');
-	$button-text: #333; 
-	$background: $paderblue;
+	$button-text: $paderblue; 
+	$background: #fff;
 	$font-size:18px;
 	.centerMe {  
 		}
@@ -129,7 +131,7 @@
 		text-align: left;
 		input {
 			border: 0;
-			width: 240px;
+			width: 190px;
 			// height: 45px;
 			margin: 0 0 0 25px;
 			outline: none;
@@ -158,7 +160,7 @@
 	}
 	&.sent { cursor: default; }
 	&.active {
-		width: 350px;
+		width: 300px;
 		text-align: left;
 		transition: width .2s ease-in-out;
 		cursor: default;

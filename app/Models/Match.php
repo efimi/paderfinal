@@ -3,13 +3,20 @@
 namespace App\Models;
 
 use App\Models\Location;
+use App\Models\Rating;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Match extends Model
+class Match extends Model 
 {
+    use SoftDeletes;
+
      protected $fillable = [
         'location_id', 'user_id',
+    ];
+    protected $appends = [
+        'averageRating'
     ];
 
     public function user()
@@ -19,6 +26,21 @@ class Match extends Model
     public function location()
     {
     	return $this->belongsTo(Location::class);
+    }
+    public function ratings()
+    {
+        return $this->hasMany(Rating::class);
+    }
+    public function setAverageRatingAttribute()
+    {   
+        if($this->ratings()->count() === 0){
+            // $divisor = 1;
+            return null;
+        }
+        else{
+            $divisor = $this->ratings()->count();
+        }
+        return $this->ratings()->sum('score') / $divisor;
     }
     public static function mToday()
     {
@@ -32,6 +54,14 @@ class Match extends Model
 	    			'user_id' => $user->id
 	    		]);
     	return $match;
+    }
+    public static function matchToLocationId($user, $locationId)
+    {
+        $match = new Match;
+        $match->location_id = $locationId;
+        $match->user_id = $user->id;
+        $match->save();
+        return $match;
     }
     public function associatedMatches($date)
     {

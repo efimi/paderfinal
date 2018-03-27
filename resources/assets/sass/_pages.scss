@@ -31,7 +31,7 @@
 	&__chat{
 		max-width: 700px;
 		&-info{
-			font-size: 3vw;
+			font-size: 5vh;
 			padding: 2vw 5vw;
 		}
 		&-box{
@@ -45,6 +45,31 @@
 			justify-content: space-between;
 			& a{
 				margin: 2vw;
+			}
+		}
+	}
+}
+
+.dashboard{
+	&__header{
+
+	}
+	&__body{
+		
+		&-table{
+			& table{
+
+			}
+			& tr {
+
+			}
+			& th {
+				text-align: center;
+			}
+			& td {
+				padding: 0.5vw 1vw;
+				text-align: center;
+				
 			}
 		}
 	}

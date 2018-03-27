@@ -31,7 +31,7 @@ class JoinTodayEmail extends Mailable
     public function build()
     {
         return $this->from('info@padermeet.de', 'Padermeet🎉')
-                    ->subject('Gerade neues Match erstellt 🎉! Heute schon was vor 😉?')
+                    ->subject('Gerade neues Match erstellt! Hast du heute schon was vor?')
                     ->markdown('emails.match.new_registered');
     }
 }

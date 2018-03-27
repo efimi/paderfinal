@@ -3,26 +3,32 @@
 @section('main')
 <div class="content flex flex__column">
     <div class="title">
-        <p>Schau 😀 mal welche Location📍 wir für dich gefunden haben! 🎉</p>
+        <p>Diene 😀  Location für heute Abend ist {{$match->location->name}}! 🎉</p>
     </div>
     @include('partials.card--result')
 	
 	<div class="title">
-		<p>Hinterlasse einen Fußabdruck für die anderen 
-		
-			</p>
-		<p>
-		 schreibe etwas auf die Pinnwand von {{$match->location->name}}</p>
+		 Heute 20:00!
+		 
+	</div>
+	<div>
+		<small>Tausche dich mit den anderen über die Pinnwand von {{$match->location->name}} aus.</small>
+		<br>
+		<small>Setzt Zeitpunkte, oder weiteres Organisatorisches hier fest!</small>
 	</div>
 
     <div class="pinwall__chat card shadow">
 				<div class="pinwall__chat-info">
-					<p>{{$match->location->name}}'s Pinnwand 📌</p>
+					<p>{{$match->location->name}}'s Pinnwand 📜</p>
 				</div>
 				<div class="pinwall__chat-box">
 					<chat></chat>
 				</div>
 	</div>
+
+	<small> Passt dir die Location nicht? Dann löse dein Match auf:</small>
+	<unmatch-button></unmatch-button>
+	
 </div>
     
 @endsection

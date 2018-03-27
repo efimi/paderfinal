@@ -21,7 +21,7 @@ Vue.component('chat', require('./components/chat/Chat.vue'));
 Vue.component('chat-messages', require('./components/chat/Messages.vue'));
 Vue.component('chat-message', require('./components/chat/Message.vue'));
 Vue.component('users-online', require('./components/chat/Users.vue'));
-// Vue.component('avatar-upload', require('./components/AvatarUpload.vue'));
+Vue.component('avatar-upload', require('./components/AvatarUpload.vue'));
 Vue.component('geo', require('./components/Geolocation.vue'));
 Vue.component('card-result', require('./components/card/Card.vue'));
 
@@ -34,11 +34,20 @@ Vue.component('footer-tab', require('./components/footer-tab/FooterTab.vue'));
 // Vue.component('logo', require('./components/Logo.vue'));
 Vue.component('unmatch-button', require('./components/match/UnmatchButton.vue'));
 Vue.component('email-subscirbe', require('./components/subscribe/EmailSubscribeButton.vue'));
+// Vue.component('one-signal', require('./components/subscribe/OneSignalSubscribe.vue'));
 Vue.component('translate-email-button', require('./components/translate/TranslateViaMail.vue'));
+Vue.component('paderpoints', require('./components/score/PaderPoints.vue'));
+// Vue.component('rating-stars', require('./components/rating/RatingStars.vue'));
 
 
 import VueCollapse from 'vue2-collapse' 
 window.Vue.use(VueCollapse)
+
+import StarRating from 'vue-star-rating'
+window.Vue.use(StarRating)
+
+// import VSwipe from 'vswipe'
+// window.Vue.use(VSwipe)
 
 // import VueQrcodeReader from 'vue-qrcode-reader'
 // window.Vue.use(VueQrcodeReader)

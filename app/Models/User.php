@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
+use App\Models\Image;
 use App\Models\Chat\Message;
 use App\Models\Feedback;
 use App\Models\Location;
 use App\Models\Match;
+use App\Models\Rating;
 use Carbon\Carbon;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -20,7 +22,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'subscribed', 'one_signal_player_id', 'token'
+        'name', 'email', 'password', 'subscribed', 'one_signal_player_id', 'token',
+        'avatar_id'
     ];
 
     /**
@@ -32,10 +35,10 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-     public function history()
-    {
-        return $this->hasMany(History::class);
-    }
+    protected $appends = [
+        'score', 'avatarPath'
+    ];
+
     public function matches()
     {
         return $this->hasMany(Match::class);
@@ -48,6 +51,39 @@ class User extends Authenticatable
     {
         return $this->hasMany(Feedback::class);
     }
+    public function ratings()
+    {
+        return $this->hasMany(Rating::class);
+    }
+
+    public function avatar()
+    {
+        return $this->hasOne(Image::class, 'id', 'avatar_id');
+    }
+    public function avatarPath()
+    {
+         if (empty($this->avatar)) {
+            return"img/avatar/avatar.png";
+        }
+
+        return $this->avatar->path();
+    }
+    public function getAvatarPathAttribute()
+    {
+        return $this->avatarPath();
+    }
+    
+
+    public function getScoreAttribute()
+    {
+        // every Match 100
+        $avatar_bonus = $this->avatar()->count() * 150;
+        $score_matches = $this->matches()->count() * 100;
+        $score_messages = $this->messages()->count();
+        $score_subscribtion = $this->subscribed * 200;
+        return $score_messages + $score_matches + $score_subscribtion + $avatar_bonus;
+    }
+
 
     public function mToday()
     {
@@ -72,6 +108,14 @@ class User extends Authenticatable
             }
         }
         return null;
+    }
+    // umatch last one
+     public function unmatch()
+    {
+        $match = $this->mToday();
+        if(count($match)){
+            $match->delete();
+        }
     }
     
     /**

@@ -4,16 +4,29 @@ namespace App\Http\Controllers\Account;
 
 use App\Events\User\UserSubscribedToEmailNotification;
 use App\Http\Controllers\Controller;
+use App\Mail\Account\Unsubscribed;
 use App\Mail\TranslateSession;
 use App\Models\User;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use Mail;
-use App\Mail\Account\Unsubscribed;
 
 
 class AccountsController extends Controller
 {
+	public function update(Request $request)
+    {
+    	$request->user()->update($request->only(['name']));
+    	$this->validate($request, [
+            'avatar_id' => Rule::exists('images', 'id')->where(function ($q) use ($request) {
+                $q->where('user_id', $request->user()->id);
+            }),
+        ]);
+    	$request->user()->update($request->only(['name', 'avatar_id']));
+    	return back();
+    }
+
 	public function subscribeToNotifications(Request $request)
 	{
 		$user = Auth::user();
@@ -48,8 +61,9 @@ class AccountsController extends Controller
 
 	public function onesignalidAdd(Request $request)
 	{
-		$user = Auth::user();
-		$user->one_signal_player_id = $request->id;
+		$user = User::find($request->user_id);
+		$user->one_signal_player_id = $request->one_signal_player_id;
+		$user->subscribed = 1;
 		$user->save();
 		return response()->json($user, 200);
 	}
@@ -70,7 +84,7 @@ class AccountsController extends Controller
 			$user->subscribed = 0;
 			$user->save();
 			Mail::to($user->email)->send(new Unsubscribed);
-			return view('unsubscribed')
+			return view('unsubscribed');
 		}
 
 

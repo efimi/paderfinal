@@ -1,11 +1,16 @@
 <footer class="footer">
+		<div class="flex " style="justify-content: flex-end; ">
+
+					
+		</div>
 		<div class="flex flex__column">
-			<p>möchtest du dich unmachten? Dann klicke hier:</p>
-			<unmatch-button></unmatch-button>
-			<p>Wenn du Padermeet von einem anderen Device nutzen möchtest dann schicke dir zunächst eine Mail:</p>
-			<translate-email-button></ranslate-email-button>
-			<p> Benachrichtigungsfunktion aktiviert? 😉 </p>
-			<email-subscirbe subscription="{{auth()->user()->subscribed}}"></email-subscirbe>
+
+			<paderpoints score="{{ auth()->user()->score }}"></paderpoints>	
+			{{-- <p>Wenn du Padermeet von einem anderen Device nutzen möchtest dann schicke dir zunächst eine Mail:</p>
+			<translate-email-button></ranslate-email-button> --}}
+
+
+			<a href="{{ route('home') }}" class="btn btn--white">Dein Dashboard📋</a>  
 			{{-- <small>Hier sollte ein Button sein:</small> --}}
 			{{-- <onesignal-button></onesignal-button> --}}
 			
@@ -20,6 +25,10 @@
 		<div>
 			<users-online></users-online>
 		</div>
+	
+		<div class="flex flex__column">{{\App\Models\Match::mToday()->count()}} Match{{\App\Models\Match::mToday()->count() === 1 ? '' : 'es'}} heute | {{\App\Models\Match::all()->count()}} Matches total </div>
+
+		
 
 		@include('partials.town')
 </footer>

@@ -27,7 +27,9 @@
     },
     "dependencies": {
         "effect-input": "^0.1.1",
+        "vswipe": "^1.0.1",
         "vue-qrcode-reader": "^0.7.1",
+        "vue-star-rating": "^1.5.1",
         "vue-template-compiler": "^2.5.15",
         "vue2-collapse": "^1.0.11"
     }

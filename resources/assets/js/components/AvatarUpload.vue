@@ -1,10 +1,11 @@
 <template>
-	<div class="upload">
-		<div class="form-group" :class="{'has-error': errors[this.sendAs]}">
+	<div class="upload flex flex__column">
+		Lade hier deinen Avatar hoch:
+		<div class="upload__form-group" :class="{'has-error': errors[this.sendAs]}">
 			<label :for="sendAs">Avatar</label>
 			<div v-if="uploading">Prozess...</div>
 			<input v-else class="btn-login" type="file" v-on:change="fileChange" :name="sendAs">
-			<div class="help-block" v-if="errors[this.sendAs]">
+			<div class="upload__help-block" v-if="errors[this.sendAs]">
 				{{ errors[this.sendAs][0] }}
 			</div>
 		</div>
@@ -57,11 +58,7 @@
 </script>
 
 <style>
-	.upload card shadow{
-		display: flex;
-		flex-direction: column;
-	}
-	.has-error{
-		border-color:red;
+	.avatar{
+		border-radius: 100%;
 	}
 </style>

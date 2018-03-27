@@ -30,21 +30,21 @@ class NewPinwallPostNotification extends Notification
      */
     public function via($notifiable)
     {
-        return [];
+        return [OneSignalChannel::class];
     }
 
     public function toOneSignal($notifiable)
     {
         //now you can build your message with the $this->data information
         return OneSignalMessage::create()
-            ->subject("Your {$notifiable->service} account was approved!")
-            ->body("Click here to see details.")
-            ->url('http://onesignal.com')
+            ->subject("Padermeet🎉 - Neue Nachricht")
+            ->body("Klicke hier für details")
+            ->url('https://padermeet.de/pinwall')
             ->webButton(
-                OneSignalWebButton::create('link-1')
-                    ->text('Click here')
-                    ->icon('https://upload.wikimedia.org/wikipedia/commons/4/4f/Laravel_logo.png')
-                    ->url('http://laravel.com')
+                OneSignalWebButton::create('Pinnwand')
+                    ->text('Klicke hier')
+                    ->icon('https://padermeet.de/img/logo.png')
+                    ->url('https://padermeet.de/pinwall')
             );
     }
     public function routeNotificationForOneSignal()
@@ -54,7 +54,7 @@ class NewPinwallPostNotification extends Notification
          * receive the message of if you want you can return 
          * an array of players id
          */
-
+        
          return $this->message->user->user_one_signal_id;
     }
 

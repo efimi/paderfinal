@@ -7,6 +7,3 @@
 		Derzeit komm{{ $location->usedPlaces() <= 2 ? 't' : 'en'}} noch {{$location->usedPlaces() - 1}} weitere Person{{ $location->usedPlaces() <= 2 ? '' : 'en'}}!🙋
 	</p>
 @endif
-@if ($location->usedPlaces() === 1 )	
-	
-@endif

@@ -5,15 +5,14 @@
                     <p>Willkommen bei Padermeet!</p>
                     @include('partials.logo')
                     <p>Padermeet ist eine neue Treffapp für die Stadt Paderborn🎉</p>
-                    <p>Beim Klick auf den Button wirst du auf eine Location von 24 Locations 📍 in der Innenstadt gematcht</p>
+                    <p>Beim Klick auf den Button werden dir 3 Locations📍 in der Innenstadt vorgeschlagen. </p>
+                    <p>Davon kannst du eine auswählen👌</p>
                     <p>Auf die selbe Location werden bis zu 4 weitere Personen 🙋 gematcht</p>
                     <p>Das Padermeet-Treffen findet dort statt. 😀</p>
                     <p>Die Uhrzeit ist "fest" 🙃 um 20:00 Uhr.</p>
-                    {{-- <p>Am besten ist, wenn du die Benachrichtigungsfunktion aktivierst!</p> --}}
-                    <p>
-                        <div><email-subscirbe></email-subscirbe></div>
-                    </p>                    
-                    <p>Probiert es einfach aus!</p>
+                    {{-- <p>Am besten ist, wenn du die Benachrichtigungsfunktion aktivierst!</p> --}}                   
+                    <p>Probier es einfach aus!</p>
+                    <small>Es ist vollkommen unverbindlich!</small>
 
 
 
