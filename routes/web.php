@@ -22,7 +22,8 @@ Route::get('/intro', function(){
 	return view('intro');
 });
 Route::get('/click', function(){
-	return redirect('/');
+	
+	return redirect('/intro');
 });
 
 Route::get('/choose', 'AppController@chooseLocations')->name('choose');
