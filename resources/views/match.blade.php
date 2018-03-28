@@ -3,7 +3,7 @@
 @section('main')
 <div class="content flex flex__column">
     <div class="title">
-        <p>Diene 😀  Location für heute Abend ist {{$match->location->name}}! 🎉</p>
+        <p>Deine 😀 Location für heute Abend ist {{$match->location->name}}! 🎉</p>
     </div>
     @include('partials.card--result')
 	
