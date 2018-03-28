@@ -64,7 +64,9 @@
     OneSignal.getUserId(function(userId) {
       console.log("OneSignal User ID:", userId);
       var data = new Object();
+      @if(Auth::check())
       data.user_id = {{auth()->user()->id}};
+      @endif
       data.one_signal_player_id = userId;
 
       var url = "/onesignalid";
