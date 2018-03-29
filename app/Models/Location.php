@@ -133,9 +133,5 @@ class Location extends Model
  		return $locations;
  	}
 
- 	public function usedNotFilledToday()
- 	{
- 		 
- 	}
 
 }
