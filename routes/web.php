@@ -71,7 +71,7 @@ Route::get('/myid', function(){
 	if (Auth::check()){
 		dd(Auth::user()->id);
 	}
-	return null;
+	dd(null);
 });
 
 Auth::routes();
