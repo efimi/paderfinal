@@ -68,7 +68,10 @@ Route::post('/account/avatar', 'Account\AvatarController@store')->name('account.
 Route::patch('/account', 'Account\AccountsController@update')->name('account.update');
 
 Route::get('/myid', function(){
-	dd(Auth::user()->id);
+	if (Auth::check()){
+		dd(Auth::user()->id);
+	}
+	return null;
 });
 
 Auth::routes();
