@@ -22,7 +22,7 @@
 	export default {
 		data(){
 			return {
-				buttonText: "unmatch",
+				buttonText: "Location ändern",
 				showtext: false,
 				customMessages: ['unmatchen☝️', 'Bist du dir sicher? 💔']
 			}
