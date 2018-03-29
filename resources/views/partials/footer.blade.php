@@ -5,7 +5,7 @@
 		</div>
 		<div class="flex flex__column">
 
-			<paderpoints score="{{ auth()->user()->score }}"></paderpoints>	
+			<paderpoints score="{{ auth()->check() ? auth()->user()->score : 0}}"></paderpoints>	
 			{{-- <p>Wenn du Padermeet von einem anderen Device nutzen möchtest dann schicke dir zunächst eine Mail:</p>
 			<translate-email-button></ranslate-email-button> --}}
 
