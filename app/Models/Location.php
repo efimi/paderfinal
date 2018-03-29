@@ -91,9 +91,9 @@ class Location extends Model
  			$addedAmout = $number - $fillable->count();
  			for ($i=0; $i < $addedAmout; $i++) { 
  				$exclude = $locations;
- 				$locations->push(self::getNewRandomForChooseable($exclude))->values();
+ 				$locations->push(self::getNewRandomForChooseable($exclude));
  			}
- 			$choosable = collect($locations);
+ 			$choosable = collect($locations)->values();
  			return $choosable;
  		}
  	}
