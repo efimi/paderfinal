@@ -21,6 +21,9 @@ Route::get('/pinwall', 'LocationsController@showPinwall')->name('pinwall');
 Route::get('/intro', function(){
 	return view('intro');
 });
+Route::get('/sendtestmessage', 'AppController@sendTestMessage')->name('sendtestmessage');
+
+
 Route::get('/click', function(){
 	return redirect('/');
 });

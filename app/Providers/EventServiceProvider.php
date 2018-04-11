@@ -18,6 +18,9 @@ class EventServiceProvider extends ServiceProvider
             'App\Listeners\Match\SendAllUsersToJoinSignal',
 
         ],
+        'App\Events\Test\TestTrigger' => [
+            'App\Listeners\Test\SendOSMessageToAllUsers'
+        ],
         // 'App\Events\Chat\MessageCreated' => [
         //     'App\Listeners\User\SendNotificationToAllParticipants',
         // ],
