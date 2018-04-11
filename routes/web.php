@@ -25,7 +25,8 @@ Route::get('/sendtestmessage', 'AppController@sendTestMessage')->name('sendtestm
 
 
 Route::get('/click', function(){
-	return redirect('/');
+	
+	return redirect('/intro');
 });
 
 Route::get('/choose', 'AppController@chooseLocations')->name('choose');
@@ -70,7 +71,10 @@ Route::post('/account/avatar', 'Account\AvatarController@store')->name('account.
 Route::patch('/account', 'Account\AccountsController@update')->name('account.update');
 
 Route::get('/myid', function(){
-	dd(Auth::user()->id);
+	if (Auth::check()){
+		dd(Auth::user()->id);
+	}
+	dd(null);
 });
 
 Auth::routes();

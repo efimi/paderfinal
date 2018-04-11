@@ -22,8 +22,8 @@ Vue.component('chat-messages', require('./components/chat/Messages.vue'));
 Vue.component('chat-message', require('./components/chat/Message.vue'));
 Vue.component('users-online', require('./components/chat/Users.vue'));
 Vue.component('avatar-upload', require('./components/AvatarUpload.vue'));
-Vue.component('geo', require('./components/Geolocation.vue'));
-Vue.component('card-result', require('./components/card/Card.vue'));
+// Vue.component('geo', require('./components/Geolocation.vue'));
+// Vue.component('card-result', require('./components/card/Card.vue'));
 
 Vue.component('faq', require('./components/footer-tab/FAQ.vue'));
 Vue.component('feedback-form', require('./components/footer-tab/FeedbackForm.vue'));
@@ -43,8 +43,8 @@ Vue.component('paderpoints', require('./components/score/PaderPoints.vue'));
 import VueCollapse from 'vue2-collapse' 
 window.Vue.use(VueCollapse)
 
-import StarRating from 'vue-star-rating'
-window.Vue.use(StarRating)
+// import StarRating from 'vue-star-rating'
+// window.Vue.use(StarRating)
 
 // import VSwipe from 'vswipe'
 // window.Vue.use(VSwipe)

@@ -75,7 +75,7 @@ class Location extends Model
  	}
  	public static function getFillableLocations()
  	{
- 		$locationsWithLessThen5 = self::allUsedToday()->filter(function($loc){
+ 		$locationsWithLessThen5 = self::allUsedToday()->filter(function($loc, $key){
  			return $loc->usedPlaces() < 5;
  		});
  		return $locationsWithLessThen5;
@@ -93,7 +93,7 @@ class Location extends Model
  				$exclude = $locations;
  				$locations->push(self::getNewRandomForChooseable($exclude));
  			}
- 			$choosable = collect($locations);
+ 			$choosable = collect($locations)->values();
  			return $choosable;
  		}
  	}
@@ -133,9 +133,5 @@ class Location extends Model
  		return $locations;
  	}
 
- 	public function usedNotFilledToday()
- 	{
- 		 
- 	}
 
 }

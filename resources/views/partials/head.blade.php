@@ -5,10 +5,33 @@
 
 <!-- CSRF Token -->
 <meta name="csrf-token" content="{{ csrf_token() }}">
-<meta name="csrf-sesson-token" content="{{ Session::token() }}">
+<meta name="csrf-session-token" content="{{ Session::token() }}">
 
 <!-- Styles -->
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+
+<!-- Sharing Site -->
+<meta property="og:site_name" content="Padermeet"/>
+<meta property="og:title" content="Padermeet - Die neue Treffapp für Paderborn!"/>
+<meta property="og:description" content="Mit Padermeet lernst du ganz leicht neue Leute kennen! Ein Button, ein Klick"/>
+<meta property="og:image" content="{{url('/')}}/img/touch/apple-touch-icon-180x180.png">
+<meta property="og:url" content="https://padermeet.de/click">
+<meta property="og:type" content="website"/>
+
+
+<!-- Touch Icon -->
+<link rel="shortcut icon" href="{{url('/')}}//favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="{{url('/')}}/img/touch/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="{{url('/')}}/img/touch/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="{{url('/')}}/img/touch/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="{{url('/')}}/img/touch/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="{{url('/')}}/img/touch/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="{{url('/')}}/img/touch/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="{{url('/')}}/img/touch/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="{{url('/')}}/img/touch/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="{{url('/')}}/img/touch/apple-touch-icon-180x180.png" />
+
 
 <!-- One Signal -->
 <script src="{{ asset('manifest.json')}}"></script>
@@ -64,7 +87,9 @@
     OneSignal.getUserId(function(userId) {
       console.log("OneSignal User ID:", userId);
       var data = new Object();
+      @if(Auth::check())
       data.user_id = {{auth()->user()->id}};
+      @endif
       data.one_signal_player_id = userId;
 
       var url = "/onesignalid";
@@ -101,8 +126,8 @@
 			'id' => auth()->check() ? auth()->user()->id : null,
 			'name' => auth()->check() ? auth()->user()->name : null,
 			'matchedLocationId' => auth()->check() ? auth()->user()->mLocationID() : null,
-      'matchPosition' => auth()->user()->matchPosition(),
-			'avatarPath' => auth()->user()->avatarPath(),
+      'matchPosition' => auth()->check() ? auth()->user()->matchPosition() : null ,
+			'avatarPath' => auth()->check() ? auth()->user()->avatarPath() : null,
 		], 
 		'keys' => [
 			'pusher' => config('broadcasting.connections.pusher.key'),
